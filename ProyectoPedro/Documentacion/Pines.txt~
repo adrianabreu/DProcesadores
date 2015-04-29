@@ -1,0 +1,50 @@
+ENTRADA
+---------
+e0[4]=L2
+e0[3]=M1
+e0[2]=M2
+e0[1]=U11
+e0[0]=U12
+
+e1[4]=W12
+e1[3]=V12
+e1[2]=M22
+e1[1]=L21
+e1[0]=L22
+
+OPERACION
+---------
+e2[0]|key2|R22
+e2[1]|key1|R21
+e2[2]|key0|T22
+
+RELOJ
+----------
+clk|key3|T21
+
+LEDS
+----------
+RESULTADO:
+    s0[7]|LEDR[7]|U18
+    s0[6]|LEDR[6]|Y18
+    s0[5]|LEDR[5]|V19
+    s0[4]|LEDR[4]|T18
+    s0[3]|LEDR[3]|Y19
+    s0[2]|LEDR[2]|U19
+    s0[1]|LEDR[1]|R19
+    s0[0]|LEDR[0]|R20
+
+PC:
+    pc[7]|LEDG[7]|Y21
+    pc[6]|LEDG[6]|Y22
+    pc[5]|LEDG[5]|W21
+    pc[4]|LEDG[4]|W22
+    pc[3]|LEDG[3]|V21
+    pc[2]|LEDG[2]|V22
+    pc[1]|LEDG[1]|U21
+    pc[0]|LEDG[0]|U22
+    
+OPERACION:
+    s1[2]|LEDG[2]|V22
+    s1[1]|LEDG[1]|U21
+    s1[0]|LEDG[0]|U22

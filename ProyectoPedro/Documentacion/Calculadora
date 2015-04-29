@@ -1,0 +1,3 @@
+Calculadora
+En un puerto de entrada de 4 bits tenemos un numero, en otro puerto de 4 bits tenemos el operando (suma, resta, multiplicacion).
+La salida de la cpu debe ser escribir el restultado, y para mostrarlo en la placa tenemos un array de leds (al puerto de salida de al menos 8 bits), pero tambien tenemos displays y de segmentos. Lo mejor seria usar de 7 segmentos.

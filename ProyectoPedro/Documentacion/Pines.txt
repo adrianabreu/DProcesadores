@@ -1,0 +1,87 @@
+ENTRADA
+---------
+e0[3]=L2
+e0[2]=M1
+e0[1]=M2
+e0[0]=U11
+
+e1[3]=W12
+e1[2]=V12
+e1[1]=M22
+e1[0]=L21
+
+OPERACION
+---------
+e2[2]|key0|T22
+e2[1]|key1|R21
+e2[0]|key2|R22
+
+
+RELOJ
+----------
+clk|key3|T21
+clk|27MHz|PIN_D12
+clk|50MHz|PIN_L1
+rst|sw0|L22
+
+DISPLAYS
+--------------
+B:
+    display1 = HEX0
+        display1[0]=J2
+        display1[1]=J1
+        display1[2]=H2
+        display1[3]=H1
+        display1[4]=F2
+        display1[5]=F1
+        display1[6]=E2
+    
+    display2 = HEX1
+        display2[0]=E1
+        display2[1]=H6
+        display2[2]=H5
+        display2[3]=H4
+        display2[4]=G3
+        display2[5]=D2
+        display2[6]=D1
+A:
+    display3=HEX2
+        display3[0]=G5
+        display3[1]=G6
+        display3[2]=C2
+        display3[3]=C1
+        display3[4]=E3
+        display3[5]=E4
+        display3[6]=D3
+
+    display4=HEX3
+        display4[0]=F4
+        display4[1]=D5
+        display4[2]=D6
+        display4[3]=J4
+        display4[4]=L8
+        display4[5]=F3
+        display4[6]=D4
+
+LEDS
+----------
+RESULTADO:
+    s0[7]|LEDR[7]|U18
+    s0[6]|LEDR[6]|Y18
+    s0[5]|LEDR[5]|V19
+    s0[4]|LEDR[4]|T18
+    s0[3]|LEDR[3]|Y19
+    s0[2]|LEDR[2]|U19
+    s0[1]|LEDR[1]|R19
+    s0[0]|LEDR[0]|R20
+
+PC:
+    pc[7]|LEDG[7]|Y21
+    pc[6]|LEDG[6]|Y22
+    pc[5]|LEDG[5]|W21
+    pc[4]|LEDG[4]|W22
+    pc[3]|LEDG[3]|V21
+    pc[2]|LEDG[2]|V22
+    pc[1]|LEDG[1]|U21
+    pc[0]|LEDG[0]|U22
+

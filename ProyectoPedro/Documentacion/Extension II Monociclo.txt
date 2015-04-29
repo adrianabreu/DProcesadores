@@ -1,0 +1,25 @@
+Instrucciones a codificar:
+·Salto relativo
+·Salto a subrutina
+·Retorno Subr
+·NOP?
+---------------
+·Salida IND REG
+·Ensamblador
+-----------------------------
+
+·Salto relativo
+----_----_--00_1111
+----_----_--01_0000
+
+·Salto a subrutina
+----_----_--01_1001
+
+·Retorno subrutina
+----_----_--01_1010
+
+·NOP ?
+ !!! El registro
+
+·Salida IND
+____|Contenido|Puerto|Opcode

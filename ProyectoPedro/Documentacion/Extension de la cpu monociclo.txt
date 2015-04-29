@@ -1,0 +1,52 @@
+Extension de la cpu monociclo
+
+Viviremos en la cueva.
+
+La cpu es una puta autopista, necesitamos instruccion de E/S.
+
+Lo leido desde E/S se escribe en el b.registros. 
+
+[4 bits][REGISTRO_A_ESCRIBIR][PUERTO][OP] <- Escritura de un registro en E/S
+                  4              2     6
+
+[4 bits][REGISTRO_A_LEER][PUERTO][OP] <- Escirtura de un registro desde E/S
+                  4        2      6
+
+[INMEDIATO][PUERTO][OP] <- Escritura de una constante en E/S
+    8         2      6
+
+
+module entrada (in clk, enable, #8 datos, port)
+
+module salida (in clk, enable, port, out #8 datos)
+
+Señales necesarias escritura en registro:
+Enable e/s : 1
+We3: 1
+Port: 1
+s_inm : 1
+
+
+
+Opcodes adicionales:
+    - Entrada
+    - Salida
+    - Salto relativo
+    - Salto a subrutina
+    - Retorno a subrutina
+    - No operación.
+
+
+OPCODES:
+    xx0[xxx]: ALU
+    xx1000: Carga
+    001001: Incondicional
+    001010: Condicional z=1
+    001011: Condicional z=0
+    001100: Leer Entrada   
+    001101: Escribir Salida Registro
+    001110: Escribir Salida Inmediato
+    001111: Salto relativo
+    011001: Salto a subrutina
+    011010: Retorno
+    011011: No operacion
