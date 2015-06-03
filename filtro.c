@@ -196,18 +196,12 @@ void rellenar_filtro(int* matfiltro,int tam, int modo){
 unsigned char valornewpixel(unsigned char** matriz,int* matfiltro, int tamfiltro, int pivotei, int pivotej){
     int i,j,k,l;
     unsigned char valor=0;
-    printf("Estoy en valorn pixel \n");
     for( i=pivotei,k=0;k<tamfiltro;i++,k++){
         for(j=pivotej,l=0;l<tamfiltro;j++,l++){
-        	printf("Hey estoy en %d %d \n", i, j);
-        	printf("%d \n", matriz[i][j]);
-        	printf("%d \n", matfiltro[pos(k,l,tamfiltro)]);
             valor+=(matriz[i][j]*matfiltro[pos(k,l,tamfiltro)]);
         }
     }
-    printf("He terminado el filtro, voy a dividir entre %d \n",tamfiltro);
     valor=valor/(tamfiltro*tamfiltro);
-    printf("%d \n",valor);
     return valor;
 }
 
@@ -216,35 +210,11 @@ void aplicarfiltro(unsigned char** matriz, int* matfiltro, int filasmat, int col
 	int i,j;
 	for (i=0;i<filasmat;i++){
 	    for(j=0;j<columnasmat;j++){
-	    	printf("%u \n",newmatriz[i][j]);
 	    	newmatriz[i][j]=valornewpixel(matriz,matfiltro,tamfiltro,i,j);
-	    	printf("La asignacion ha sido correcta \n");
 	    }
 	}
 }
 
-void rellenar_imagen(int* matriz, int filas,int columnas){
-   int i,j;
-   int pixel;
-   for (i=0;i<filas;i++){
-   	  pixel=0;
-      for(j=0;j<columnas;j++){
-      	 matriz[pos(i,j,columnas)]=pixel;
-      	 pixel+=255/15;
-      }
-   }
-}
-
-void mostrar_imagen(int* matriz,int filas, int columnas){
-	int i,j;
-	for (i=0; i<filas; i++){
-		printf("\n");
-		for(j=0; j<columnas; j++){
-			printf("%d ", matriz[pos(i,j,columnas)]);
-		}
-	}
-	printf("\n");
-}
 
 void func1(){
 	int tamfiltro=3,modo=0,w,h;
