@@ -4,8 +4,6 @@
 #define N 8
 #define M 10
 
-unsigned char** newmatriz;
-
 unsigned char** pgmread(char* filename, int* w, int* h){
     FILE* file;
     char line[256];
@@ -220,6 +218,7 @@ void aplicarfiltro(unsigned char** matriz, int* matfiltro, unsigned char ** newm
 void func1(){
     int tamfiltro=3,modo=0,w,h;
     unsigned char** matriz;
+    unsigned char** newmatriz;
     int filtro[20];
     char filename[16]="inputImage.pgm";
     char outname[16]="outputImage.pgm";
@@ -249,9 +248,9 @@ void func1(){
         }
         printf("I ended creating the row %d \n", j);
         aplicarfiltro(matriz,filtro,newmatriz,ow,oh,tamfiltro);
-        printf ("Aplicamos el iltro like a heros");
+        printf ("Aplicamos el iltro like a heros\n");
         pgmwrite(outname,ow,oh,newmatriz,"",1);
-        printf ("Imagen hecha, con dos cojones");
+        printf ("Imagen hecha, con dos cojones\n");
     }
 }
 
