@@ -196,10 +196,12 @@ unsigned char valornewpixel(unsigned char** matriz,int* matfiltro, int tamfiltro
     int valor=0;
     for( i=pivotei,k=0;k<tamfiltro;i++,k++){
         for(j=pivotej,l=0;l<tamfiltro;j++,l++){
-            valor+=(matriz[i][j]*matfiltro[pos(k,l,tamfiltro)]);
+            valor+=(((int)matriz[i][j])*matfiltro[pos(k,l,tamfiltro)]);
         }
     }
     valor=(valor/(tamfiltro*tamfiltro));
+    if(valor>255)
+        valor=255;
     devolver=(unsigned char)valor;
     return devolver;
 }
@@ -216,30 +218,24 @@ void aplicarfiltro(unsigned char** matriz, int* matfiltro, unsigned char ** newm
 
 
 void func1(){
-    int tamfiltro=3,modo=0,w,h;
+    int tamfiltro=5,modo=0,w,h,j;
     unsigned char** matriz;
     unsigned char** newmatriz;
-    int filtro[20];
-    char filename[16]="inputImage.pgm";
+    int filtro[24];
+    char filename[15]="inputImage.pgm";
     char outname[16]="outputImage.pgm";
     
-    unsigned char iterador;
     int ow,oh;
     
     matriz=pgmread(filename,&h,&w);
 
     if (tamfiltro > 0){
         rellenar_filtro(filtro,tamfiltro,modo);
-
         ow=w-(tamfiltro-1);
         oh=h-(tamfiltro-1);
-        int width;
-        width=oh;
-        printf("I will create %d rows and %d columns \n", width, width);
-        int i,j;
-        newmatriz = calloc(width, sizeof(unsigned char*));
+        newmatriz = calloc(ow, sizeof(unsigned char*));
         
-        for (j=0 ; j < width; j++){
+        for (j=0;j<ow;j++){
             if (( newmatriz[j] = calloc(oh, sizeof(unsigned char))) == NULL){
                printf("Memory allocation error. Exit program\n");
                 exit(1);
@@ -248,9 +244,7 @@ void func1(){
         }
         printf("I ended creating the row %d \n", j);
         aplicarfiltro(matriz,filtro,newmatriz,ow,oh,tamfiltro);
-        printf ("Aplicamos el iltro like a heros\n");
         pgmwrite(outname,ow,oh,newmatriz,"",1);
-        printf ("Imagen hecha, con dos cojones\n");
     }
 }
 
