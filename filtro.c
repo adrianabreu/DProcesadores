@@ -1,6 +1,8 @@
 //#include <sys/alt_timestamp.h>
 //#include <alt_types.h>
-#include "pgm4.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <stddef.h>
 #define N 8
 #define M 10
 
