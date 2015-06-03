@@ -193,10 +193,7 @@ void rellenar_filtro(int* matfiltro,int tam, int modo){
 
 }
 
-
 unsigned char valornewpixel(unsigned char** matriz,int* matfiltro, int tamfiltro, int pivotei, int pivotej){
-    //SUMA DE LA MULTIPLICACION DE LA MATRIZ POR (LA MATRIZ DE FILTRO * 1/SIZE²)
-    //SE HACE LA SUMA Y DESPUES SE APLICA LA FORMULA DEL FILTRO
     int i,j,k,l;
     unsigned char valor=0;
     printf("Estoy en valorn pixel \n");
@@ -208,14 +205,13 @@ unsigned char valornewpixel(unsigned char** matriz,int* matfiltro, int tamfiltro
             valor+=(matriz[i][j]*matfiltro[pos(k,l,tamfiltro)]);
         }
     }
-    //printf("%d %d\ n",valor,tamfiltro);
     printf("He terminado el filtro, voy a dividir entre %d \n",tamfiltro);
     valor=valor/(tamfiltro*tamfiltro);
     printf("%d \n",valor);
     return valor;
 }
 
-void aplicarfiltro(unsigned char** matriz, int* matfiltro, unsigned char** newmatriz, int filasmat, int columnasmat,int tamfiltro){
+void aplicarfiltro(unsigned char** matriz, int* matfiltro, int filasmat, int columnasmat,int tamfiltro){
 	printf("Estoy en aplicarfiltro \n");
 	int i,j;
 	for (i=0;i<filasmat;i++){
@@ -287,9 +283,9 @@ void func1(){
         	}
         }
         printf ("imagen leida \n");
-    	aplicarfiltro(matriz,filtro,newmatriz,ow,oh,tamfiltro);
+    	aplicarfiltro(matriz,filtro,ow,oh,tamfiltro);
     	printf ("Aplicamos el iltro like a heros");
-    	pgmwrite(outname,ow,oh,newmatriz,"",1);
+    	pgmwrite(outname,ow,oh,&newmatriz,"",1);
     	printf ("Imagen hecha, con dos cojones");
 	}
 }
