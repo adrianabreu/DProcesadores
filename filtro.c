@@ -167,6 +167,7 @@ int pgmwrite(char* filename, int w, int h,
     return(0);
 }
 
+
 int pos(int fila,int columna, int ancho){
     return fila*ancho+columna;
 }
@@ -254,21 +255,24 @@ void func1(){
         printf ("Imagen hecha, con dos cojones");
     }
 }
-int main(void){
 
-    //alt_u32 time1;
-    //alt_u32 time2;
-    //alt_u32 time3;
+int main(void){
     
-    /*if (alt_timestamp_start() < 0)
+    func1();
+    //Comment top and uncomment this from altera
+    /*alt_u32 time1;
+      alt_u32 time2;
+      alt_u32 time3;
+    
+    if (alt_timestamp_start() < 0)
     {
         printf ("No timestamp device available\n");
     }
     else
-    {*/
-    //  time1 = alt_timestamp();
-        func1(); /* first function to monitor */
-    //  time2 = alt_timestamp();
+    {
+        time1 = alt_timestamp();
+        func1(); //first function to monitor
+        time2 = alt_timestamp();
         //func2(); /* second function to monitor */
         //time3 = alt_timestamp();
     //  printf ("time in func1 = %u ticks\n",
@@ -276,8 +280,8 @@ int main(void){
         /*printf ("time in func2 = %u ticks\n",
         (unsigned int) (time3 - time2));
         printf ("Number of ticks per second = %u\n",
-        (unsigned int)alt_timestamp_freq());*/
-    //}
+        (unsigned int)alt_timestamp_freq());
+    }*/
 
     return 0;
 }
