@@ -277,12 +277,6 @@ void func1(){
            
         }
         printf("I ended creating the row %d \n", j);
-        for (i=0;i<width;i++){
-        	for(j=0;j<width;j++){
-        		printf("%c \n",newmatriz[i][j]);
-        	}
-        }
-        printf ("imagen leida \n");
     	aplicarfiltro(matriz,filtro,ow,oh,tamfiltro);
     	printf ("Aplicamos el iltro like a heros");
     	pgmwrite(outname,ow,oh,&newmatriz,"",1);
