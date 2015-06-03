@@ -197,14 +197,16 @@ void rellenar_filtro(int* matfiltro,int tam, int modo){
 
 unsigned char valornewpixel(unsigned char** matriz,int* matfiltro, int tamfiltro, int pivotei, int pivotej){
     int i,j,k,l;
-    unsigned char valor=0;
+    unsigned char devolver;
+    int valor=0;
     for( i=pivotei,k=0;k<tamfiltro;i++,k++){
         for(j=pivotej,l=0;l<tamfiltro;j++,l++){
             valor+=(matriz[i][j]*matfiltro[pos(k,l,tamfiltro)]);
         }
     }
-    valor=valor/(tamfiltro*tamfiltro);
-    return valor;
+    valor=(valor/(tamfiltro*tamfiltro));
+    devolver=valor;
+    return devolver;
 }
 
 void aplicarfiltro(unsigned char** matriz, int* matfiltro, int filasmat, int columnasmat,int tamfiltro){
@@ -222,8 +224,8 @@ void func1(){
     int tamfiltro=3,modo=0,w,h;
     unsigned char** matriz;
     int filtro[20];
-    char filename[30]="inputImage.pgm";
-    char outname[30]="outputImage.pgm";
+    char filename[16]="inputImage.pgm";
+    char outname[16]="outputImage.pgm";
     
     unsigned char iterador;
     int ow,oh;
@@ -252,7 +254,7 @@ void func1(){
         aplicarfiltro(matriz,filtro,ow,oh,tamfiltro);
         printf ("Aplicamos el iltro like a heros");
         pgmwrite(outname,ow,oh,"",1);
-        printf ("Imagen hecha, con dos cojones");
+        printf ("Imagen hecha, con dos cojones\n");
     }
 }
 
