@@ -1,8 +1,6 @@
-#include <stdio.h>
-#include <stdlib.h>
 //#include <sys/alt_timestamp.h>
 //#include <alt_types.h>
-//#include "pgm4.h"
+#include "pgm4.h"
 #define N 8
 #define M 10
 
@@ -106,10 +104,9 @@ unsigned char** pgmread(char* filename, int* w, int* h){
     return(data);
 }
 
-int pgmwrite(char* filename, int w, int h, 
+int pgmwrite(char* filename, int w, int h, unsigned char** data,
             char* comment_string, int binsave)
 {
-    unsigned char** data=newmatriz;
     FILE* file;
     char line[256];
     int maxval;
@@ -205,11 +202,11 @@ unsigned char valornewpixel(unsigned char** matriz,int* matfiltro, int tamfiltro
         }
     }
     valor=(valor/(tamfiltro*tamfiltro));
-    devolver=valor;
+    devolver=(unsigned char)valor;
     return devolver;
 }
 
-void aplicarfiltro(unsigned char** matriz, int* matfiltro, int filasmat, int columnasmat,int tamfiltro){
+void aplicarfiltro(unsigned char** matriz, int* matfiltro, unsigned char ** newmatriz, int filasmat, int columnasmat,int tamfiltro){
     printf("Estoy en aplicarfiltro \n");
     int i,j;
     for (i=0;i<filasmat;i++){
@@ -251,10 +248,10 @@ void func1(){
            
         }
         printf("I ended creating the row %d \n", j);
-        aplicarfiltro(matriz,filtro,ow,oh,tamfiltro);
+        aplicarfiltro(matriz,filtro,newmatriz,ow,oh,tamfiltro);
         printf ("Aplicamos el iltro like a heros");
-        pgmwrite(outname,ow,oh,"",1);
-        printf ("Imagen hecha, con dos cojones\n");
+        pgmwrite(outname,ow,oh,newmatriz,"",1);
+        printf ("Imagen hecha, con dos cojones");
     }
 }
 
