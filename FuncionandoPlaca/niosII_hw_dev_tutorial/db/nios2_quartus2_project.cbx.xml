@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="nios2_quartus2_project">
+		<CBX_INST_ENTRY INSTANCE_NAME="|nios2_quartus2_project|first_nios2_system:inst3|first_nios2_system_cpu:cpu|first_nios2_system_cpu_nios2_oci:the_first_nios2_system_cpu_nios2_oci|first_nios2_system_cpu_nios2_oci_im:the_first_nios2_system_cpu_nios2_oci_im|first_nios2_system_cpu_traceram_lpm_dram_bdp_component_module:first_nios2_system_cpu_traceram_lpm_dram_bdp_component|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_bc22.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|nios2_quartus2_project|first_nios2_system:inst3|first_nios2_system_cpu:cpu|first_nios2_system_cpu_nios2_oci:the_first_nios2_system_cpu_nios2_oci|first_nios2_system_cpu_nios2_ocimem:the_first_nios2_system_cpu_nios2_ocimem|first_nios2_system_cpu_ociram_lpm_dram_bdp_component_module:first_nios2_system_cpu_ociram_lpm_dram_bdp_component|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_f6b2.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|nios2_quartus2_project|first_nios2_system:inst3|first_nios2_system_cpu:cpu|first_nios2_system_cpu_register_bank_a_module:first_nios2_system_cpu_register_bank_a|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_lsj1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|nios2_quartus2_project|first_nios2_system:inst3|first_nios2_system_cpu:cpu|lpm_add_sub:Add8" CBX_FILE_NAME="add_sub_8ri.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|nios2_quartus2_project|first_nios2_system:inst3|first_nios2_system_jtag_uart:jtag_uart|first_nios2_system_jtag_uart_scfifo_w:the_first_nios2_system_jtag_uart_scfifo_w|scfifo:wfifo" CBX_FILE_NAME="scfifo_1n21.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|nios2_quartus2_project|first_nios2_system:inst3|first_nios2_system_jtag_uart:jtag_uart|first_nios2_system_jtag_uart_scfifo_r:the_first_nios2_system_jtag_uart_scfifo_r|scfifo:rfifo" CBX_FILE_NAME="scfifo_1n21.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|nios2_quartus2_project|first_nios2_system:inst3|first_nios2_system_onchip_mem:onchip_mem|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_bof1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|nios2_quartus2_project|first_nios2_system:inst3|first_nios2_system_cpu:cpu|first_nios2_system_cpu_ic_data_module:first_nios2_system_cpu_ic_data|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_9gf1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|nios2_quartus2_project|first_nios2_system:inst3|first_nios2_system_cpu:cpu|first_nios2_system_cpu_ic_tag_module:first_nios2_system_cpu_ic_tag|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_e3k1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|nios2_quartus2_project|first_nios2_system:inst3|first_nios2_system_cpu:cpu|first_nios2_system_cpu_register_bank_b_module:first_nios2_system_cpu_register_bank_b|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_msj1.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

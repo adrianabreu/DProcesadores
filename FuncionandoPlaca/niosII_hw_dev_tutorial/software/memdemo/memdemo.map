@@ -1,0 +1,694 @@
+Archive member included because of file (symbol)
+
+../memdemo_bsp//libhal_bsp.a(alt_load.o)
+                              ../memdemo_bsp//obj/HAL/src/crt0.o (alt_load)
+../memdemo_bsp//libhal_bsp.a(alt_main.o)
+                              ../memdemo_bsp//obj/HAL/src/crt0.o (alt_main)
+../memdemo_bsp//libhal_bsp.a(alt_putstr.o)
+                              obj/default/hello_world_small.o (alt_putstr)
+../memdemo_bsp//libhal_bsp.a(alt_sys_init.o)
+                              ../memdemo_bsp//libhal_bsp.a(alt_main.o) (alt_sys_init)
+../memdemo_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+                              ../memdemo_bsp//libhal_bsp.a(alt_putstr.o) (altera_avalon_jtag_uart_write)
+../memdemo_bsp//libhal_bsp.a(altera_avalon_timer_sc.o)
+                              ../memdemo_bsp//libhal_bsp.a(alt_sys_init.o) (alt_avalon_timer_sc_init)
+../memdemo_bsp//libhal_bsp.a(altera_avalon_timer_vars.o)
+                              ../memdemo_bsp//libhal_bsp.a(alt_sys_init.o) (altera_avalon_timer_ts_base)
+../memdemo_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
+                              ../memdemo_bsp//libhal_bsp.a(alt_load.o) (alt_dcache_flush_all)
+../memdemo_bsp//libhal_bsp.a(alt_icache_flush_all.o)
+                              ../memdemo_bsp//libhal_bsp.a(alt_load.o) (alt_icache_flush_all)
+../memdemo_bsp//libhal_bsp.a(alt_iic.o)
+                              ../memdemo_bsp//libhal_bsp.a(altera_avalon_timer_sc.o) (alt_ic_isr_register)
+../memdemo_bsp//libhal_bsp.a(alt_iic_isr_register.o)
+                              ../memdemo_bsp//libhal_bsp.a(alt_iic.o) (alt_iic_isr_register)
+../memdemo_bsp//libhal_bsp.a(alt_irq_entry.o)
+                              ../memdemo_bsp//libhal_bsp.a(alt_iic_isr_register.o) (alt_irq_entry)
+../memdemo_bsp//libhal_bsp.a(alt_irq_handler.o)
+                              ../memdemo_bsp//libhal_bsp.a(alt_iic_isr_register.o) (alt_irq_handler)
+../memdemo_bsp//libhal_bsp.a(alt_irq_vars.o)
+                              ../memdemo_bsp//libhal_bsp.a(alt_iic.o) (alt_irq_active)
+../memdemo_bsp//libhal_bsp.a(alt_tick.o)
+                              ../memdemo_bsp//libhal_bsp.a(altera_avalon_timer_sc.o) (alt_tick)
+../memdemo_bsp//libhal_bsp.a(altera_nios2_qsys_irq.o)
+                              ../memdemo_bsp//libhal_bsp.a(alt_sys_init.o) (altera_nios2_qsys_irq_init)
+../memdemo_bsp//libhal_bsp.a(alt_exception_entry.o)
+                              ../memdemo_bsp//libhal_bsp.a(alt_irq_entry.o) (alt_exception)
+../memdemo_bsp//libhal_bsp.a(alt_icache_flush.o)
+                              ../memdemo_bsp//libhal_bsp.a(alt_icache_flush_all.o) (alt_icache_flush)
+/opt/altera/12.1sp1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-strlen.o)
+                              ../memdemo_bsp//libhal_bsp.a(alt_putstr.o) (strlen)
+
+Allocating common symbols
+Common symbol       size              file
+
+alt_irq             0x100             ../memdemo_bsp//libhal_bsp.a(alt_irq_handler.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+reset            0x00000000         0x00000020
+onchip_mem       0x00000020         0x00004fe0
+sram             0x00100000         0x00080000
+sdram            0x01000000         0x00800000
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD ../memdemo_bsp//obj/HAL/src/crt0.o
+                0x0000001c                exit = _exit
+LOAD obj/default/hello_world_small.o
+LOAD /opt/altera/12.1sp1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/mno-hw-mul/libstdc++.a
+LOAD /opt/altera/12.1sp1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/mno-hw-mul/libm.a
+LOAD /opt/altera/12.1sp1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/mno-hw-mul/libgcc.a
+START GROUP
+LOAD /opt/altera/12.1sp1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/mno-hw-mul/libsmallc.a
+LOAD /opt/altera/12.1sp1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/mno-hw-mul/libgcc.a
+LOAD ../memdemo_bsp//libhal_bsp.a
+END GROUP
+LOAD /opt/altera/12.1sp1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/mno-hw-mul/libgcc.a
+                0x00000000                __alt_mem_onchip_mem = 0x0
+                0x00100000                __alt_mem_sram = 0x100000
+                0x01000000                __alt_mem_sdram = 0x1000000
+
+.entry          0x00000000       0x20
+ *(.entry)
+ .entry         0x00000000       0x20 ../memdemo_bsp//obj/HAL/src/crt0.o
+                0x00000000                __reset
+                0x0000001c                _exit
+
+.exceptions     0x00000020      0x120
+                0x00000020                PROVIDE (__ram_exceptions_start, ABSOLUTE (.))
+                0x00000020                . = ALIGN (0x20)
+ *(.irq)
+ *(.exceptions.entry.label)
+ .exceptions.entry.label
+                0x00000020        0x0 ../memdemo_bsp//libhal_bsp.a(alt_irq_entry.o)
+                0x00000020                alt_irq_entry
+ .exceptions.entry.label
+                0x00000020        0x0 ../memdemo_bsp//libhal_bsp.a(alt_exception_entry.o)
+                0x00000020                alt_exception
+ *(.exceptions.entry.user)
+ *(.exceptions.entry)
+ .exceptions.entry
+                0x00000020       0x54 ../memdemo_bsp//libhal_bsp.a(alt_exception_entry.o)
+ *(.exceptions.irqtest.user)
+ *(.exceptions.irqtest)
+ .exceptions.irqtest
+                0x00000074       0x10 ../memdemo_bsp//libhal_bsp.a(alt_irq_entry.o)
+ *(.exceptions.irqhandler.user)
+ *(.exceptions.irqhandler)
+ .exceptions.irqhandler
+                0x00000084        0x4 ../memdemo_bsp//libhal_bsp.a(alt_irq_entry.o)
+ *(.exceptions.irqreturn.user)
+ *(.exceptions.irqreturn)
+ .exceptions.irqreturn
+                0x00000088        0x4 ../memdemo_bsp//libhal_bsp.a(alt_irq_entry.o)
+ *(.exceptions.notirq.label)
+ .exceptions.notirq.label
+                0x0000008c        0x0 ../memdemo_bsp//libhal_bsp.a(alt_irq_entry.o)
+ *(.exceptions.notirq.user)
+ *(.exceptions.notirq)
+ .exceptions.notirq
+                0x0000008c        0x8 ../memdemo_bsp//libhal_bsp.a(alt_exception_entry.o)
+ *(.exceptions.soft.user)
+ *(.exceptions.soft)
+ *(.exceptions.unknown.user)
+ *(.exceptions.unknown)
+ .exceptions.unknown
+                0x00000094        0x4 ../memdemo_bsp//libhal_bsp.a(alt_exception_entry.o)
+ *(.exceptions.exit.label)
+ .exceptions.exit.label
+                0x00000098        0x0 ../memdemo_bsp//libhal_bsp.a(alt_irq_entry.o)
+ .exceptions.exit.label
+                0x00000098        0x0 ../memdemo_bsp//libhal_bsp.a(alt_exception_entry.o)
+ *(.exceptions.exit.user)
+ *(.exceptions.exit)
+ .exceptions.exit
+                0x00000098       0x54 ../memdemo_bsp//libhal_bsp.a(alt_exception_entry.o)
+ *(.exceptions)
+ .exceptions    0x000000ec       0x54 ../memdemo_bsp//libhal_bsp.a(alt_irq_handler.o)
+                0x000000ec                alt_irq_handler
+                0x00000140                PROVIDE (__ram_exceptions_end, ABSOLUTE (.))
+                0x00000020                PROVIDE (__flash_exceptions_start, LOADADDR (.exceptions))
+
+.text           0x00000140      0x4c8
+                0x00000140                PROVIDE (stext, ABSOLUTE (.))
+ *(.interp)
+ *(.hash)
+ *(.dynsym)
+ *(.dynstr)
+ *(.gnu.version)
+ *(.gnu.version_d)
+ *(.gnu.version_r)
+ *(.rel.init)
+ *(.rela.init)
+ *(.rel.text .rel.text.* .rel.gnu.linkonce.t.*)
+ *(.rela.text .rela.text.* .rela.gnu.linkonce.t.*)
+ *(.rel.fini)
+ *(.rela.fini)
+ *(.rel.rodata .rel.rodata.* .rel.gnu.linkonce.r.*)
+ *(.rela.rodata .rela.rodata.* .rela.gnu.linkonce.r.*)
+ *(.rel.data .rel.data.* .rel.gnu.linkonce.d.*)
+ *(.rela.data .rela.data.* .rela.gnu.linkonce.d.*)
+ *(.rel.tdata .rel.tdata.* .rel.gnu.linkonce.td.*)
+ *(.rela.tdata .rela.tdata.* .rela.gnu.linkonce.td.*)
+ *(.rel.tbss .rel.tbss.* .rel.gnu.linkonce.tb.*)
+ *(.rela.tbss .rela.tbss.* .rela.gnu.linkonce.tb.*)
+ *(.rel.ctors)
+ *(.rela.ctors)
+ *(.rel.dtors)
+ *(.rela.dtors)
+ *(.rel.got)
+ *(.rela.got)
+ *(.rel.sdata .rel.sdata.* .rel.gnu.linkonce.s.*)
+ *(.rela.sdata .rela.sdata.* .rela.gnu.linkonce.s.*)
+ *(.rel.sbss .rel.sbss.* .rel.gnu.linkonce.sb.*)
+ *(.rela.sbss .rela.sbss.* .rela.gnu.linkonce.sb.*)
+ *(.rel.sdata2 .rel.sdata2.* .rel.gnu.linkonce.s2.*)
+ *(.rela.sdata2 .rela.sdata2.* .rela.gnu.linkonce.s2.*)
+ *(.rel.sbss2 .rel.sbss2.* .rel.gnu.linkonce.sb2.*)
+ *(.rela.sbss2 .rela.sbss2.* .rela.gnu.linkonce.sb2.*)
+ *(.rel.bss .rel.bss.* .rel.gnu.linkonce.b.*)
+ *(.rela.bss .rela.bss.* .rela.gnu.linkonce.b.*)
+ *(.rel.plt)
+ *(.rela.plt)
+ *(.rel.dyn)
+ *(.init)
+ *(.plt)
+ *(.text .stub .text.* .gnu.linkonce.t.*)
+ .text          0x00000140       0x3c ../memdemo_bsp//obj/HAL/src/crt0.o
+                0x00000140                _start
+ .text          0x0000017c       0x18 obj/default/hello_world_small.o
+                0x0000017c                main
+ .text          0x00000194       0x8c ../memdemo_bsp//libhal_bsp.a(alt_load.o)
+                0x000001b4                alt_load
+ .text          0x00000220       0x2c ../memdemo_bsp//libhal_bsp.a(alt_main.o)
+                0x00000220                alt_main
+ .text          0x0000024c       0x38 ../memdemo_bsp//libhal_bsp.a(alt_putstr.o)
+                0x0000024c                alt_putstr
+ .text          0x00000284       0x6c ../memdemo_bsp//libhal_bsp.a(alt_sys_init.o)
+                0x00000284                alt_sys_init
+                0x000002d0                alt_irq_init
+ .text          0x000002f0       0x34 ../memdemo_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+                0x000002f0                altera_avalon_jtag_uart_write
+ .text          0x00000324       0x8c ../memdemo_bsp//libhal_bsp.a(altera_avalon_timer_sc.o)
+                0x00000324                alt_avalon_timer_sc_init
+ .text          0x000003b0        0x0 ../memdemo_bsp//libhal_bsp.a(altera_avalon_timer_vars.o)
+ .text          0x000003b0        0x4 ../memdemo_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
+                0x000003b0                alt_dcache_flush_all
+ .text          0x000003b4        0xc ../memdemo_bsp//libhal_bsp.a(alt_icache_flush_all.o)
+                0x000003b4                alt_icache_flush_all
+ .text          0x000003c0       0x9c ../memdemo_bsp//libhal_bsp.a(alt_iic.o)
+                0x000003c0                alt_ic_irq_enabled
+                0x000003d8                alt_ic_irq_enable
+                0x00000418                alt_ic_irq_disable
+                0x00000458                alt_ic_isr_register
+ .text          0x0000045c       0x6c ../memdemo_bsp//libhal_bsp.a(alt_iic_isr_register.o)
+                0x0000045c                alt_iic_isr_register
+ .text          0x000004c8        0x0 ../memdemo_bsp//libhal_bsp.a(alt_irq_entry.o)
+ .text          0x000004c8        0x0 ../memdemo_bsp//libhal_bsp.a(alt_irq_handler.o)
+ .text          0x000004c8        0x0 ../memdemo_bsp//libhal_bsp.a(alt_irq_vars.o)
+ .text          0x000004c8       0xe0 ../memdemo_bsp//libhal_bsp.a(alt_tick.o)
+                0x000004c8                alt_alarm_stop
+                0x000004fc                alt_tick
+ .text          0x000005a8        0x8 ../memdemo_bsp//libhal_bsp.a(altera_nios2_qsys_irq.o)
+                0x000005a8                altera_nios2_qsys_irq_init
+ .text          0x000005b0        0x0 ../memdemo_bsp//libhal_bsp.a(alt_exception_entry.o)
+ .text          0x000005b0       0x38 ../memdemo_bsp//libhal_bsp.a(alt_icache_flush.o)
+                0x000005b0                alt_icache_flush
+ .text          0x000005e8       0x20 /opt/altera/12.1sp1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-strlen.o)
+                0x000005e8                strlen
+ *(.gnu.warning.*)
+ *(.fini)
+                0x00000608                PROVIDE (__etext, ABSOLUTE (.))
+                0x00000608                PROVIDE (_etext, ABSOLUTE (.))
+                0x00000608                PROVIDE (etext, ABSOLUTE (.))
+ *(.eh_frame_hdr)
+                0x00000608                . = ALIGN (0x4)
+                0x00000608                PROVIDE (__preinit_array_start, ABSOLUTE (.))
+ *(.preinit_array)
+                0x00000608                PROVIDE (__preinit_array_end, ABSOLUTE (.))
+                0x00000608                PROVIDE (__init_array_start, ABSOLUTE (.))
+ *(.init_array)
+                0x00000608                PROVIDE (__init_array_end, ABSOLUTE (.))
+                0x00000608                PROVIDE (__fini_array_start, ABSOLUTE (.))
+ *(.fini_array)
+                0x00000608                PROVIDE (__fini_array_end, ABSOLUTE (.))
+ *(.eh_frame)
+ *(.gcc_except_table)
+ *(.dynamic)
+                0x00000608                PROVIDE (__CTOR_LIST__, ABSOLUTE (.))
+ *(.ctors)
+ *(SORT(.ctors.*))
+                0x00000608                PROVIDE (__CTOR_END__, ABSOLUTE (.))
+                0x00000608                PROVIDE (__DTOR_LIST__, ABSOLUTE (.))
+ *(.dtors)
+ *(SORT(.dtors.*))
+                0x00000608                PROVIDE (__DTOR_END__, ABSOLUTE (.))
+ *(.jcr)
+                0x00000608                . = ALIGN (0x4)
+
+.rodata         0x00000608       0x18
+                0x00000608                PROVIDE (__ram_rodata_start, ABSOLUTE (.))
+                0x00000608                . = ALIGN (0x4)
+ *(.rodata .rodata.* .gnu.linkonce.r.*)
+ .rodata.str1.4
+                0x00000608       0x18 obj/default/hello_world_small.o
+ *(.rodata1)
+                0x00000620                . = ALIGN (0x4)
+                0x00000620                PROVIDE (__ram_rodata_end, ABSOLUTE (.))
+                0x00000608                PROVIDE (__flash_rodata_start, LOADADDR (.rodata))
+
+.rwdata         0x00000620       0x10 load address 0x00000630
+                0x00000620                PROVIDE (__ram_rwdata_start, ABSOLUTE (.))
+                0x00000620                . = ALIGN (0x4)
+ *(.got.plt)
+ *(.got)
+ *(.data1)
+ *(.data .data.* .gnu.linkonce.d.*)
+ .data          0x00000620        0x0 ../memdemo_bsp//obj/HAL/src/crt0.o
+ .data          0x00000620        0x0 obj/default/hello_world_small.o
+ .data          0x00000620        0x0 ../memdemo_bsp//libhal_bsp.a(alt_load.o)
+ .data          0x00000620        0x0 ../memdemo_bsp//libhal_bsp.a(alt_main.o)
+ .data          0x00000620        0x0 ../memdemo_bsp//libhal_bsp.a(alt_putstr.o)
+ .data          0x00000620        0x0 ../memdemo_bsp//libhal_bsp.a(alt_sys_init.o)
+ .data          0x00000620        0x0 ../memdemo_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+ .data          0x00000620        0x0 ../memdemo_bsp//libhal_bsp.a(altera_avalon_timer_sc.o)
+ .data          0x00000620        0x0 ../memdemo_bsp//libhal_bsp.a(altera_avalon_timer_vars.o)
+ .data          0x00000620        0x0 ../memdemo_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
+ .data          0x00000620        0x0 ../memdemo_bsp//libhal_bsp.a(alt_icache_flush_all.o)
+ .data          0x00000620        0x0 ../memdemo_bsp//libhal_bsp.a(alt_iic.o)
+ .data          0x00000620        0x0 ../memdemo_bsp//libhal_bsp.a(alt_iic_isr_register.o)
+ .data          0x00000620        0x0 ../memdemo_bsp//libhal_bsp.a(alt_irq_entry.o)
+ .data          0x00000620        0x0 ../memdemo_bsp//libhal_bsp.a(alt_irq_handler.o)
+ .data          0x00000620        0x0 ../memdemo_bsp//libhal_bsp.a(alt_irq_vars.o)
+ .data          0x00000620        0x0 ../memdemo_bsp//libhal_bsp.a(alt_tick.o)
+ .data          0x00000620        0x0 ../memdemo_bsp//libhal_bsp.a(altera_nios2_qsys_irq.o)
+ .data          0x00000620        0x0 ../memdemo_bsp//libhal_bsp.a(alt_exception_entry.o)
+ .data          0x00000620        0x0 ../memdemo_bsp//libhal_bsp.a(alt_icache_flush.o)
+ .data          0x00000620        0x0 /opt/altera/12.1sp1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-strlen.o)
+                0x00008620                _gp = ABSOLUTE ((. + 0x8000))
+                0x00008620                PROVIDE (gp, _gp)
+ *(.rwdata .rwdata.*)
+ *(.sdata .sdata.* .gnu.linkonce.s.*)
+ .sdata         0x00000620        0x4 ../memdemo_bsp//libhal_bsp.a(alt_sys_init.o)
+                0x00000620                jtag_uart
+ .sdata         0x00000624        0x4 ../memdemo_bsp//libhal_bsp.a(alt_irq_vars.o)
+                0x00000624                alt_priority_mask
+ .sdata         0x00000628        0x8 ../memdemo_bsp//libhal_bsp.a(alt_tick.o)
+                0x00000628                alt_alarm_list
+ *(.sdata2 .sdata2.* .gnu.linkonce.s2.*)
+                0x00000630                . = ALIGN (0x4)
+                0x00000630                _edata = ABSOLUTE (.)
+                0x00000630                PROVIDE (edata, ABSOLUTE (.))
+                0x00000630                PROVIDE (__ram_rwdata_end, ABSOLUTE (.))
+                0x00000630                PROVIDE (__flash_rwdata_start, LOADADDR (.rwdata))
+
+.bss            0x00000640      0x120
+                0x00000640                __bss_start = ABSOLUTE (.)
+                0x00000640                PROVIDE (__sbss_start, ABSOLUTE (.))
+                0x00000640                PROVIDE (___sbss_start, ABSOLUTE (.))
+ *(.dynsbss)
+ *(.sbss .sbss.* .gnu.linkonce.sb.*)
+ .sbss          0x00000640        0xc ../memdemo_bsp//libhal_bsp.a(alt_main.o)
+                0x00000640                alt_argc
+                0x00000644                alt_argv
+                0x00000648                alt_envp
+ .sbss          0x0000064c        0x8 ../memdemo_bsp//libhal_bsp.a(altera_avalon_timer_vars.o)
+                0x0000064c                altera_avalon_timer_ts_base
+                0x00000650                altera_avalon_timer_ts_freq
+ .sbss          0x00000654        0x4 ../memdemo_bsp//libhal_bsp.a(alt_irq_vars.o)
+                0x00000654                alt_irq_active
+ .sbss          0x00000658        0x8 ../memdemo_bsp//libhal_bsp.a(alt_tick.o)
+                0x00000658                _alt_tick_rate
+                0x0000065c                _alt_nticks
+ *(.sbss2 .sbss2.* .gnu.linkonce.sb2.*)
+ *(.scommon)
+                0x00000660                PROVIDE (__sbss_end, ABSOLUTE (.))
+                0x00000660                PROVIDE (___sbss_end, ABSOLUTE (.))
+ *(.dynbss)
+ *(.bss .bss.* .gnu.linkonce.b.*)
+ .bss           0x00000660        0x0 ../memdemo_bsp//obj/HAL/src/crt0.o
+ .bss           0x00000660        0x0 obj/default/hello_world_small.o
+ .bss           0x00000660        0x0 ../memdemo_bsp//libhal_bsp.a(alt_load.o)
+ .bss           0x00000660        0x0 ../memdemo_bsp//libhal_bsp.a(alt_main.o)
+ .bss           0x00000660        0x0 ../memdemo_bsp//libhal_bsp.a(alt_putstr.o)
+ .bss           0x00000660        0x0 ../memdemo_bsp//libhal_bsp.a(alt_sys_init.o)
+ .bss           0x00000660        0x0 ../memdemo_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+ .bss           0x00000660        0x0 ../memdemo_bsp//libhal_bsp.a(altera_avalon_timer_sc.o)
+ .bss           0x00000660        0x0 ../memdemo_bsp//libhal_bsp.a(altera_avalon_timer_vars.o)
+ .bss           0x00000660        0x0 ../memdemo_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
+ .bss           0x00000660        0x0 ../memdemo_bsp//libhal_bsp.a(alt_icache_flush_all.o)
+ .bss           0x00000660        0x0 ../memdemo_bsp//libhal_bsp.a(alt_iic.o)
+ .bss           0x00000660        0x0 ../memdemo_bsp//libhal_bsp.a(alt_iic_isr_register.o)
+ .bss           0x00000660        0x0 ../memdemo_bsp//libhal_bsp.a(alt_irq_entry.o)
+ .bss           0x00000660        0x0 ../memdemo_bsp//libhal_bsp.a(alt_irq_handler.o)
+ .bss           0x00000660        0x0 ../memdemo_bsp//libhal_bsp.a(alt_irq_vars.o)
+ .bss           0x00000660        0x0 ../memdemo_bsp//libhal_bsp.a(alt_tick.o)
+ .bss           0x00000660        0x0 ../memdemo_bsp//libhal_bsp.a(altera_nios2_qsys_irq.o)
+ .bss           0x00000660        0x0 ../memdemo_bsp//libhal_bsp.a(alt_exception_entry.o)
+ .bss           0x00000660        0x0 ../memdemo_bsp//libhal_bsp.a(alt_icache_flush.o)
+ .bss           0x00000660        0x0 /opt/altera/12.1sp1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-strlen.o)
+ *(COMMON)
+ COMMON         0x00000660      0x100 ../memdemo_bsp//libhal_bsp.a(alt_irq_handler.o)
+                0x00000660                alt_irq
+                0x00000760                . = ALIGN (0x4)
+                0x00000760                __bss_end = ABSOLUTE (.)
+
+.onchip_mem     0x00000760        0x0
+                0x00000760                PROVIDE (_alt_partition_onchip_mem_start, ABSOLUTE (.))
+ *(.onchip_mem. onchip_mem.*)
+                0x00000760                . = ALIGN (0x4)
+                0x00000760                PROVIDE (_alt_partition_onchip_mem_end, ABSOLUTE (.))
+                0x00000760                _end = ABSOLUTE (.)
+                0x00000760                end = ABSOLUTE (.)
+                0x00000760                __alt_stack_base = ABSOLUTE (.)
+                0x00000760                PROVIDE (_alt_partition_onchip_mem_load_addr, LOADADDR (.onchip_mem))
+
+.sram           0x00100000        0x0 load address 0x00000760
+                0x00100000                PROVIDE (_alt_partition_sram_start, ABSOLUTE (.))
+ *(.sram. sram.*)
+                0x00100000                . = ALIGN (0x4)
+                0x00100000                PROVIDE (_alt_partition_sram_end, ABSOLUTE (.))
+                0x00000760                PROVIDE (_alt_partition_sram_load_addr, LOADADDR (.sram))
+
+.sdram          0x01000000        0x0 load address 0x00000760
+                0x01000000                PROVIDE (_alt_partition_sdram_start, ABSOLUTE (.))
+ *(.sdram. sdram.*)
+                0x01000000                . = ALIGN (0x4)
+                0x01000000                PROVIDE (_alt_partition_sdram_end, ABSOLUTE (.))
+                0x00000760                PROVIDE (_alt_partition_sdram_load_addr, LOADADDR (.sdram))
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment        0x00000000       0x26
+ *(.comment)
+ .comment       0x00000000       0x26 obj/default/hello_world_small.o
+                                 0x27 (size before relaxing)
+ .comment       0x00000000       0x27 ../memdemo_bsp//libhal_bsp.a(alt_load.o)
+ .comment       0x00000000       0x27 ../memdemo_bsp//libhal_bsp.a(alt_main.o)
+ .comment       0x00000000       0x27 ../memdemo_bsp//libhal_bsp.a(alt_putstr.o)
+ .comment       0x00000000       0x27 ../memdemo_bsp//libhal_bsp.a(alt_sys_init.o)
+ .comment       0x00000000       0x27 ../memdemo_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+ .comment       0x00000000       0x27 ../memdemo_bsp//libhal_bsp.a(altera_avalon_timer_sc.o)
+ .comment       0x00000000       0x27 ../memdemo_bsp//libhal_bsp.a(altera_avalon_timer_vars.o)
+ .comment       0x00000000       0x27 ../memdemo_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
+ .comment       0x00000000       0x27 ../memdemo_bsp//libhal_bsp.a(alt_icache_flush_all.o)
+ .comment       0x00000000       0x27 ../memdemo_bsp//libhal_bsp.a(alt_iic.o)
+ .comment       0x00000000       0x27 ../memdemo_bsp//libhal_bsp.a(alt_iic_isr_register.o)
+ .comment       0x00000000       0x27 ../memdemo_bsp//libhal_bsp.a(alt_irq_handler.o)
+ .comment       0x00000000       0x27 ../memdemo_bsp//libhal_bsp.a(alt_irq_vars.o)
+ .comment       0x00000000       0x27 ../memdemo_bsp//libhal_bsp.a(alt_tick.o)
+ .comment       0x00000000       0x27 ../memdemo_bsp//libhal_bsp.a(altera_nios2_qsys_irq.o)
+ .comment       0x00000000       0x27 ../memdemo_bsp//libhal_bsp.a(alt_icache_flush.o)
+ .comment       0x00000000       0x27 /opt/altera/12.1sp1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-strlen.o)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x00000000      0x298
+ *(.debug_aranges)
+ .debug_aranges
+                0x00000000       0x28 ../memdemo_bsp//obj/HAL/src/crt0.o
+ .debug_aranges
+                0x00000028       0x20 obj/default/hello_world_small.o
+ .debug_aranges
+                0x00000048       0x20 ../memdemo_bsp//libhal_bsp.a(alt_load.o)
+ .debug_aranges
+                0x00000068       0x20 ../memdemo_bsp//libhal_bsp.a(alt_main.o)
+ .debug_aranges
+                0x00000088       0x20 ../memdemo_bsp//libhal_bsp.a(alt_putstr.o)
+ .debug_aranges
+                0x000000a8       0x20 ../memdemo_bsp//libhal_bsp.a(alt_sys_init.o)
+ .debug_aranges
+                0x000000c8       0x20 ../memdemo_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+ .debug_aranges
+                0x000000e8       0x20 ../memdemo_bsp//libhal_bsp.a(altera_avalon_timer_sc.o)
+ .debug_aranges
+                0x00000108       0x20 ../memdemo_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
+ .debug_aranges
+                0x00000128       0x20 ../memdemo_bsp//libhal_bsp.a(alt_icache_flush_all.o)
+ .debug_aranges
+                0x00000148       0x20 ../memdemo_bsp//libhal_bsp.a(alt_iic.o)
+ .debug_aranges
+                0x00000168       0x20 ../memdemo_bsp//libhal_bsp.a(alt_iic_isr_register.o)
+ .debug_aranges
+                0x00000188       0x30 ../memdemo_bsp//libhal_bsp.a(alt_irq_entry.o)
+ .debug_aranges
+                0x000001b8       0x28 ../memdemo_bsp//libhal_bsp.a(alt_irq_handler.o)
+ .debug_aranges
+                0x000001e0       0x20 ../memdemo_bsp//libhal_bsp.a(alt_tick.o)
+ .debug_aranges
+                0x00000200       0x20 ../memdemo_bsp//libhal_bsp.a(altera_nios2_qsys_irq.o)
+ .debug_aranges
+                0x00000220       0x38 ../memdemo_bsp//libhal_bsp.a(alt_exception_entry.o)
+ .debug_aranges
+                0x00000258       0x20 ../memdemo_bsp//libhal_bsp.a(alt_icache_flush.o)
+ .debug_aranges
+                0x00000278       0x20 /opt/altera/12.1sp1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-strlen.o)
+
+.debug_pubnames
+                0x00000000      0x3d1
+ *(.debug_pubnames)
+ .debug_pubnames
+                0x00000000       0x1b obj/default/hello_world_small.o
+ .debug_pubnames
+                0x0000001b       0x1f ../memdemo_bsp//libhal_bsp.a(alt_load.o)
+ .debug_pubnames
+                0x0000003a       0x46 ../memdemo_bsp//libhal_bsp.a(alt_main.o)
+ .debug_pubnames
+                0x00000080       0x21 ../memdemo_bsp//libhal_bsp.a(alt_putstr.o)
+ .debug_pubnames
+                0x000000a1       0x42 ../memdemo_bsp//libhal_bsp.a(alt_sys_init.o)
+ .debug_pubnames
+                0x000000e3       0x34 ../memdemo_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+ .debug_pubnames
+                0x00000117       0x2f ../memdemo_bsp//libhal_bsp.a(altera_avalon_timer_sc.o)
+ .debug_pubnames
+                0x00000146       0x52 ../memdemo_bsp//libhal_bsp.a(altera_avalon_timer_vars.o)
+ .debug_pubnames
+                0x00000198       0x2b ../memdemo_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
+ .debug_pubnames
+                0x000001c3       0x2b ../memdemo_bsp//libhal_bsp.a(alt_icache_flush_all.o)
+ .debug_pubnames
+                0x000001ee       0x6e ../memdemo_bsp//libhal_bsp.a(alt_iic.o)
+ .debug_pubnames
+                0x0000025c       0x2b ../memdemo_bsp//libhal_bsp.a(alt_iic_isr_register.o)
+ .debug_pubnames
+                0x00000287       0x32 ../memdemo_bsp//libhal_bsp.a(alt_irq_handler.o)
+ .debug_pubnames
+                0x000002b9       0x3b ../memdemo_bsp//libhal_bsp.a(alt_irq_vars.o)
+ .debug_pubnames
+                0x000002f4       0x68 ../memdemo_bsp//libhal_bsp.a(alt_tick.o)
+ .debug_pubnames
+                0x0000035c       0x31 ../memdemo_bsp//libhal_bsp.a(altera_nios2_qsys_irq.o)
+ .debug_pubnames
+                0x0000038d       0x27 ../memdemo_bsp//libhal_bsp.a(alt_icache_flush.o)
+ .debug_pubnames
+                0x000003b4       0x1d /opt/altera/12.1sp1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-strlen.o)
+
+.debug_info     0x00000000     0x180f
+ *(.debug_info .gnu.linkonce.wi.*)
+ .debug_info    0x00000000       0x6a ../memdemo_bsp//obj/HAL/src/crt0.o
+ .debug_info    0x0000006a       0x45 obj/default/hello_world_small.o
+ .debug_info    0x000000af      0x12e ../memdemo_bsp//libhal_bsp.a(alt_load.o)
+ .debug_info    0x000001dd      0x125 ../memdemo_bsp//libhal_bsp.a(alt_main.o)
+ .debug_info    0x00000302       0xc5 ../memdemo_bsp//libhal_bsp.a(alt_putstr.o)
+ .debug_info    0x000003c7      0x19b ../memdemo_bsp//libhal_bsp.a(alt_sys_init.o)
+ .debug_info    0x00000562      0x18f ../memdemo_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+ .debug_info    0x000006f1      0x221 ../memdemo_bsp//libhal_bsp.a(altera_avalon_timer_sc.o)
+ .debug_info    0x00000912       0xf2 ../memdemo_bsp//libhal_bsp.a(altera_avalon_timer_vars.o)
+ .debug_info    0x00000a04       0x8d ../memdemo_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
+ .debug_info    0x00000a91       0x8d ../memdemo_bsp//libhal_bsp.a(alt_icache_flush_all.o)
+ .debug_info    0x00000b1e      0x341 ../memdemo_bsp//libhal_bsp.a(alt_iic.o)
+ .debug_info    0x00000e5f      0x1f2 ../memdemo_bsp//libhal_bsp.a(alt_iic_isr_register.o)
+ .debug_info    0x00001051       0x73 ../memdemo_bsp//libhal_bsp.a(alt_irq_entry.o)
+ .debug_info    0x000010c4      0x17b ../memdemo_bsp//libhal_bsp.a(alt_irq_handler.o)
+ .debug_info    0x0000123f       0x92 ../memdemo_bsp//libhal_bsp.a(alt_irq_vars.o)
+ .debug_info    0x000012d1      0x2a1 ../memdemo_bsp//libhal_bsp.a(alt_tick.o)
+ .debug_info    0x00001572       0x8d ../memdemo_bsp//libhal_bsp.a(altera_nios2_qsys_irq.o)
+ .debug_info    0x000015ff       0x79 ../memdemo_bsp//libhal_bsp.a(alt_exception_entry.o)
+ .debug_info    0x00001678       0xd5 ../memdemo_bsp//libhal_bsp.a(alt_icache_flush.o)
+ .debug_info    0x0000174d       0xc2 /opt/altera/12.1sp1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-strlen.o)
+
+.debug_abbrev   0x00000000      0xd34
+ *(.debug_abbrev)
+ .debug_abbrev  0x00000000       0x12 ../memdemo_bsp//obj/HAL/src/crt0.o
+ .debug_abbrev  0x00000012       0x34 obj/default/hello_world_small.o
+ .debug_abbrev  0x00000046       0x97 ../memdemo_bsp//libhal_bsp.a(alt_load.o)
+ .debug_abbrev  0x000000dd       0xa6 ../memdemo_bsp//libhal_bsp.a(alt_main.o)
+ .debug_abbrev  0x00000183       0x7c ../memdemo_bsp//libhal_bsp.a(alt_putstr.o)
+ .debug_abbrev  0x000001ff       0xea ../memdemo_bsp//libhal_bsp.a(alt_sys_init.o)
+ .debug_abbrev  0x000002e9       0xf0 ../memdemo_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+ .debug_abbrev  0x000003d9      0x158 ../memdemo_bsp//libhal_bsp.a(altera_avalon_timer_sc.o)
+ .debug_abbrev  0x00000531       0x87 ../memdemo_bsp//libhal_bsp.a(altera_avalon_timer_vars.o)
+ .debug_abbrev  0x000005b8       0x3f ../memdemo_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
+ .debug_abbrev  0x000005f7       0x3f ../memdemo_bsp//libhal_bsp.a(alt_icache_flush_all.o)
+ .debug_abbrev  0x00000636      0x160 ../memdemo_bsp//libhal_bsp.a(alt_iic.o)
+ .debug_abbrev  0x00000796      0x17e ../memdemo_bsp//libhal_bsp.a(alt_iic_isr_register.o)
+ .debug_abbrev  0x00000914       0x12 ../memdemo_bsp//libhal_bsp.a(alt_irq_entry.o)
+ .debug_abbrev  0x00000926      0x117 ../memdemo_bsp//libhal_bsp.a(alt_irq_handler.o)
+ .debug_abbrev  0x00000a3d       0x44 ../memdemo_bsp//libhal_bsp.a(alt_irq_vars.o)
+ .debug_abbrev  0x00000a81      0x15f ../memdemo_bsp//libhal_bsp.a(alt_tick.o)
+ .debug_abbrev  0x00000be0       0x3f ../memdemo_bsp//libhal_bsp.a(altera_nios2_qsys_irq.o)
+ .debug_abbrev  0x00000c1f       0x12 ../memdemo_bsp//libhal_bsp.a(alt_exception_entry.o)
+ .debug_abbrev  0x00000c31       0x89 ../memdemo_bsp//libhal_bsp.a(alt_icache_flush.o)
+ .debug_abbrev  0x00000cba       0x7a /opt/altera/12.1sp1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-strlen.o)
+
+.debug_line     0x00000000     0x2855
+ *(.debug_line)
+ .debug_line    0x00000000       0x6c ../memdemo_bsp//obj/HAL/src/crt0.o
+ .debug_line    0x0000006c       0xe6 obj/default/hello_world_small.o
+ .debug_line    0x00000152      0x225 ../memdemo_bsp//libhal_bsp.a(alt_load.o)
+ .debug_line    0x00000377      0x2d0 ../memdemo_bsp//libhal_bsp.a(alt_main.o)
+ .debug_line    0x00000647      0x1e7 ../memdemo_bsp//libhal_bsp.a(alt_putstr.o)
+ .debug_line    0x0000082e      0x2cd ../memdemo_bsp//libhal_bsp.a(alt_sys_init.o)
+ .debug_line    0x00000afb      0x302 ../memdemo_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+ .debug_line    0x00000dfd      0x2c7 ../memdemo_bsp//libhal_bsp.a(altera_avalon_timer_sc.o)
+ .debug_line    0x000010c4      0x257 ../memdemo_bsp//libhal_bsp.a(altera_avalon_timer_vars.o)
+ .debug_line    0x0000131b      0x1c3 ../memdemo_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
+ .debug_line    0x000014de      0x1d3 ../memdemo_bsp//libhal_bsp.a(alt_icache_flush_all.o)
+ .debug_line    0x000016b1      0x28d ../memdemo_bsp//libhal_bsp.a(alt_iic.o)
+ .debug_line    0x0000193e      0x247 ../memdemo_bsp//libhal_bsp.a(alt_iic_isr_register.o)
+ .debug_line    0x00001b85       0x6b ../memdemo_bsp//libhal_bsp.a(alt_irq_entry.o)
+ .debug_line    0x00001bf0      0x22d ../memdemo_bsp//libhal_bsp.a(alt_irq_handler.o)
+ .debug_line    0x00001e1d       0x72 ../memdemo_bsp//libhal_bsp.a(alt_irq_vars.o)
+ .debug_line    0x00001e8f      0x300 ../memdemo_bsp//libhal_bsp.a(alt_tick.o)
+ .debug_line    0x0000218f      0x1dc ../memdemo_bsp//libhal_bsp.a(altera_nios2_qsys_irq.o)
+ .debug_line    0x0000236b       0xab ../memdemo_bsp//libhal_bsp.a(alt_exception_entry.o)
+ .debug_line    0x00002416      0x1ef ../memdemo_bsp//libhal_bsp.a(alt_icache_flush.o)
+ .debug_line    0x00002605      0x250 /opt/altera/12.1sp1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-strlen.o)
+
+.debug_frame    0x00000000      0x2cc
+ *(.debug_frame)
+ .debug_frame   0x00000000       0x28 obj/default/hello_world_small.o
+ .debug_frame   0x00000028       0x38 ../memdemo_bsp//libhal_bsp.a(alt_load.o)
+ .debug_frame   0x00000060       0x28 ../memdemo_bsp//libhal_bsp.a(alt_main.o)
+ .debug_frame   0x00000088       0x28 ../memdemo_bsp//libhal_bsp.a(alt_putstr.o)
+ .debug_frame   0x000000b0       0x40 ../memdemo_bsp//libhal_bsp.a(alt_sys_init.o)
+ .debug_frame   0x000000f0       0x20 ../memdemo_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+ .debug_frame   0x00000110       0x40 ../memdemo_bsp//libhal_bsp.a(altera_avalon_timer_sc.o)
+ .debug_frame   0x00000150       0x20 ../memdemo_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
+ .debug_frame   0x00000170       0x20 ../memdemo_bsp//libhal_bsp.a(alt_icache_flush_all.o)
+ .debug_frame   0x00000190       0x50 ../memdemo_bsp//libhal_bsp.a(alt_iic.o)
+ .debug_frame   0x000001e0       0x28 ../memdemo_bsp//libhal_bsp.a(alt_iic_isr_register.o)
+ .debug_frame   0x00000208       0x28 ../memdemo_bsp//libhal_bsp.a(alt_irq_handler.o)
+ .debug_frame   0x00000230       0x3c ../memdemo_bsp//libhal_bsp.a(alt_tick.o)
+ .debug_frame   0x0000026c       0x20 ../memdemo_bsp//libhal_bsp.a(altera_nios2_qsys_irq.o)
+ .debug_frame   0x0000028c       0x20 ../memdemo_bsp//libhal_bsp.a(alt_icache_flush.o)
+ .debug_frame   0x000002ac       0x20 /opt/altera/12.1sp1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-strlen.o)
+
+.debug_str      0x00000000      0x821
+ *(.debug_str)
+ .debug_str     0x00000000       0x55 obj/default/hello_world_small.o
+                                 0x5a (size before relaxing)
+ .debug_str     0x00000055      0x17a ../memdemo_bsp//libhal_bsp.a(alt_load.o)
+                                0x1bf (size before relaxing)
+ .debug_str     0x000001cf       0x75 ../memdemo_bsp//libhal_bsp.a(alt_main.o)
+                                0x143 (size before relaxing)
+ .debug_str     0x00000244       0x4a ../memdemo_bsp//libhal_bsp.a(alt_putstr.o)
+                                0x118 (size before relaxing)
+ .debug_str     0x0000028e       0xb8 ../memdemo_bsp//libhal_bsp.a(alt_sys_init.o)
+                                0x1ee (size before relaxing)
+ .debug_str     0x00000346       0x56 ../memdemo_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+                                0x1bb (size before relaxing)
+ .debug_str     0x0000039c       0xb6 ../memdemo_bsp//libhal_bsp.a(altera_avalon_timer_sc.o)
+                                0x1f1 (size before relaxing)
+ .debug_str     0x00000452       0x27 ../memdemo_bsp//libhal_bsp.a(altera_avalon_timer_vars.o)
+                                0x166 (size before relaxing)
+ .debug_str     0x00000479       0x34 ../memdemo_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
+                                0x102 (size before relaxing)
+ .debug_str     0x000004ad       0x34 ../memdemo_bsp//libhal_bsp.a(alt_icache_flush_all.o)
+                                0x102 (size before relaxing)
+ .debug_str     0x000004e1       0xc4 ../memdemo_bsp//libhal_bsp.a(alt_iic.o)
+                                0x1eb (size before relaxing)
+ .debug_str     0x000005a5       0x4c ../memdemo_bsp//libhal_bsp.a(alt_iic_isr_register.o)
+                                0x195 (size before relaxing)
+ .debug_str     0x000005f1       0x3a ../memdemo_bsp//libhal_bsp.a(alt_irq_handler.o)
+                                0x144 (size before relaxing)
+ .debug_str     0x0000062b       0x17 ../memdemo_bsp//libhal_bsp.a(alt_irq_vars.o)
+                                 0xfc (size before relaxing)
+ .debug_str     0x00000642       0x8a ../memdemo_bsp//libhal_bsp.a(alt_tick.o)
+                                0x1ff (size before relaxing)
+ .debug_str     0x000006cc       0x3b ../memdemo_bsp//libhal_bsp.a(altera_nios2_qsys_irq.o)
+                                0x109 (size before relaxing)
+ .debug_str     0x00000707       0x2c ../memdemo_bsp//libhal_bsp.a(alt_icache_flush.o)
+                                0x108 (size before relaxing)
+ .debug_str     0x00000733       0xee /opt/altera/12.1sp1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-strlen.o)
+                                0x189 (size before relaxing)
+
+.debug_loc      0x00000000      0x45b
+ *(.debug_loc)
+ .debug_loc     0x00000000       0x1f obj/default/hello_world_small.o
+ .debug_loc     0x0000001f       0x1f ../memdemo_bsp//libhal_bsp.a(alt_load.o)
+ .debug_loc     0x0000003e       0x1f ../memdemo_bsp//libhal_bsp.a(alt_main.o)
+ .debug_loc     0x0000005d       0x48 ../memdemo_bsp//libhal_bsp.a(alt_putstr.o)
+ .debug_loc     0x000000a5       0x51 ../memdemo_bsp//libhal_bsp.a(alt_sys_init.o)
+ .debug_loc     0x000000f6       0x26 ../memdemo_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+ .debug_loc     0x0000011c       0xdc ../memdemo_bsp//libhal_bsp.a(altera_avalon_timer_sc.o)
+ .debug_loc     0x000001f8       0x72 ../memdemo_bsp//libhal_bsp.a(alt_iic.o)
+ .debug_loc     0x0000026a       0xf4 ../memdemo_bsp//libhal_bsp.a(alt_iic_isr_register.o)
+ .debug_loc     0x0000035e       0x5b ../memdemo_bsp//libhal_bsp.a(alt_irq_handler.o)
+ .debug_loc     0x000003b9       0x71 ../memdemo_bsp//libhal_bsp.a(alt_tick.o)
+ .debug_loc     0x0000042a       0x13 ../memdemo_bsp//libhal_bsp.a(alt_icache_flush.o)
+ .debug_loc     0x0000043d       0x1e /opt/altera/12.1sp1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-strlen.o)
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.debug_alt_sim_info
+                0x00000000       0x20
+ *(.debug_alt_sim_info)
+ .debug_alt_sim_info
+                0x00000000       0x20 ../memdemo_bsp//obj/HAL/src/crt0.o
+                0x00005000                __alt_data_end = 0x5000
+                0x00005000                PROVIDE (__alt_stack_pointer, __alt_data_end)
+                0x00000760                PROVIDE (__alt_stack_limit, __alt_stack_base)
+                0x00000760                PROVIDE (__alt_heap_start, end)
+                0x00005000                PROVIDE (__alt_heap_limit, 0x5000)
+OUTPUT(memdemo.elf elf32-littlenios2)
+
+.debug_ranges   0x00000000       0xa8
+ .debug_ranges  0x00000000       0x20 ../memdemo_bsp//obj/HAL/src/crt0.o
+ .debug_ranges  0x00000020       0x18 ../memdemo_bsp//libhal_bsp.a(altera_avalon_timer_sc.o)
+ .debug_ranges  0x00000038       0x28 ../memdemo_bsp//libhal_bsp.a(alt_irq_entry.o)
+ .debug_ranges  0x00000060       0x18 ../memdemo_bsp//libhal_bsp.a(alt_irq_handler.o)
+ .debug_ranges  0x00000078       0x30 ../memdemo_bsp//libhal_bsp.a(alt_exception_entry.o)
