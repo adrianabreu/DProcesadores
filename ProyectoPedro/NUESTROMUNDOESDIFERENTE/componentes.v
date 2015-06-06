@@ -32,16 +32,53 @@ module retrasado(input wire clk, reset,
 	always @(clk)
 		begin
 			if(reset)
-				s = 25b'0;
-			if (s == 25b'1011111010111100001000000)
+				begin
+					s = 25'b0;
+				end
+			if (s == 25'b1011111010111100001000000)
 				begin
 					clock = 1;
-					s = 25b'0;
+					s = 25'b0;
 				end
 			else
 				s=s+1;
 				clock = 0;
 		end
+endmodule
+
+module descompose(input wire clk, reset,
+					input wire [9:0] morse,
+					output wire short, long);
+		
+	always @(posedge clk, posedge reset)
+		begin
+			if(reset)
+				begin
+					short=0;
+					long=0;
+				end
+			if(morse[9]==1)
+				begin
+					morse = morse << 1;
+					if(morse[9]==1)
+						begin
+							long=1;
+							short=0;
+						end
+					else
+						begin
+							short=1;
+							long=0;
+						end
+					morse = morse << 1;
+				end
+			else
+				begin
+					short=0;
+					long=0;
+					morse = morse << 1;
+				end
+		end		
 endmodule
 
 //modulo de registro para modelar el PC, cambia en cada flanco de subida de reloj o de reset

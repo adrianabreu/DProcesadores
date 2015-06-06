@@ -6,7 +6,7 @@ reg [4:0] rellenooperacion;
 
     always @(posedge clk or posedge reset) begin
         if (reset) begin
-            rellenooperando<=4'b0000;
+            rellenooperando<=3'b000;
             rellenooperacion<=5'b00000;
             e0<=8'b00000000;
             e1<=8'b00000000;
@@ -14,13 +14,13 @@ reg [4:0] rellenooperacion;
             e3<=8'b00000000;
         end
         else begin
-            e0 = {rellenooperando,a};
-            e1 = {rellenooperando,b};
+            e0 = {rellenooperando,morse[9:5]};
+            e1 = {rellenooperando,morse[4:0]};
             e2 = {rellenooperacion,op};
         end
     end 
 
-    monociclo mono(clk, reset, e0,e1,e2,e3, s0,s1,s2,s3, pc_out);
+    monociclo mono(clk, reset, morse, e0,e1,e2,e3, s0,s1,s2,s3, pc_out);
     deco4a7 deco1(b, display1, display2); 
     deco4a7 deco2(a, display3, display4); 
     

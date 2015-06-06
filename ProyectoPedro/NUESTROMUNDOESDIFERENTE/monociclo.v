@@ -1,5 +1,7 @@
 module monociclo(input wire clk, reset, 
                 input wire [9:0] entrada_sonido,
+                input wire [7:0]e0,e1,e2,e3, 
+                output wire [7:0]s0,s1,s2,s3,
                 output wire [7:0] leds_verdes, 
                 /////////////////////////////////////////////
                 input [1:0]   CLOCK_24,       //  24 MHz
@@ -33,8 +35,9 @@ module monociclo(input wire clk, reset,
   wire clock;
   wire [2:0] op;
   wire [5:0] opcode;
-  wire [1:0] puerto1,puerto2;
-  wire enable0, enable1, enable2,enable3;
+  wire [1:0] puerto1, puerto2;
+  wire enable0, enable1, enable2, enable3;
+  wire short, long;
   
   microc micro1(clk, reset, enable0, enable1, enable2, enable3,
                 enablebackup, s_inc, s_inm, we3, selsalida,
@@ -46,7 +49,10 @@ module monociclo(input wire clk, reset,
 
   retrasado pll(clk, reset, clock);
    
+  descompose descomponer(clock, reset, morse, short, long);
+					
   ModuloSonido modsonido(clock,
+                enable,
                 audio_enable,
                 reset, short, long,
                 sonido

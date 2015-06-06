@@ -1,0 +1,28 @@
+ENTREGA
+    - INFORME
+        * Mejoras de rendimiento, comentadas pero no necesariamente probadas
+        * Aplicar las mejoras mas prometedoras
+        * Medicion de tiempo
+        * Discusion de resultados
+        
+    - CODIGO (OPC)
+    
+    OPCIONALES:
+        Instrucciones custom
+        Multiprocesador
+        
+EDITOR BSP->PAQUETES SOFTWARE->ALTERA HOST FS (HOST FILE SYSTEM) (directorio software o subdirectorio ?) "/mnt/(...)"
+
+MEJORAS:
+    PONER PROCESADOR CON CACHE DE INSTRUCCIONES (Hay que usarlo con punteros a mano)
+    PONER PROCESADOR CON CACHE DE DATOS
+    TIPOS DE HARDWARE MULTIPLICADOR (
+    OPTIMIZAR CALCULOS DE OFFSET (suma en vez de multiplicacion/uso de punteros)
+    AUMENTAR RELOJ? <- No me convence
+    Jugar con los tiempos de las memorias
+    
+    
+HECHAS:
+    Offset en macro con multiplicacion
+    Offset en macro con suma
+    
