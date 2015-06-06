@@ -1,8 +1,9 @@
 module monociclo(input wire clk, reset, 
-                input wire [9:0] entrada_sonido,
+                input wire [9:0] morse,
                 input wire [7:0]e0,e1,e2,e3, 
                 output wire [7:0]s0,s1,s2,s3,
-                output wire [7:0] leds_verdes, 
+                output wire [7:0] leds_verdes,
+					 output wire [9:0] pc_out,
                 /////////////////////////////////////////////
                 input [1:0]   CLOCK_24,       //  24 MHz
                 input [1:0]   CLOCK_27,       //  27 MHz
@@ -16,20 +17,14 @@ module monociclo(input wire clk, reset,
                 output      AUD_DACLRCK,      //  Audio CODEC DAC LR Clock
                 output      AUD_DACDAT,       //  Audio CODEC DAC Data
                 inout       AUD_BCLK,       //  Audio CODEC Bit-Stream Clock
-                output      AUD_XCK       //  Audio CODEC Chip Clock);
+                output      AUD_XCK);       //  Audio CODEC Chip Clock);
   
-  assign  I2C_SDAT  = 1'bz;
-  //  Audio
-  assign  AUD_ADCLRCK = AUD_DACLRCK;
-  assign  AUD_XCK   = AUD_CTRL_CLK;
   wire      AUD_CTRL_CLK;
   wire      VGA_CTRL_CLK;
-  
+  wire		AUD_ADCLRCK;
   wire [51:0] sonido;
-  
   wire audio_enable;
-
-  //================================================
+  
   wire s_inc, s_inm, selentrada, selsalida, we3, z;
   wire s_rel, enablebackup, s_ret;
   wire clock;
@@ -38,6 +33,10 @@ module monociclo(input wire clk, reset,
   wire [1:0] puerto1, puerto2;
   wire enable0, enable1, enable2, enable3;
   wire short, long;
+  
+  assign  I2C_SDAT  = 1'bz;
+  assign  AUD_ADCLRCK = AUD_DACLRCK;
+  assign  AUD_XCK   = AUD_CTRL_CLK;
   
   microc micro1(clk, reset, enable0, enable1, enable2, enable3,
                 enablebackup, s_inc, s_inm, we3, selsalida,
@@ -51,10 +50,9 @@ module monociclo(input wire clk, reset,
    
   descompose descomponer(clock, reset, morse, short, long);
 					
-  ModuloSonido modsonido(clock,
-                enable,
+  ModuloSonido modsonido(clock, reset,
                 audio_enable,
-                reset, short, long,
+                short, long,
                 sonido
                 );
 

@@ -8,7 +8,6 @@ module ModuloSonido(input clk, enable,
 	reg still;
 
 	always@(clk)
-		if(enable)
 			begin
 				if (short)
 					begin

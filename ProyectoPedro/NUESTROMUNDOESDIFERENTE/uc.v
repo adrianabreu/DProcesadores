@@ -1,12 +1,12 @@
 module uc(input wire clk, reset, z, input wire [5:0] opcode, 
     output reg s_inc, s_inm, selentrada, selsalida, enablebackup,
                s_rel, s_ret, we3, enable0, enable1, enable2, enable3,
-    input wire [1:0] puerto, output wire [2:0] op);
+    input wire [1:0] puerto1,puerto2, output wire [2:0] op);
 
 //Si usamos wires se descontrola todo
 assign op = opcode[2:0];
 
-always @(clk, reset, opcode)
+always @(*)
   begin 
     enable0 <= 1'b0;
     enable1 <= 1'b0;
@@ -128,7 +128,7 @@ always @(clk, reset, opcode)
             s_rel <= 1'b0;
             s_ret <= 1'b0; 
             enablebackup <= 1'b0;
-            case (puerto)
+            case (puerto1)
                 2'b00:
                     enable0 <= 1'b1;   
 
@@ -154,7 +154,7 @@ always @(clk, reset, opcode)
             s_rel <= 1'b0;
             s_ret <= 1'b0; 
             enablebackup <= 1'b0;
-            case (puerto)
+            case (puerto1)
                 2'b00:
                     enable0 <= 1'b1;   
 
@@ -181,7 +181,7 @@ always @(clk, reset, opcode)
             s_rel <= 1'b0;
             s_ret <= 1'b0; 
             enablebackup <= 1'b0;
-            case (puerto)
+            case (puerto2)
                 2'b00:
                     enable0 <= 1'b1;   
 

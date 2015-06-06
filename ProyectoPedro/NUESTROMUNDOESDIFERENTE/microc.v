@@ -1,44 +1,97 @@
 //Microcontrolador sin memoria de datos de un solo ciclo
-module microc(input wire clk, reset, s_inc, s_inm, we3, s_mem_rd2, s_e,s_s,
-				input wire[7:0]d0_e,d1_e,d2_e,d3_e, input wire [2:0] op,
-				output wire zero, output wire [7:0]d0_s,d1_s,d2_s,d3_s, output wire [5:0] opcode);
+module microc(input wire clk, reset, enable0, enable1, enable2, enable3, 
+                         enablebackup,s_inc, s_inm, we3, selsalida, 
+                         selentrada, s_rel, s_ret,
+			  input wire[7:0]ein0,ein1,ein2,ein3, 
+			  output wire [5:0] opcode,
+              input wire [2:0] op,
+              output wire [1:0] puerto1,
+              output wire [1:0] puerto2,
+              output wire [7:0] sout0,sout1,sout2,sout3,
+				  output wire [9:0] pc_out,
+              output wire zero);
 
-wire [9:0] pc_out, mux_pc; //cable sumador, pc y memprog; cable mux_inc y pc
-wire [9:0] sum_mux;
-wire [7:0] alu_mux, mux_reg, mux_mux, puerto_mux;
-wire [7:0] rd1_alu, rd2_alu; //entradas a y b de la ALU
-wire [15:0] bus_datos;
+//wire [7:0]sout0,sout1,sout2,sout3;
+wire [9:0] muxpc_out; //cable sumador, pc y memprog; cable mux_pc y pc
+wire [9:0] sumpc_out; //Salida del sumador del pc
+wire [7:0] alu_mux_in, mux_reg, alu_mux_out, puerto_mux; //Conexion multiplexor alu
+wire [7:0] rd1, rd2; //Entradas alu
+wire [15:0] bus_de_datos; //Bus
 wire z;
-wire [7:0] d0_p, d1_p, d2_p, d3_p;
+wire [7:0] sin0, sin1, sin2, sin3;
+wire [7:0] eout0,eout1,eout2,eout3;
+wire [7:0] SalidaMux2ADmux4;
+wire[1:0] salmuxpuerto;
 
-sum sum_pc(pc_out, 10'b0000000001, sum_mux);	//a,1→in	sum_mux→out
+//Cables nuevos:
+wire [9:0] smuxalupc,restorepc,retornopc_out,compsalto_out;
 
-registro #(10) pc(clk, reset, mux_pc, pc_out);	//clk,reset,mux_pc→in	pc_out→out
-               
-memprog mem_instr(clk, pc_out, bus_datos[15:0]);           
-                             
-mux2 #(10) mux_inc(bus_datos[15:6], sum_mux, s_inc, mux_pc); //modulo multiplexor, con s=1 sale sum_mux, s=0 sale d0            
-             
-regfile registros(clk, we3, bus_datos[7:4], bus_datos[11:8], bus_datos[15:12], mux_reg, rd1_alu, rd2_alu);               
-              
-alu alu1(rd1_alu, rd2_alu, op, alu_mux, z); 
-           
-mux2 mux_inm(alu_mux, bus_datos[11:4], s_inm, mux_mux);
+assign opcode = bus_de_datos[5:0];
 
-registro #(1) ffzero(clk, reset, z, zero);	//clk,reset,mux_pc→in	pc_out→out
+//mux2 #(2) muxpuertosal(bus_de_datos[7:6],rd1[1:0],selpuerto,salmuxpuerto);
+//assign puerto = (bus_de_datos[3:0]==1111) ? rd1[1:0] : bus_de_datos[7:6];
+assign puerto1 = bus_de_datos[7:6];
+assign puerto2 = rd1[1:0];
 
-assign opcode = bus_datos[5:0];
+sum sum_pc(pc_out, smuxalupc, sumpc_out); //module sum(input wire [9:0] a, b, output wire [9:0] y);
 
-///entrada salida
-mux2 mux_e(mux_mux, puerto_mux, s_e, mux_reg);//si s_e → 1, lee datos de la entrada salida
+//--------------------------------------------------------
+//Modificaciones para las mejoras de salto
+//---------------------------------------------------------
+//Salto relativo
+complementoa2 compsalto(bus_de_datos[14:6],bus_de_datos[15],compsalto_out);
+mux2 #(10) mux_srel(10'b1,compsalto_out,s_rel,smuxalupc);
 
-mux16_e #(8) mux_puerto_e(d0_e, d1_e, d2_e, d3_e, bus_datos[7:6], puerto_mux);	//selecciona el puerto a escribir d0..3→puerto_mux_e
+//Salto subrutina
+registroconenable #(10) pcbackup(clk, reset, enablebackup, sumpc_out, restorepc);
+mux2 #(10) retornopc (muxpc_out,restorepc,s_ret,retornopc_out);
+//------------------------------------------------------------------------------
 
-mux16_s #(8) mux_puerto_s(d0_p, d1_p, d2_p, d3_p, bus_datos[7:6],clk , s_mem_rd2,s_s, bus_datos[15:8],rd2_alu);	//selecciona el puerto del que leer puerto_mux_s→d0..3
+//module registro #(parameter WIDTH = 8)(input wire clk, reset,
+//input wire [WIDTH-1:0] d,  output reg  [WIDTH-1:0] q);
+registro #(10) pc(clk, reset, retornopc_out, pc_out);
 
-registro #(8) puerto_s0(clk, reset, d0_p, d0_s);	//registro previo a disp salida
-registro #(8) puerto_s1(clk, reset, d1_p, d1_s);	//registro previo a disp salida
-registro #(8) puerto_s2(clk, reset, d2_p, d2_s);	//registro previo a disp salida
-registro #(8) puerto_s3(clk, reset, d3_p, d3_s);	//registro previo a disp salida
+//module memprog(input wire clk, input wire [9:0] a, output wire [15:0] rd);     
+memprog memoria(clk, pc_out, bus_de_datos[15:0]);
+
+//module mux2 (input  wire [WIDTH-1:0] d0, d1, input wire s,
+//output wire [WIDTH-1:0] y);    
+mux2 #(10) mux_pc(bus_de_datos[15:6], sumpc_out, s_inc, muxpc_out);
+
+//module regfile(input wire clk, input wire we3, input wire [3:0] ra1, ra2, wa3, 
+//input wire [7:0] wd3, output wire [7:0] rd1, rd2);   
+regfile registros(clk, we3, bus_de_datos[7:4], bus_de_datos[11:8], bus_de_datos[15:12], mux_reg, rd1, rd2);               
+
+//module alu(input wire [7:0] a, b, input wire [2:0] op,
+//           output wire [7:0] y, output wire zero);      
+alu alu1(rd1, rd2, op, alu_mux_in, z); 
+
+//module mux2 #(parameter WIDTH = 8)(input  wire [WIDTH-1:0] d0, d1, input wire s, 
+//                                   output wire [WIDTH-1:0] y);
+mux2 mux_banco(alu_mux_in, bus_de_datos[11:4], s_inm, alu_mux_out);
+
+//Para que la señal de zero no desaparezca la retrasaremos un ciclo metiendola en un registro
+//assign zero = z;
+registro #(1) regzero(clk, reset, z, zero);	
+
+
+
+//--------------------------------------------
+//ENTRADA - SALIDA
+//--------------------------------------------
+
+//Muxentrada a registro
+mux2 muxentradaregistro(alu_mux_out, puerto_mux, selentrada, mux_reg);
+
+mux2 muxademux(bus_de_datos[15:8],rd2,selsalida,SalidaMux2ADmux4);
+mux4 #(8) muxentrada(ein0, ein1, ein2, ein3, bus_de_datos[7:6], puerto_mux);
+
+//Registros de salida
+registroconenable #(8) salida0(clk, reset, enable0, SalidaMux2ADmux4, sout0);
+registroconenable #(8) salida1(clk, reset, enable1, SalidaMux2ADmux4, sout1);
+registroconenable #(8) salida2(clk, reset, enable2, SalidaMux2ADmux4, sout2);
+registroconenable #(8) salida3(clk, reset, enable3, SalidaMux2ADmux4, sout3);
+
+//-------------------------------------------------------------------------------
 
 endmodule
