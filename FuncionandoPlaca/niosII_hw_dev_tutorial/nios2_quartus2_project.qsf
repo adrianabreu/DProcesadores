@@ -360,5 +360,5 @@ set_location_assignment PIN_U3 -to DRAM_BA[0]
 set_location_assignment PIN_V4 -to DRAM_BA[1]
 set_location_assignment PIN_R7 -to DRAM_DQM[0]
 set_location_assignment PIN_M5 -to DRAM_DQM[1]
-set_global_assignment -name QIP_FILE first_nios2_system/synthesis/first_nios2_system.qip
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name QIP_FILE first_nios2_system/synthesis/first_nios2_system.qip
