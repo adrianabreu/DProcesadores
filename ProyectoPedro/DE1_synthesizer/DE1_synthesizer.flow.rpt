@@ -1,6 +1,6 @@
 Flow report for DE1_synthesizer
-Thu Nov 16 09:02:57 2006
-Version 6.0 Build 202 06/20/2006 Service Pack 1 SJ Full Version
+Fri Jun 05 11:04:15 2015
+Quartus II 64-Bit Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Edition
 
 
 ---------------------
@@ -11,17 +11,18 @@ Version 6.0 Build 202 06/20/2006 Service Pack 1 SJ Full Version
   3. Flow Settings
   4. Flow Non-Default Global Settings
   5. Flow Elapsed Time
-  6. Flow Log
+  6. Flow OS Summary
+  7. Flow Log
 
 
 
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 1991-2006 Altera Corporation
+Copyright (C) 1991-2012 Altera Corporation
 Your use of Altera Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
-functions, and any output files any of the foregoing 
+functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
 to the terms and conditions of the Altera Program License 
@@ -37,15 +38,16 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------------+
 ; Flow Summary                                                                       ;
 +------------------------------------+-----------------------------------------------+
-; Flow Status                        ; Successful - Thu Nov 16 09:02:57 2006         ;
-; Quartus II Version                 ; 6.0 Build 202 06/20/2006 SP 1 SJ Full Version ;
+; Flow Status                        ; Successful - Fri Jun 05 11:04:09 2015         ;
+; Quartus II 64-Bit Version          ; 12.1 Build 243 01/31/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; DE1_synthesizer                               ;
 ; Top-level Entity Name              ; DE1_synthesizer                               ;
 ; Family                             ; Cyclone II                                    ;
 ; Device                             ; EP2C20F484C7                                  ;
 ; Timing Models                      ; Final                                         ;
-; Met timing requirements            ; No                                            ;
-; Total logic elements               ; 1,414 / 18,752 ( 8 % )                        ;
+; Total logic elements               ; 1,551 / 18,752 ( 8 % )                        ;
+;     Total combinational functions  ; 1,535 / 18,752 ( 8 % )                        ;
+;     Dedicated logic registers      ; 306 / 18,752 ( 2 % )                          ;
 ; Total registers                    ; 306                                           ;
 ; Total pins                         ; 283 / 315 ( 90 % )                            ;
 ; Total virtual pins                 ; 0                                             ;
@@ -60,34 +62,50 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/16/2006 09:01:48 ;
+; Start date & time ; 06/05/2015 11:03:34 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; DE1_synthesizer     ;
 +-------------------+---------------------+
 
 
-+---------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                ;
-+---------------------------+----------+---------------+-------------+------------+
-; Assignment Name           ; Value    ; Default Value ; Entity Name ; Section Id ;
-+---------------------------+----------+---------------+-------------+------------+
-; AUTO_ENABLE_SMART_COMPILE ; On       ; --            ; --          ; --         ;
-; ENABLE_SIGNALTAP          ; Off      ; --            ; --          ; --         ;
-; USE_SIGNALTAP_FILE        ; stp1.stp ; --            ; --          ; --         ;
-+---------------------------+----------+---------------+-------------+------------+
++------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                 ;
++-------------------------------------+---------------------------------+---------------+-------------+------------+
+; Assignment Name                     ; Value                           ; Default Value ; Entity Name ; Section Id ;
++-------------------------------------+---------------------------------+---------------+-------------+------------+
+; AUTO_ENABLE_SMART_COMPILE           ; On                              ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 134660534743251.143349861407936 ; --            ; --          ; --         ;
+; ENABLE_SIGNALTAP                    ; Off                             ; --            ; --          ; --         ;
+; PARTITION_COLOR                     ; 16764057                        ; --            ; --          ; Top        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING           ; --            ; --          ; Top        ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                          ; --            ; --          ; Top        ;
+; USE_SIGNALTAP_FILE                  ; stp1.stp                        ; --            ; --          ; --         ;
++-------------------------------------+---------------------------------+---------------+-------------+------------+
 
 
-+-------------------------------------+
-; Flow Elapsed Time                   ;
-+----------------------+--------------+
-; Module Name          ; Elapsed Time ;
-+----------------------+--------------+
-; Analysis & Synthesis ; 00:00:37     ;
-; Fitter               ; 00:00:18     ;
-; Assembler            ; 00:00:07     ;
-; Timing Analyzer      ; 00:00:02     ;
-; Total                ; 00:01:04     ;
-+----------------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                             ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis      ; 00:00:14     ; 1.0                     ; 499 MB              ; 00:00:13                           ;
+; Fitter                    ; 00:00:17     ; 1.0                     ; 759 MB              ; 00:00:17                           ;
+; Assembler                 ; 00:00:01     ; 1.0                     ; 452 MB              ; 00:00:02                           ;
+; TimeQuest Timing Analyzer ; 00:00:05     ; 1.0                     ; 464 MB              ; 00:00:04                           ;
+; Total                     ; 00:00:37     ; --                      ; --                  ; 00:00:36                           ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+
+
++----------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                        ;
++---------------------------+------------------+-----------+------------+----------------+
+; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
++---------------------------+------------------+-----------+------------+----------------+
+; Analysis & Synthesis      ; WIN-Q61M2CMVCUS  ; Windows 7 ; 6.2        ; x86_64         ;
+; Fitter                    ; WIN-Q61M2CMVCUS  ; Windows 7 ; 6.2        ; x86_64         ;
+; Assembler                 ; WIN-Q61M2CMVCUS  ; Windows 7 ; 6.2        ; x86_64         ;
+; TimeQuest Timing Analyzer ; WIN-Q61M2CMVCUS  ; Windows 7 ; 6.2        ; x86_64         ;
++---------------------------+------------------+-----------+------------+----------------+
 
 
 ------------
@@ -96,7 +114,7 @@ applicable agreement for further details.
 quartus_map --read_settings_files=on --write_settings_files=off DE1_synthesizer -c DE1_synthesizer
 quartus_fit --read_settings_files=off --write_settings_files=off DE1_synthesizer -c DE1_synthesizer
 quartus_asm --read_settings_files=off --write_settings_files=off DE1_synthesizer -c DE1_synthesizer
-quartus_tan --read_settings_files=off --write_settings_files=off DE1_synthesizer -c DE1_synthesizer --timing_analysis_only
+quartus_sta DE1_synthesizer -c DE1_synthesizer
 
 
 

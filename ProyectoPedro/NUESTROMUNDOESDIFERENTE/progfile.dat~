@@ -1,0 +1,6 @@
+0100000000001000    // 1.) LOAD 0 en R4
+0011000011011110    // 2.) Entrada del Puerto 3 a R3
+0110000000110011    // 3.) R3 - R4 → R6
+0000000000001011    // 4.) if Z != 0 JUMP to 0.) ; salto condicional
+1000000011001100    // 5.) Salida por puerto 3
+0000000000001001    // 6.) Salto Absoluto a 0
