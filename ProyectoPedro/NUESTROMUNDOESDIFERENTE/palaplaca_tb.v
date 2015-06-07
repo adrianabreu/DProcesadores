@@ -1,6 +1,6 @@
 `timescale 2 ns / 20 ps
 
-module cpu_tb;
+module palaplaca_tb;
 
 reg reset, clk;	
 reg [7:0] d0_e, d1_e, d2_e, d3_e;
@@ -44,7 +44,7 @@ initial begin
   
 end
 
-cpu cpu1(clk, reset, d0_e, d1_e, d2_e, d3_e, d0_s, d1_s, d2_s, d3_s);
+plaplaca pa1(clk, reset, d0_e, d1_e, d2_e, d3_e, d0_s, d1_s, d2_s, d3_s);
 
 endmodule
 

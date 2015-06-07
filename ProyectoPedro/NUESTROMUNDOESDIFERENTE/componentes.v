@@ -1,19 +1,6 @@
 //Componentes varios
 
 //DECODIFICADOR 5 A 32
-/*
-module deco5a7(input  wire [4:0]  binario,
-               output wire [6:0]  display1, display2);  
-
-reg[6:0] salida1, salida2;
-
-  always @(binario) begin
-    case (binario)
-      
-    endcase
-  end
-endmodule
-*/
 
 module deco4a7(input  wire [3:0]  binario,
                output wire [6:0]  display1, display2);   
