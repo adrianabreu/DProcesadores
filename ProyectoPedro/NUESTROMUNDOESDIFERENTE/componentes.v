@@ -112,69 +112,6 @@ assign display2 = salida2;
   end
 endmodule
 
-/*
-module deco3a7(input  wire [2:0]  binario,
-               output wire [6:0]  display);
-
-reg[6:0] salida;
-
-assign display = salida;
-
-  always @(binario) begin
-    case (binario)
-      
-      3'b000:
-        begin
-          salida<=7'b0111111;
-        end
-      
-
-      3'b001:
-        begin
-          salida<=7'b0000110;
-        end
-      
-
-      3'b010:
-        begin
-          salida<=7'b1011011;
-        end
-      
-
-      3'b011:
-        begin
-          salida<=7'b1001111;
-        end
-      
-
-      3'b100:
-        begin
-          salida<=7'b1100110;
-        end
-      
-
-      3'b101:
-        begin
-          salida<=7'b1101101;
-        end
-      
-
-      3'b110:
-        begin
-          salida<=7'b1111101;
-        end
-      
-
-      3'b111:
-        begin
-          salida<=7'b0000111;
-        end
-      
-    endcase
-  end
-endmodule
-*/
-
 //Banco de registros de dos salidas y una entrada
 module regfile(input  wire        clk, 
                input  wire        we3,           //se�al de habilitaci�n de escritura ���ROJO!!!
