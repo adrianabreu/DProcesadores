@@ -33,7 +33,7 @@ module monociclo(input wire clk, reset,
   wire [1:0] puerto1, puerto2;
   wire enable0, enable1, enable2, enable3;
   wire short, long;
-  
+  wire [9:0] audiofromregtomodulo;
   assign  I2C_SDAT  = 1'bz;
   assign  AUD_ADCLRCK = AUD_DACLRCK;
   assign  AUD_XCK   = AUD_CTRL_CLK;
@@ -47,10 +47,12 @@ module monociclo(input wire clk, reset,
          enable3, puerto1,puerto2, op);
 
   retrasado pll(clk, reset, clock);
-   
-  descompose descomponer(clock, reset, morse, short, long);
 					
-  ModuloSonido modsonido(clock, reset,
+  registro10 salvaaudio(clk, reset, morse, audiofromregtomodulo);
+  
+  descompose descomponer(clock, reset, audiofromregtomodulo, short, long);
+  
+  ModuloSonido modsonido(clock, audioact,
                 audio_enable,
                 short, long,
                 sonido

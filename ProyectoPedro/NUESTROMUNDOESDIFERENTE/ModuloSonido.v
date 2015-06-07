@@ -1,6 +1,6 @@
 module ModuloSonido(input clk, enable,
 							output reg s_enable,
-							input reset, short, long,
+							input short, long,
 							output wire[51:0] sonido
 							);
 	reg[51:0] frecuencia;
@@ -8,6 +8,7 @@ module ModuloSonido(input clk, enable,
 	reg still;
 
 	always@(clk)
+		if (enable)
 			begin
 				if (short)
 					begin
@@ -37,5 +38,5 @@ module ModuloSonido(input clk, enable,
 							end
 						end
 					end
-				end
+			end
 endmodule

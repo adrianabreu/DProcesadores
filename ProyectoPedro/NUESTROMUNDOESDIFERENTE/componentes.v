@@ -112,6 +112,19 @@ assign display2 = salida2;
   end
 endmodule
 
+//Registro de ancho 10 para almacenar el audio
+module registro10(input wire clk, reset,
+                  input wire audioreg,
+                  input wire [9:0] morse,
+                  output reg [9:0] salida);
+
+   always @(posedge clk)
+      begin
+        if (reset) salida <= 10'b0;
+        if (audioreg) salida <= morse;
+      end
+endmodule
+
 //Banco de registros de dos salidas y una entrada
 module regfile(input  wire        clk, 
                input  wire        we3,           //se�al de habilitaci�n de escritura ���ROJO!!!
