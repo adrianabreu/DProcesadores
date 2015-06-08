@@ -58,25 +58,22 @@ module monociclo(input wire clk, reset,
                 sonido
                 );
 
-//AUDIO CONTROLLER  
-VGA_Audio_PLL     u3  ( .inclk0(CLOCK_27[0]),.c0(VGA_CTRL_CLK),.c1(AUD_CTRL_CLK)  );
+//PARTE RELATIVA AL MODULO DE AUDIO
+VGA_Audio_PLL aud1  ( .inclk0(CLOCK_27[0]),
+                          .c0(VGA_CTRL_CLK),
+                          .c1(AUD_CTRL_CLK));
 
-I2C_AV_Config     u7  ( //  Host Side
-              .iCLK(CLOCK_50),
-              .iRST_N(audio_enable),
-              //  I2C Side
-              .I2C_SCLK(I2C_SCLK),
-              .I2C_SDAT(I2C_SDAT) );
-              
-              
-AUDIO_DAC       u8  ( //  Audio Side
-              .oAUD_BCK(AUD_BCLK),
-              .oAUD_DATA(AUD_DACDAT),
-              .oAUD_LRCK(AUD_DACLRCK),
-              //  Control Signals
-                 .iCLK_18_4(AUD_CTRL_CLK),
-              .iRate(sonido),
-              .iRST_N(audio_enable) );
+I2C_AV_Config aud2(.iCLK(CLOCK_50),
+                   .iRST_N(audio_enable),
+                   .I2C_SCLK(I2C_SCLK),
+                   .I2C_SDAT(I2C_SDAT) );
+
+adio_codec   aud3 (.oAUD_BCK(AUD_BCLK),
+                  .oAUD_DATA(AUD_DACDAT),
+                  .oAUD_LRCK(AUD_DACLRCK),
+                  .iCLK_18_4(AUD_CTRL_CLK),
+                  .iRate(sonido),
+                  .iRST_N(audio_enable) );
                            
 endmodule
 

@@ -1,33 +1,24 @@
-module AUDIO_DAC (
-					//	Audio Side
-					oAUD_BCK,
-					oAUD_DATA,
-					oAUD_LRCK,
-					//	Control Signals
-					iSrc_Select,
-				   iCLK_18_4,
-					iRate,
-					iRST_N	);				
+module adio_codec (
+	output			oAUD_DATA,
+	output			oAUD_LRCK,
+	output	reg		oAUD_BCK,
+	input	[1:0]	iSrc_Select,
+	input			iCLK_18_4,
+	input			iRST_N,
+	input [51:0]	iRate,
+	);				
 
 parameter	REF_CLK			=	18432000;	//	18.432	MHz
-
 parameter	SAMPLE_RATE		=	48000;		//	48		KHz
-
 parameter	DATA_WIDTH		=	16;			//	16		Bits
 parameter	CHANNEL_NUM		=	2;			//	Dual Channel
 
-parameter	SIN_SAMPLE_DATA	=	69;
+parameter	SIN_SAMPLE_DATA	=	48;
 
 ////////////	Input Source Number	//////////////
 parameter	SIN_SANPLE		=	0;
 //////////////////////////////////////////////////
 
-//	Audio Side
-output			oAUD_DATA;
-output			oAUD_LRCK;
-output	reg		oAUD_BCK;
-//	Control Signals
-input [51:0]iRate;
 //input [51:0]iRefClock;
 input	[1:0]	iSrc_Select;
 input			iCLK_18_4;
