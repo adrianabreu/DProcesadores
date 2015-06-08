@@ -5,7 +5,7 @@ module adio_codec (
 	input	[1:0]	iSrc_Select,
 	input			iCLK_18_4,
 	input			iRST_N,
-	input [51:0]	iRate,
+	input [51:0]	iRate
 	);				
 
 parameter	REF_CLK			=	18432000;	//	18.432	MHz
