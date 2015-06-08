@@ -32,6 +32,7 @@ module monociclo(input wire clk, reset,
   wire [5:0] opcode;
   wire [1:0] puerto1, puerto2;
   wire enable0, enable1, enable2, enable3;
+  wire audioreg, audioact;
   wire short, long;
   wire [9:0] audiofromregtomodulo;
   assign  I2C_SDAT  = 1'bz;
@@ -44,7 +45,7 @@ module monociclo(input wire clk, reset,
   
   uc uc1(clk, reset, z, opcode, s_inc, s_inm, selentrada, selsalida,
          enablebackup, s_rel, s_ret, we3, enable0, enable1, enable2,
-         enable3, puerto1,puerto2, op);
+         enable3, audioreg, audioact, puerto1,puerto2, op);
 
   retrasado pll(clk, reset, clock);
 					
