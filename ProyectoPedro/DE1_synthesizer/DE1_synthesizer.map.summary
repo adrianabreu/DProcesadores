@@ -1,11 +1,9 @@
-Analysis & Synthesis Status : Successful - Fri Jun 05 11:03:48 2015
-Quartus II 64-Bit Version : 12.1 Build 243 01/31/2013 SP 1 SJ Web Edition
+Analysis & Synthesis Status : Successful - Thu Nov 16 09:02:25 2006
+Quartus II Version : 6.0 Build 202 06/20/2006 SP 1 SJ Full Version
 Revision Name : DE1_synthesizer
 Top-level Entity Name : DE1_synthesizer
 Family : Cyclone II
-Total logic elements : 1,561
-    Total combinational functions : 1,535
-    Dedicated logic registers : 306
+Total logic elements : 1406
 Total registers : 306
 Total pins : 283
 Total virtual pins : 0

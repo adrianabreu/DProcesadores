@@ -1,1 +1,1 @@
-nios2_quartus2_project/SOURCE
+nios2_quartus2_project/DONE

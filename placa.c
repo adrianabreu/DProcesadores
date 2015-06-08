@@ -277,7 +277,5 @@ int main(void){
         (unsigned int)alt_timestamp_freq());
     }*/
 
-        
-    }
     return 0;
 }

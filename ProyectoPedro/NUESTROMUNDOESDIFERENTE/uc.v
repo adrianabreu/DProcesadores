@@ -264,7 +264,7 @@ always @(*)
         6'b011100:
            begin
             we3 <= 1'b0;        //Deshabilitamos escritura
-            s_inc <= 1'b0;      //El pc cambia su ciclo
+            s_inc <= 1'b1;      //El pc cambia su ciclo
             s_inm <= 1'b0;      //No vienen constantes del multiplexor
             selentrada <= 1'b0;  //No se aceptan entradas de los disp.      
             selsalida <= 1'b0;  //La entrada al mux de salida es el bus de datos
@@ -303,7 +303,7 @@ always @(*)
             s_ret <= 1'b0; 
             enablebackup <= 1'b0;	
             audioreg <= 1'b0;
-            audioact <= 1'b0;
+				audioact <= 1'b1;
             end
         endcase
       end	

@@ -47,21 +47,6 @@ set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
 set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
-set_global_assignment -name VERILOG_FILE ../NUESTROMUNDOESDIFERENTE/VGA_Audio_PLL.v
-set_global_assignment -name VERILOG_FILE ../NUESTROMUNDOESDIFERENTE/uc.v
-set_global_assignment -name VERILOG_FILE ../NUESTROMUNDOESDIFERENTE/palaplaca.v
-set_global_assignment -name VERILOG_FILE ../NUESTROMUNDOESDIFERENTE/monociclo.v
-set_global_assignment -name VERILOG_FILE ../NUESTROMUNDOESDIFERENTE/ModuloSonido.v
-set_global_assignment -name VERILOG_FILE ../NUESTROMUNDOESDIFERENTE/microc.v
-set_global_assignment -name VERILOG_FILE ../NUESTROMUNDOESDIFERENTE/memprog.v
-set_global_assignment -name VERILOG_FILE ../NUESTROMUNDOESDIFERENTE/I2C_Controller.v
-set_global_assignment -name VERILOG_FILE ../NUESTROMUNDOESDIFERENTE/I2C_AV_Config.v
-set_global_assignment -name VERILOG_FILE ../NUESTROMUNDOESDIFERENTE/cpu_tb.v
-set_global_assignment -name VERILOG_FILE ../NUESTROMUNDOESDIFERENTE/cpu.v
-set_global_assignment -name VERILOG_FILE ../NUESTROMUNDOESDIFERENTE/componentes.v
-set_global_assignment -name VERILOG_FILE ../NUESTROMUNDOESDIFERENTE/AUDIO_DAC.v
-set_global_assignment -name VERILOG_FILE ../NUESTROMUNDOESDIFERENTE/audio_clk_generator.v
-set_global_assignment -name VERILOG_FILE ../NUESTROMUNDOESDIFERENTE/alu.v
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
@@ -132,4 +117,18 @@ set_location_assignment PIN_E12 -to CLOCK_27[1]
 set_location_assignment PIN_D12 -to CLOCK_27[0]
 set_location_assignment PIN_A3 -to I2C_SCLK
 set_location_assignment PIN_B3 -to I2C_SDAT
+set_global_assignment -name LICENSE_FILE ../NUESTROMUNDOESDIFERENTE/progfile.dat
+set_global_assignment -name VERILOG_FILE ../NUESTROMUNDOESDIFERENTE/adio_codec.v
+set_global_assignment -name VERILOG_FILE ../NUESTROMUNDOESDIFERENTE/VGA_Audio_PLL.v
+set_global_assignment -name VERILOG_FILE ../NUESTROMUNDOESDIFERENTE/uc.v
+set_global_assignment -name VERILOG_FILE ../NUESTROMUNDOESDIFERENTE/palaplaca.v
+set_global_assignment -name VERILOG_FILE ../NUESTROMUNDOESDIFERENTE/monociclo.v
+set_global_assignment -name VERILOG_FILE ../NUESTROMUNDOESDIFERENTE/ModuloSonido.v
+set_global_assignment -name VERILOG_FILE ../NUESTROMUNDOESDIFERENTE/microc.v
+set_global_assignment -name VERILOG_FILE ../NUESTROMUNDOESDIFERENTE/memprog.v
+set_global_assignment -name VERILOG_FILE ../NUESTROMUNDOESDIFERENTE/I2C_Controller.v
+set_global_assignment -name VERILOG_FILE ../NUESTROMUNDOESDIFERENTE/I2C_AV_Config.v
+set_global_assignment -name VERILOG_FILE ../NUESTROMUNDOESDIFERENTE/componentes.v
+set_global_assignment -name VERILOG_FILE ../NUESTROMUNDOESDIFERENTE/alu.v
+set_global_assignment -name CDF_FILE output_files/Dunna.cdf
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

@@ -207,69 +207,6 @@ module regfile(input  wire        clk,
   assign rd2 = (ra2 != 0) ? regb[ra2] : 8'b0;
 endmodule
 
-module retrasado(input wire clk, reset,
-          output reg clock);
-  reg [24:0] s;
-  always @(clk)
-    begin
-      if(reset)
-        begin
-          s = 25'b0;
-        end
-      if (s == 25'b1011111010111100001000000)
-        begin
-          clock = 1;
-          s = 25'b0;
-        end
-      else
-        s=s+1;
-        clock = 0;
-    end
-endmodule
-
-module descompose(input wire clk, reset,
-          input wire [9:0] entrada,
-          output wire short, long);
-  reg s,l;
-  reg[9:0] morse;
-  assign short=s;
-  assign long=l;
-  
-  
-    
-  always @(posedge clk, posedge reset)
-    begin
-      if(reset)
-        begin
-          morse = entrada;
-          s=0;
-          l=0;
-        end
-      else
-      if(morse[9]==1'b1)
-        begin
-          morse = morse << 1;
-          if(morse[9]==1'b1)
-            begin
-              l=1;
-              s=0;
-            end
-          else
-            begin
-              s=1;
-              l=0;
-            end
-          morse = morse << 1;
-        end
-      else
-        begin
-          s=0;
-          l=0;
-          morse = morse << 1;
-        end
-    end   
-endmodule
-
 //modulo sumador  
 module sum(input  wire [9:0] a, b,
              output wire [9:0] y);

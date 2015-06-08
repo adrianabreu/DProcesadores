@@ -1,15 +1,11 @@
-module monociclo(input wire clk, reset, 
+module monociclo(input wire clk, reset, enciendete,
                 input wire [9:0] morse,
                 input wire [7:0]e0,e1,e2,e3, 
                 output wire [7:0]s0,s1,s2,s3,
-                output wire [7:0] leds_verdes,
 					 output wire [9:0] pc_out,
+					 output wire audio_enable, short, long,
                 /////////////////////////////////////////////
-                input [1:0]   CLOCK_24,       //  24 MHz
                 input [1:0]   CLOCK_27,       //  27 MHz
-                input       CLOCK_50,       //  50 MHz
-                input [3:0]     KEY,
-                input [9:0]     SW,
                 ////////////////////////  I2C   ////////////////////////////////
                 inout       I2C_SDAT,       //  I2C Data
                 output      I2C_SCLK,       //  I2C Clock
@@ -23,7 +19,7 @@ module monociclo(input wire clk, reset,
   wire      VGA_CTRL_CLK;
   wire		AUD_ADCLRCK;
   wire [51:0] sonido;
-  wire audio_enable;
+  //wire audio_enable;
   
   wire s_inc, s_inm, selentrada, selsalida, we3, z;
   wire s_rel, enablebackup, s_ret;
@@ -32,11 +28,13 @@ module monociclo(input wire clk, reset,
   wire [5:0] opcode;
   wire [1:0] puerto1, puerto2;
   wire enable0, enable1, enable2, enable3;
-  wire short, long;
+  wire audioreg, audioact;
+  //wire short, long;
   wire [9:0] audiofromregtomodulo;
   assign  I2C_SDAT  = 1'bz;
   assign  AUD_ADCLRCK = AUD_DACLRCK;
   assign  AUD_XCK   = AUD_CTRL_CLK;
+ 
   
   microc micro1(clk, reset, enable0, enable1, enable2, enable3,
                 enablebackup, s_inc, s_inm, we3, selsalida,
@@ -44,39 +42,36 @@ module monociclo(input wire clk, reset,
   
   uc uc1(clk, reset, z, opcode, s_inc, s_inm, selentrada, selsalida,
          enablebackup, s_rel, s_ret, we3, enable0, enable1, enable2,
-         enable3, puerto1,puerto2, op);
+         enable3, audioreg, audioact, puerto1,puerto2, op);
 
-  retrasado pll(clk, reset, clock);
 					
-  registro10 salvaaudio(clk, reset, morse, audiofromregtomodulo);
+  registro10 salvaaudio(clk, reset, audioreg, morse, audiofromregtomodulo);
   
-  descompose descomponer(clock, reset, audiofromregtomodulo, short, long);
+  descompose descomponer(clk, reset, audioact, morse, short, long, clock);
   
-  ModuloSonido modsonido(clock, audioact,
+  ModuloSonido modsonido(clock,audioact,
                 audio_enable,
                 short, long,
                 sonido
                 );
 
-//AUDIO CONTROLLER  
-VGA_Audio_PLL     u3  ( .inclk0(CLOCK_27[0]),.c0(VGA_CTRL_CLK),.c1(AUD_CTRL_CLK)  );
+//PARTE RELATIVA AL MODULO DE AUDIO
 
-I2C_AV_Config     u7  ( //  Host Side
-              .iCLK(CLOCK_50),
-              .iRST_N(audio_enable),
-              //  I2C Side
-              .I2C_SCLK(I2C_SCLK),
-              .I2C_SDAT(I2C_SDAT) );
-              
-              
-AUDIO_DAC       u8  ( //  Audio Side
-              .oAUD_BCK(AUD_BCLK),
-              .oAUD_DATA(AUD_DACDAT),
-              .oAUD_LRCK(AUD_DACLRCK),
-              //  Control Signals
-                 .iCLK_18_4(AUD_CTRL_CLK),
-              .iRate(sonido),
-              .iRST_N(audio_enable) );
-                           
+VGA_Audio_PLL aud1  ( .inclk0(CLOCK_27[0]),
+                          .c0(VGA_CTRL_CLK),
+                          .c1(AUD_CTRL_CLK));
+
+I2C_AV_Config aud2(.iCLK(AUD_CTRL_CLK),
+                   .iRST_N(audio_enable),
+                   .I2C_SCLK(I2C_SCLK),
+                   .I2C_SDAT(I2C_SDAT) );
+
+adio_codec   aud3 (.oAUD_BCK(AUD_BCLK),
+                  .oAUD_DATA(AUD_DACDAT),
+                  .oAUD_LRCK(AUD_DACLRCK),
+                  .iCLK_18_4(AUD_CTRL_CLK),
+                  .iRate(sonido),
+                  .iRST_N(audio_enable) );
+                                          
 endmodule
 

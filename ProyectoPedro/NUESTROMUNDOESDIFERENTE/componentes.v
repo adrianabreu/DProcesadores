@@ -144,7 +144,7 @@ module regfile(input  wire        clk,
   assign rd2 = (ra2 != 0) ? regb[ra2] : 8'b0;
 endmodule
 
-module retrasado(input wire clk, reset,
+/*module retrasado(input wire clk, reset,
           output reg clock);
   reg [24:0] s;
   always @(clk)
@@ -162,47 +162,80 @@ module retrasado(input wire clk, reset,
         s=s+1;
         clock = 0;
     end
-endmodule
+endmodule*/
 
-module descompose(input wire clk, reset,
+module descompose(input wire clk, reset, enable,
           input wire [9:0] entrada,
-          output wire short, long);
-  reg s,l;
-  reg[9:0] morse;
-  assign short=s;
-  assign long=l;
-    
-  always @(posedge clk, posedge reset)
+          output reg short, l, clock);
+  
+ reg [24:0]s; 
+ reg[9:0] morse;
+ reg still;
+ 
+  always @(posedge clk,posedge reset)
     begin
       if(reset)
         begin
-          morse = entrada;
-          s=0;
+			 clock = 0;
+          s = 25'b0;
+			 morse = entrada;
+          short=0;
           l=0;
         end
+		else
+			if (s == 25'b1011111010111100001000000)
+				begin
+					if(clock==0)
+						clock = 1;
+					else
+						clock = 0;
+					s = 25'b0;
+					if(enable)
+						if(still)
+							begin
+								l=1;
+								short=0;
+								still=0;
+								morse = morse << 1;
+							end
+						else
+						  begin 
+						if(morse[9]==1'b1)
+							begin
+								morse = morse << 1;
+								if(morse[9]==1'b1)
+									begin
+										l=1;
+										still=1;
+										short=0;
+									end
+								else
+									begin
+										short=1;
+										l=0;
+									end
+							end
+							else
+								begin
+									short=0;
+									l=0;
+									morse = morse << 1;
+								end
+							end
+		end   
       else
-      if(morse[9]==1'b1)
+			begin
+			  s=s+1;
+		  end
+    end  
+ /* always @(posedge clk, posedge reset)
+    begin
+      if(reset)
         begin
-          morse = morse << 1;
-          if(morse[9]==1'b1)
-            begin
-              l=1;
-              s=0;
-            end
-          else
-            begin
-              s=1;
-              l=0;
-            end
-          morse = morse << 1;
+ 
         end
-      else
-        begin
-          s=0;
-          l=0;
-          morse = morse << 1;
-        end
-    end   
+      else*/
+		
 endmodule
 
 //modulo sumador  

@@ -1,6 +1,6 @@
 Analysis & Synthesis report for DE1_synthesizer
-Fri Jun 05 11:03:48 2015
-Quartus II 64-Bit Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Edition
+Thu Nov 16 09:02:25 2006
+Version 6.0 Build 202 06/20/2006 Service Pack 1 SJ Full Version
 
 
 ---------------------
@@ -9,43 +9,28 @@ Quartus II 64-Bit Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Editio
   1. Legal Notice
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
-  4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. Analysis & Synthesis IP Cores Summary
-  9. State Machine - |DE1_synthesizer|I2C_AV_Config:u7|mSetup_ST
- 10. User-Specified and Inferred Latches
- 11. Registers Removed During Synthesis
- 12. Removed Registers Triggering Further Register Optimizations
- 13. General Register Statistics
- 14. Inverted Register Statistics
- 15. Multiplexer Restructuring Statistics (Restructuring Performed)
- 16. Parameter Settings for User Entity Instance: VGA_Audio_PLL:u1|altpll:altpll_component
- 17. Parameter Settings for User Entity Instance: I2C_AV_Config:u7
- 18. Parameter Settings for User Entity Instance: adio_codec:ad1
- 19. altpll Parameter Settings by Entity Instance
- 20. Port Connectivity Checks: "adio_codec:ad1"
- 21. Port Connectivity Checks: "staff:st1|bar_big:b2"
- 22. Port Connectivity Checks: "staff:st1|bar_big:b0"
- 23. Port Connectivity Checks: "staff:st1|vga_time_generator:vga0"
- 24. Port Connectivity Checks: "staff:st1"
- 25. Port Connectivity Checks: "PS2_KEYBOARD:keyboard"
- 26. Port Connectivity Checks: "I2C_AV_Config:u7|I2C_Controller:u0"
- 27. Port Connectivity Checks: "VGA_Audio_PLL:u1"
- 28. Port Connectivity Checks: "SEG7_LUT_4:u0"
- 29. Elapsed Time Per Partition
- 30. Analysis & Synthesis Messages
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. State Machine - |DE1_synthesizer|I2C_AV_Config:u7|mSetup_ST
+  8. User-Specified and Inferred Latches
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: VGA_Audio_PLL:u1|altpll:altpll_component
+ 13. Parameter Settings for User Entity Instance: I2C_AV_Config:u7
+ 14. Parameter Settings for User Entity Instance: adio_codec:ad1
+ 15. Analysis & Synthesis Messages
 
 
 
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 1991-2012 Altera Corporation
+Copyright (C) 1991-2006 Altera Corporation
 Your use of Altera Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
-functions, and any output files from any of the foregoing 
+functions, and any output files any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
 to the terms and conditions of the Altera Program License 
@@ -61,14 +46,12 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                       ;
 +------------------------------------+-----------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Jun 05 11:03:48 2015         ;
-; Quartus II 64-Bit Version          ; 12.1 Build 243 01/31/2013 SP 1 SJ Web Edition ;
+; Analysis & Synthesis Status        ; Successful - Thu Nov 16 09:02:25 2006         ;
+; Quartus II Version                 ; 6.0 Build 202 06/20/2006 SP 1 SJ Full Version ;
 ; Revision Name                      ; DE1_synthesizer                               ;
 ; Top-level Entity Name              ; DE1_synthesizer                               ;
 ; Family                             ; Cyclone II                                    ;
-; Total logic elements               ; 1,561                                         ;
-;     Total combinational functions  ; 1,535                                         ;
-;     Dedicated logic registers      ; 306                                           ;
+; Total logic elements               ; 1406                                          ;
 ; Total registers                    ; 306                                           ;
 ; Total pins                         ; 283                                           ;
 ; Total virtual pins                 ; 0                                             ;
@@ -78,132 +61,94 @@ applicable agreement for further details.
 +------------------------------------+-----------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Settings                                                                                        ;
-+----------------------------------------------------------------------------+--------------------+--------------------+
-; Option                                                                     ; Setting            ; Default Value      ;
-+----------------------------------------------------------------------------+--------------------+--------------------+
-; Device                                                                     ; EP2C20F484C7       ;                    ;
-; Top-level entity name                                                      ; DE1_synthesizer    ; DE1_synthesizer    ;
-; Family name                                                                ; Cyclone II         ; Stratix            ;
-; Use smart compilation                                                      ; Off                ; Off                ;
-; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
-; Enable compact report table                                                ; Off                ; Off                ;
-; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
-; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
-; Preserve fewer node names                                                  ; On                 ; On                 ;
-; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
-; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
-; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
-; State Machine Processing                                                   ; Auto               ; Auto               ;
-; Safe State Machine                                                         ; Off                ; Off                ;
-; Extract Verilog State Machines                                             ; On                 ; On                 ;
-; Extract VHDL State Machines                                                ; On                 ; On                 ;
-; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
-; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
-; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
-; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
-; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
-; Parallel Synthesis                                                         ; On                 ; On                 ;
-; DSP Block Balancing                                                        ; Auto               ; Auto               ;
-; Maximum DSP Block Usage                                                    ; -1                 ; -1                 ;
-; NOT Gate Push-Back                                                         ; On                 ; On                 ;
-; Power-Up Don't Care                                                        ; On                 ; On                 ;
-; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
-; Remove Duplicate Registers                                                 ; On                 ; On                 ;
-; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
-; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
-; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
-; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
-; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
-; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
-; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
-; Optimization Technique                                                     ; Balanced           ; Balanced           ;
-; Carry Chain Length                                                         ; 70                 ; 70                 ;
-; Auto Carry Chains                                                          ; On                 ; On                 ;
-; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
-; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
-; Auto ROM Replacement                                                       ; On                 ; On                 ;
-; Auto RAM Replacement                                                       ; On                 ; On                 ;
-; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
-; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
-; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
-; Strict RAM Replacement                                                     ; Off                ; Off                ;
-; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
-; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
-; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
-; Auto Resource Sharing                                                      ; Off                ; Off                ;
-; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
-; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
-; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
-; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
-; Maximum Number of M4K/M9K/M20K/M10K Memory Blocks                          ; -1                 ; -1                 ;
-; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
-; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
-; Report Parameter Settings                                                  ; On                 ; On                 ;
-; Report Source Assignments                                                  ; On                 ; On                 ;
-; Report Connectivity Checks                                                 ; On                 ; On                 ;
-; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
-; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
-; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
-; HDL message level                                                          ; Level2             ; Level2             ;
-; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
-; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
-; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
-; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
-; Clock MUX Protection                                                       ; On                 ; On                 ;
-; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
-; Block Design Naming                                                        ; Auto               ; Auto               ;
-; SDC constraint protection                                                  ; Off                ; Off                ;
-; Synthesis Effort                                                           ; Auto               ; Auto               ;
-; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
-; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
-; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
-; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
-; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
-; Synthesis Seed                                                             ; 1                  ; 1                  ;
-+----------------------------------------------------------------------------+--------------------+--------------------+
++--------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                ;
++--------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                             ; Setting            ; Default Value      ;
++--------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                             ; EP2C20F484C7       ;                    ;
+; Top-level entity name                                              ; DE1_synthesizer    ; DE1_synthesizer    ;
+; Family name                                                        ; Cyclone II         ; Stratix            ;
+; Use smart compilation                                              ; Off                ; Off                ;
+; Restructure Multiplexers                                           ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                ; Off                ; Off                ;
+; Preserve fewer node names                                          ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                          ; Off                ; Off                ;
+; Verilog Version                                                    ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                       ; VHDL93             ; VHDL93             ;
+; State Machine Processing                                           ; Auto               ; Auto               ;
+; Extract Verilog State Machines                                     ; On                 ; On                 ;
+; Extract VHDL State Machines                                        ; On                 ; On                 ;
+; Add Pass-Through Logic to Inferred RAMs                            ; On                 ; On                 ;
+; DSP Block Balancing                                                ; Auto               ; Auto               ;
+; Maximum DSP Block Usage                                            ; Unlimited          ; Unlimited          ;
+; NOT Gate Push-Back                                                 ; On                 ; On                 ;
+; Power-Up Don't Care                                                ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                       ; Off                ; Off                ;
+; Remove Duplicate Registers                                         ; On                 ; On                 ;
+; Ignore CARRY Buffers                                               ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                             ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                              ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                          ; Off                ; Off                ;
+; Ignore LCELL Buffers                                               ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                     ; Off                ; Off                ;
+; Optimization Technique -- Cyclone II                               ; Balanced           ; Balanced           ;
+; Carry Chain Length -- Stratix/Stratix GX/Cyclone/MAX II/Cyclone II ; 70                 ; 70                 ;
+; Auto Carry Chains                                                  ; On                 ; On                 ;
+; Auto Open-Drain Pins                                               ; On                 ; On                 ;
+; Remove Duplicate Logic                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                              ; Off                ; Off                ;
+; Perform gate-level register retiming                               ; Off                ; Off                ;
+; Allow register retiming to trade off Tsu/Tco with Fmax             ; On                 ; On                 ;
+; Auto ROM Replacement                                               ; On                 ; On                 ;
+; Auto RAM Replacement                                               ; On                 ; On                 ;
+; Auto Shift Register Replacement                                    ; On                 ; On                 ;
+; Auto Clock Enable Replacement                                      ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                  ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                             ; Off                ; Off                ;
+; Auto Resource Sharing                                              ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                 ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                 ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                      ; Off                ; Off                ;
+; Maximum Number of M4K Memory Blocks                                ; Unlimited          ; Unlimited          ;
+; Ignore translate_off and translate_on Synthesis Directives         ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                 ; Off                ; Off                ;
+; Retiming Meta-Stability Register Sequence Length                   ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                       ; Normal compilation ; Normal compilation ;
+; HDL message level                                                  ; Level2             ; Level2             ;
++--------------------------------------------------------------------+--------------------+--------------------+
 
 
-Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
-+-------------------------------------+
-; Parallel Compilation                ;
-+----------------------------+--------+
-; Processors                 ; Number ;
-+----------------------------+--------+
-; Number detected on machine ; 8      ;
-; Maximum allowed            ; 1      ;
-+----------------------------+--------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                   ;
-+----------------------------------+-----------------+-----------------------------------+---------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                         ; File Name with Absolute Path                                                          ; Library ;
-+----------------------------------+-----------------+-----------------------------------+---------------------------------------------------------------------------------------+---------+
-; de1_synthesizer.v                ; yes             ; Auto-Found Verilog HDL File       ; D:/Documentos/GitHub/DProcesadores/ProyectoPedro/DE1_synthesizer/de1_synthesizer.v    ;         ;
-; seg7_lut_4.v                     ; yes             ; Auto-Found Verilog HDL File       ; D:/Documentos/GitHub/DProcesadores/ProyectoPedro/DE1_synthesizer/seg7_lut_4.v         ;         ;
-; seg7_lut.v                       ; yes             ; Auto-Found Verilog HDL File       ; D:/Documentos/GitHub/DProcesadores/ProyectoPedro/DE1_synthesizer/seg7_lut.v           ;         ;
-; vga_audio_pll.v                  ; yes             ; Auto-Found Wizard-Generated File  ; D:/Documentos/GitHub/DProcesadores/ProyectoPedro/DE1_synthesizer/vga_audio_pll.v      ;         ;
-; altpll.tdf                       ; yes             ; Megafunction                      ; d:/altera/12.1sp1/quartus/libraries/megafunctions/altpll.tdf                          ;         ;
-; aglobal121.inc                   ; yes             ; Megafunction                      ; d:/altera/12.1sp1/quartus/libraries/megafunctions/aglobal121.inc                      ;         ;
-; stratix_pll.inc                  ; yes             ; Megafunction                      ; d:/altera/12.1sp1/quartus/libraries/megafunctions/stratix_pll.inc                     ;         ;
-; stratixii_pll.inc                ; yes             ; Megafunction                      ; d:/altera/12.1sp1/quartus/libraries/megafunctions/stratixii_pll.inc                   ;         ;
-; cycloneii_pll.inc                ; yes             ; Megafunction                      ; d:/altera/12.1sp1/quartus/libraries/megafunctions/cycloneii_pll.inc                   ;         ;
-; i2c_av_config.v                  ; yes             ; Auto-Found Verilog HDL File       ; D:/Documentos/GitHub/DProcesadores/ProyectoPedro/DE1_synthesizer/i2c_av_config.v      ;         ;
-; i2c_controller.v                 ; yes             ; Auto-Found Verilog HDL File       ; D:/Documentos/GitHub/DProcesadores/ProyectoPedro/DE1_synthesizer/i2c_controller.v     ;         ;
-; demo_sound1.v                    ; yes             ; Auto-Found Verilog HDL File       ; D:/Documentos/GitHub/DProcesadores/ProyectoPedro/DE1_synthesizer/demo_sound1.v        ;         ;
-; demo_sound2.v                    ; yes             ; Auto-Found Verilog HDL File       ; D:/Documentos/GitHub/DProcesadores/ProyectoPedro/DE1_synthesizer/demo_sound2.v        ;         ;
-; ps2_keyboard.v                   ; yes             ; Auto-Found Verilog HDL File       ; D:/Documentos/GitHub/DProcesadores/ProyectoPedro/DE1_synthesizer/ps2_keyboard.v       ;         ;
-; staff.v                          ; yes             ; Auto-Found Verilog HDL File       ; D:/Documentos/GitHub/DProcesadores/ProyectoPedro/DE1_synthesizer/staff.v              ;         ;
-; vga_time_generator.v             ; yes             ; Auto-Found Verilog HDL File       ; D:/Documentos/GitHub/DProcesadores/ProyectoPedro/DE1_synthesizer/vga_time_generator.v ;         ;
-; bar_white.v                      ; yes             ; Auto-Found Verilog HDL File       ; D:/Documentos/GitHub/DProcesadores/ProyectoPedro/DE1_synthesizer/bar_white.v          ;         ;
-; bar_big.v                        ; yes             ; Auto-Found Verilog HDL File       ; D:/Documentos/GitHub/DProcesadores/ProyectoPedro/DE1_synthesizer/bar_big.v            ;         ;
-; bar_blank.v                      ; yes             ; Auto-Found Verilog HDL File       ; D:/Documentos/GitHub/DProcesadores/ProyectoPedro/DE1_synthesizer/bar_blank.v          ;         ;
-; adio_codec.v                     ; yes             ; Auto-Found Verilog HDL File       ; D:/Documentos/GitHub/DProcesadores/ProyectoPedro/DE1_synthesizer/adio_codec.v         ;         ;
-; wave_gen_string.v                ; yes             ; Auto-Found Verilog HDL File       ; D:/Documentos/GitHub/DProcesadores/ProyectoPedro/DE1_synthesizer/wave_gen_string.v    ;         ;
-; wave_gen_brass.v                 ; yes             ; Auto-Found Verilog HDL File       ; D:/Documentos/GitHub/DProcesadores/ProyectoPedro/DE1_synthesizer/wave_gen_brass.v     ;         ;
-+----------------------------------+-----------------+-----------------------------------+---------------------------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                 ;
++----------------------------------+-----------------+---------------+-----------------------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type     ; File Name with Absolute Path                                                      ;
++----------------------------------+-----------------+---------------+-----------------------------------------------------------------------------------+
+; DE1_synthesizer.v                ; yes             ; Other         ; C:/Documents and Settings/User/桌面/新資料夾/DE1_synthesizer/DE1_synthesizer.v    ;
+; SEG7_LUT_4.v                     ; yes             ; Other         ; C:/Documents and Settings/User/桌面/新資料夾/DE1_synthesizer/SEG7_LUT_4.v         ;
+; SEG7_LUT.v                       ; yes             ; Other         ; C:/Documents and Settings/User/桌面/新資料夾/DE1_synthesizer/SEG7_LUT.v           ;
+; VGA_Audio_PLL.v                  ; yes             ; Other         ; C:/Documents and Settings/User/桌面/新資料夾/DE1_synthesizer/VGA_Audio_PLL.v      ;
+; altpll.tdf                       ; yes             ; Megafunction  ; c:/altera/quartus60/libraries/megafunctions/altpll.tdf                            ;
+; aglobal60.inc                    ; yes             ; Other         ; c:/altera/quartus60/libraries/megafunctions/aglobal60.inc                         ;
+; stratix_pll.inc                  ; yes             ; Other         ; c:/altera/quartus60/libraries/megafunctions/stratix_pll.inc                       ;
+; stratixii_pll.inc                ; yes             ; Other         ; c:/altera/quartus60/libraries/megafunctions/stratixii_pll.inc                     ;
+; cycloneii_pll.inc                ; yes             ; Other         ; c:/altera/quartus60/libraries/megafunctions/cycloneii_pll.inc                     ;
+; I2C_AV_Config.v                  ; yes             ; Other         ; C:/Documents and Settings/User/桌面/新資料夾/DE1_synthesizer/I2C_AV_Config.v      ;
+; I2C_Controller.v                 ; yes             ; Other         ; C:/Documents and Settings/User/桌面/新資料夾/DE1_synthesizer/I2C_Controller.v     ;
+; demo_sound1.v                    ; yes             ; Other         ; C:/Documents and Settings/User/桌面/新資料夾/DE1_synthesizer/demo_sound1.v        ;
+; demo_sound2.v                    ; yes             ; Other         ; C:/Documents and Settings/User/桌面/新資料夾/DE1_synthesizer/demo_sound2.v        ;
+; PS2_KEYBOARD.v                   ; yes             ; Other         ; C:/Documents and Settings/User/桌面/新資料夾/DE1_synthesizer/PS2_KEYBOARD.v       ;
+; staff.v                          ; yes             ; Other         ; C:/Documents and Settings/User/桌面/新資料夾/DE1_synthesizer/staff.v              ;
+; vga_time_generator.v             ; yes             ; Other         ; C:/Documents and Settings/User/桌面/新資料夾/DE1_synthesizer/vga_time_generator.v ;
+; bar_white.v                      ; yes             ; Other         ; C:/Documents and Settings/User/桌面/新資料夾/DE1_synthesizer/bar_white.v          ;
+; bar_big.v                        ; yes             ; Other         ; C:/Documents and Settings/User/桌面/新資料夾/DE1_synthesizer/bar_big.v            ;
+; bar_blank.v                      ; yes             ; Other         ; C:/Documents and Settings/User/桌面/新資料夾/DE1_synthesizer/bar_blank.v          ;
+; adio_codec.v                     ; yes             ; Other         ; C:/Documents and Settings/User/桌面/新資料夾/DE1_synthesizer/adio_codec.v         ;
+; wave_gen_string.v                ; yes             ; Other         ; C:/Documents and Settings/User/桌面/新資料夾/DE1_synthesizer/wave_gen_string.v    ;
+; wave_gen_brass.v                 ; yes             ; Other         ; C:/Documents and Settings/User/桌面/新資料夾/DE1_synthesizer/wave_gen_brass.v     ;
++----------------------------------+-----------------+---------------+-----------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -211,67 +156,52 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 1,561 ;
-;                                             ;       ;
-; Total combinational functions               ; 1535  ;
+; Estimated Total logic elements              ; 1,406 ;
+; Total combinational functions               ; 1406  ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 940   ;
-;     -- 3 input functions                    ; 310   ;
-;     -- <=2 input functions                  ; 285   ;
-;                                             ;       ;
+;     -- 4 input functions                    ; 847   ;
+;     -- 3 input functions                    ; 259   ;
+;     -- <=2 input functions                  ; 300   ;
+;         -- Combinational cells for routing  ; 0     ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 1281  ;
+;     -- normal mode                          ; 1152  ;
 ;     -- arithmetic mode                      ; 254   ;
-;                                             ;       ;
 ; Total registers                             ; 306   ;
-;     -- Dedicated logic registers            ; 306   ;
-;     -- I/O registers                        ; 0     ;
-;                                             ;       ;
 ; I/O pins                                    ; 283   ;
-; Embedded Multiplier 9-bit elements          ; 0     ;
 ; Total PLLs                                  ; 1     ;
-;     -- PLLs                                 ; 1     ;
-;                                             ;       ;
-; Maximum fan-out                             ; 215   ;
-; Total fan-out                               ; 6294  ;
-; Average fan-out                             ; 2.96  ;
+; Maximum fan-out node                        ; SW[0] ;
+; Maximum fan-out                             ; 210   ;
+; Total fan-out                               ; 5789  ;
+; Average fan-out                             ; 2.90  ;
 +---------------------------------------------+-------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                    ;
-+---------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------+--------------+
-; Compilation Hierarchy Node      ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                       ; Library Name ;
-+---------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------+--------------+
-; |DE1_synthesizer                ; 1535 (67)         ; 306 (19)     ; 0           ; 0            ; 0       ; 0         ; 283  ; 0            ; |DE1_synthesizer                                          ;              ;
-;    |I2C_AV_Config:u7|           ; 86 (43)           ; 57 (35)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE1_synthesizer|I2C_AV_Config:u7                         ;              ;
-;       |I2C_Controller:u0|       ; 43 (43)           ; 22 (22)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE1_synthesizer|I2C_AV_Config:u7|I2C_Controller:u0       ;              ;
-;    |PS2_KEYBOARD:keyboard|      ; 88 (88)           ; 54 (54)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE1_synthesizer|PS2_KEYBOARD:keyboard                    ;              ;
-;    |VGA_Audio_PLL:u1|           ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE1_synthesizer|VGA_Audio_PLL:u1                         ;              ;
-;       |altpll:altpll_component| ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE1_synthesizer|VGA_Audio_PLL:u1|altpll:altpll_component ;              ;
-;    |adio_codec:ad1|             ; 451 (451)         ; 50 (50)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE1_synthesizer|adio_codec:ad1                           ;              ;
-;    |demo_sound1:dd1|            ; 184 (184)         ; 37 (37)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE1_synthesizer|demo_sound1:dd1                          ;              ;
-;    |demo_sound2:dd2|            ; 191 (191)         ; 37 (37)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE1_synthesizer|demo_sound2:dd2                          ;              ;
-;    |staff:st1|                  ; 468 (362)         ; 52 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE1_synthesizer|staff:st1                                ;              ;
-;       |bar_big:b0|              ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE1_synthesizer|staff:st1|bar_big:b0                     ;              ;
-;       |bar_big:b2|              ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE1_synthesizer|staff:st1|bar_big:b2                     ;              ;
-;       |bar_blank:bar_blank1|    ; 14 (14)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE1_synthesizer|staff:st1|bar_blank:bar_blank1           ;              ;
-;       |bar_white:bar1|          ; 9 (9)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE1_synthesizer|staff:st1|bar_white:bar1                 ;              ;
-;       |vga_time_generator:vga0| ; 75 (75)           ; 52 (52)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE1_synthesizer|staff:st1|vga_time_generator:vga0        ;              ;
-+---------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                            ;
++---------------------------------+-------------------+--------------+-------------+------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------+
+; Compilation Hierarchy Node      ; LC Combinationals ; LC Registers ; Memory Bits ; M4Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                       ;
++---------------------------------+-------------------+--------------+-------------+------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------+
+; |DE1_synthesizer                ; 1406 (63)         ; 306 (19)     ; 0           ; 0    ; 0            ; 0       ; 0         ; 283  ; 0            ; |DE1_synthesizer                                          ;
+;    |I2C_AV_Config:u7|           ; 85 (43)           ; 57 (35)      ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE1_synthesizer|I2C_AV_Config:u7                         ;
+;       |I2C_Controller:u0|       ; 42 (42)           ; 22 (22)      ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE1_synthesizer|I2C_AV_Config:u7|I2C_Controller:u0       ;
+;    |PS2_KEYBOARD:keyboard|      ; 86 (86)           ; 54 (54)      ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE1_synthesizer|PS2_KEYBOARD:keyboard                    ;
+;    |VGA_Audio_PLL:u1|           ; 0 (0)             ; 0 (0)        ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE1_synthesizer|VGA_Audio_PLL:u1                         ;
+;       |altpll:altpll_component| ; 0 (0)             ; 0 (0)        ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE1_synthesizer|VGA_Audio_PLL:u1|altpll:altpll_component ;
+;    |adio_codec:ad1|             ; 442 (440)         ; 50 (50)      ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE1_synthesizer|adio_codec:ad1                           ;
+;       |wave_gen_brass:s1|       ; 1 (1)             ; 0 (0)        ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE1_synthesizer|adio_codec:ad1|wave_gen_brass:s1         ;
+;       |wave_gen_brass:s2|       ; 1 (1)             ; 0 (0)        ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE1_synthesizer|adio_codec:ad1|wave_gen_brass:s2         ;
+;    |demo_sound1:dd1|            ; 182 (182)         ; 37 (37)      ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE1_synthesizer|demo_sound1:dd1                          ;
+;    |demo_sound2:dd2|            ; 187 (187)         ; 37 (37)      ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE1_synthesizer|demo_sound2:dd2                          ;
+;    |staff:st1|                  ; 361 (231)         ; 52 (0)       ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE1_synthesizer|staff:st1                                ;
+;       |bar_big:b0|              ; 6 (6)             ; 0 (0)        ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE1_synthesizer|staff:st1|bar_big:b0                     ;
+;       |bar_big:b2|              ; 3 (3)             ; 0 (0)        ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE1_synthesizer|staff:st1|bar_big:b2                     ;
+;       |bar_blank:bar_blank1|    ; 22 (22)           ; 0 (0)        ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE1_synthesizer|staff:st1|bar_blank:bar_blank1           ;
+;       |bar_white:bar1|          ; 19 (19)           ; 0 (0)        ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE1_synthesizer|staff:st1|bar_white:bar1                 ;
+;       |vga_time_generator:vga0| ; 80 (80)           ; 52 (52)      ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE1_synthesizer|staff:st1|vga_time_generator:vga0        ;
++---------------------------------+-------------------+--------------+-------------+------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis IP Cores Summary                                                                                                                                                ;
-+--------+--------------+---------+--------------+--------------+-----------------------------------+----------------------------------------------------------------------------------+
-; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                   ; IP Include File                                                                  ;
-+--------+--------------+---------+--------------+--------------+-----------------------------------+----------------------------------------------------------------------------------+
-; Altera ; ALTPLL       ; N/A     ; N/A          ; N/A          ; |DE1_synthesizer|VGA_Audio_PLL:u1 ; D:/Documentos/GitHub/DProcesadores/ProyectoPedro/DE1_synthesizer/vga_audio_pll.v ;
-+--------+--------------+---------+--------------+--------------+-----------------------------------+----------------------------------------------------------------------------------+
-
-
-Encoding Type:  One-Hot
 +-------------------------------------------------------------+
 ; State Machine - |DE1_synthesizer|I2C_AV_Config:u7|mSetup_ST ;
 +--------------+--------------+--------------+----------------+
@@ -289,88 +219,24 @@ Encoding Type:  One-Hot
 ; Latch Name                                          ; Latch Enable Signal      ; Free of Timing Hazards ;
 +-----------------------------------------------------+--------------------------+------------------------+
 ; demo_sound1:dd1|TT[3]                               ; demo_sound1:dd1|WideNor0 ; yes                    ;
+; demo_sound1:dd1|TT[7]                               ; demo_sound1:dd1|WideNor0 ; yes                    ;
+; demo_sound1:dd1|TT[4]                               ; demo_sound1:dd1|WideNor0 ; yes                    ;
 ; demo_sound1:dd1|TT[6]                               ; demo_sound1:dd1|WideNor0 ; yes                    ;
 ; demo_sound1:dd1|TT[5]                               ; demo_sound1:dd1|WideNor0 ; yes                    ;
-; demo_sound1:dd1|TT[4]                               ; demo_sound1:dd1|WideNor0 ; yes                    ;
-; demo_sound1:dd1|TT[7]                               ; demo_sound1:dd1|WideNor0 ; yes                    ;
 ; demo_sound1:dd1|TT[2]                               ; demo_sound1:dd1|WideNor0 ; yes                    ;
 ; demo_sound1:dd1|TT[0]                               ; demo_sound1:dd1|WideNor0 ; yes                    ;
 ; demo_sound1:dd1|TT[1]                               ; demo_sound1:dd1|WideNor0 ; yes                    ;
 ; demo_sound2:dd2|TT[3]                               ; demo_sound2:dd2|WideNor0 ; yes                    ;
+; demo_sound2:dd2|TT[7]                               ; demo_sound2:dd2|WideNor0 ; yes                    ;
+; demo_sound2:dd2|TT[4]                               ; demo_sound2:dd2|WideNor0 ; yes                    ;
 ; demo_sound2:dd2|TT[6]                               ; demo_sound2:dd2|WideNor0 ; yes                    ;
 ; demo_sound2:dd2|TT[5]                               ; demo_sound2:dd2|WideNor0 ; yes                    ;
-; demo_sound2:dd2|TT[4]                               ; demo_sound2:dd2|WideNor0 ; yes                    ;
-; demo_sound2:dd2|TT[7]                               ; demo_sound2:dd2|WideNor0 ; yes                    ;
 ; demo_sound2:dd2|TT[2]                               ; demo_sound2:dd2|WideNor0 ; yes                    ;
 ; demo_sound2:dd2|TT[0]                               ; demo_sound2:dd2|WideNor0 ; yes                    ;
 ; demo_sound2:dd2|TT[1]                               ; demo_sound2:dd2|WideNor0 ; yes                    ;
 ; Number of user-specified and inferred latches = 16  ;                          ;                        ;
 +-----------------------------------------------------+--------------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
-
-
-+--------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                     ;
-+-------------------------------------------------+------------------------------------------------------+
-; Register name                                   ; Reason for Removal                                   ;
-+-------------------------------------------------+------------------------------------------------------+
-; adio_codec:ad1|ramp4[0]                         ; Stuck at GND due to stuck port clear                 ;
-; adio_codec:ad1|ramp3[0..15]                     ; Stuck at GND due to stuck port clear                 ;
-; adio_codec:ad1|ramp4[1..15]                     ; Stuck at GND due to stuck port clear                 ;
-; I2C_AV_Config:u7|mI2C_DATA[22,23]               ; Stuck at GND due to stuck port data_in               ;
-; I2C_AV_Config:u7|mI2C_DATA[20,21]               ; Stuck at VCC due to stuck port data_in               ;
-; I2C_AV_Config:u7|mI2C_DATA[19]                  ; Stuck at GND due to stuck port data_in               ;
-; I2C_AV_Config:u7|mI2C_DATA[18]                  ; Stuck at VCC due to stuck port data_in               ;
-; I2C_AV_Config:u7|mI2C_DATA[8,13..17]            ; Stuck at GND due to stuck port data_in               ;
-; I2C_AV_Config:u7|I2C_Controller:u0|SD[22,23]    ; Stuck at GND due to stuck port data_in               ;
-; I2C_AV_Config:u7|I2C_Controller:u0|SD[20,21]    ; Stuck at VCC due to stuck port data_in               ;
-; I2C_AV_Config:u7|I2C_Controller:u0|SD[19]       ; Stuck at GND due to stuck port data_in               ;
-; I2C_AV_Config:u7|I2C_Controller:u0|SD[18]       ; Stuck at VCC due to stuck port data_in               ;
-; I2C_AV_Config:u7|I2C_Controller:u0|SD[8,13..17] ; Stuck at GND due to stuck port data_in               ;
-; demo_sound2:dd2|st[4,5]                         ; Merged with demo_sound2:dd2|st[3]                    ;
-; I2C_AV_Config:u7|mI2C_DATA[6]                   ; Merged with I2C_AV_Config:u7|mI2C_DATA[5]            ;
-; I2C_AV_Config:u7|mI2C_DATA[4]                   ; Merged with I2C_AV_Config:u7|mI2C_DATA[3]            ;
-; I2C_AV_Config:u7|I2C_Controller:u0|SD[6]        ; Merged with I2C_AV_Config:u7|I2C_Controller:u0|SD[5] ;
-; I2C_AV_Config:u7|I2C_Controller:u0|SD[4]        ; Merged with I2C_AV_Config:u7|I2C_Controller:u0|SD[3] ;
-; demo_sound1:dd1|st[4,5]                         ; Merged with demo_sound1:dd1|st[3]                    ;
-; demo_sound1:dd1|st[3]                           ; Stuck at GND due to stuck port data_in               ;
-; demo_sound2:dd2|st[3]                           ; Stuck at GND due to stuck port data_in               ;
-; VGA_CLK_o[19..31]                               ; Lost fanout                                          ;
-; adio_codec:ad1|BCK_DIV[3]                       ; Stuck at GND due to stuck port data_in               ;
-; Total Number of Removed Registers = 80          ;                                                      ;
-+-------------------------------------------------+------------------------------------------------------+
-
-
-+--------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                            ;
-+--------------------------------+---------------------------+-------------------------------------------+
-; Register name                  ; Reason for Removal        ; Registers Removed due to This Register    ;
-+--------------------------------+---------------------------+-------------------------------------------+
-; I2C_AV_Config:u7|mI2C_DATA[23] ; Stuck at GND              ; I2C_AV_Config:u7|I2C_Controller:u0|SD[23] ;
-;                                ; due to stuck port data_in ;                                           ;
-; I2C_AV_Config:u7|mI2C_DATA[22] ; Stuck at GND              ; I2C_AV_Config:u7|I2C_Controller:u0|SD[22] ;
-;                                ; due to stuck port data_in ;                                           ;
-; I2C_AV_Config:u7|mI2C_DATA[21] ; Stuck at VCC              ; I2C_AV_Config:u7|I2C_Controller:u0|SD[21] ;
-;                                ; due to stuck port data_in ;                                           ;
-; I2C_AV_Config:u7|mI2C_DATA[20] ; Stuck at VCC              ; I2C_AV_Config:u7|I2C_Controller:u0|SD[20] ;
-;                                ; due to stuck port data_in ;                                           ;
-; I2C_AV_Config:u7|mI2C_DATA[19] ; Stuck at GND              ; I2C_AV_Config:u7|I2C_Controller:u0|SD[19] ;
-;                                ; due to stuck port data_in ;                                           ;
-; I2C_AV_Config:u7|mI2C_DATA[18] ; Stuck at VCC              ; I2C_AV_Config:u7|I2C_Controller:u0|SD[18] ;
-;                                ; due to stuck port data_in ;                                           ;
-; I2C_AV_Config:u7|mI2C_DATA[17] ; Stuck at GND              ; I2C_AV_Config:u7|I2C_Controller:u0|SD[17] ;
-;                                ; due to stuck port data_in ;                                           ;
-; I2C_AV_Config:u7|mI2C_DATA[16] ; Stuck at GND              ; I2C_AV_Config:u7|I2C_Controller:u0|SD[16] ;
-;                                ; due to stuck port data_in ;                                           ;
-; I2C_AV_Config:u7|mI2C_DATA[15] ; Stuck at GND              ; I2C_AV_Config:u7|I2C_Controller:u0|SD[15] ;
-;                                ; due to stuck port data_in ;                                           ;
-; I2C_AV_Config:u7|mI2C_DATA[14] ; Stuck at GND              ; I2C_AV_Config:u7|I2C_Controller:u0|SD[14] ;
-;                                ; due to stuck port data_in ;                                           ;
-; I2C_AV_Config:u7|mI2C_DATA[13] ; Stuck at GND              ; I2C_AV_Config:u7|I2C_Controller:u0|SD[13] ;
-;                                ; due to stuck port data_in ;                                           ;
-; I2C_AV_Config:u7|mI2C_DATA[8]  ; Stuck at GND              ; I2C_AV_Config:u7|I2C_Controller:u0|SD[8]  ;
-;                                ; due to stuck port data_in ;                                           ;
-+--------------------------------+---------------------------+-------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -383,7 +249,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Number of registers using Synchronous Load   ; 6     ;
 ; Number of registers using Asynchronous Clear ; 199   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 116   ;
+; Number of registers using Clock Enable       ; 106   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -393,55 +259,54 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------------------------------------+---------+
 ; Inverted Register                                ; Fan out ;
 +--------------------------------------------------+---------+
-; I2C_AV_Config:u7|I2C_Controller:u0|SD_COUNTER[0] ; 17      ;
-; I2C_AV_Config:u7|I2C_Controller:u0|SD_COUNTER[2] ; 17      ;
-; I2C_AV_Config:u7|I2C_Controller:u0|SD_COUNTER[3] ; 19      ;
-; I2C_AV_Config:u7|I2C_Controller:u0|SD_COUNTER[1] ; 14      ;
-; I2C_AV_Config:u7|I2C_Controller:u0|SD_COUNTER[4] ; 12      ;
-; I2C_AV_Config:u7|I2C_Controller:u0|SD_COUNTER[5] ; 11      ;
 ; PS2_KEYBOARD:keyboard|key1_code[4]               ; 2       ;
-; PS2_KEYBOARD:keyboard|key1_code[5]               ; 4       ;
+; PS2_KEYBOARD:keyboard|key1_code[5]               ; 2       ;
+; PS2_KEYBOARD:keyboard|key1_code[7]               ; 2       ;
 ; PS2_KEYBOARD:keyboard|key1_code[6]               ; 2       ;
-; PS2_KEYBOARD:keyboard|key1_code[7]               ; 3       ;
 ; PS2_KEYBOARD:keyboard|key2_code[4]               ; 2       ;
-; PS2_KEYBOARD:keyboard|key2_code[5]               ; 2       ;
-; PS2_KEYBOARD:keyboard|key2_code[6]               ; 2       ;
+; PS2_KEYBOARD:keyboard|key2_code[5]               ; 3       ;
 ; PS2_KEYBOARD:keyboard|key2_code[7]               ; 2       ;
-; I2C_AV_Config:u7|I2C_Controller:u0|SCLK          ; 3       ;
+; PS2_KEYBOARD:keyboard|key2_code[6]               ; 2       ;
+; I2C_AV_Config:u7|I2C_Controller:u0|SD_COUNTER[0] ; 18      ;
+; I2C_AV_Config:u7|I2C_Controller:u0|SD_COUNTER[2] ; 15      ;
+; I2C_AV_Config:u7|I2C_Controller:u0|SD_COUNTER[3] ; 18      ;
+; I2C_AV_Config:u7|I2C_Controller:u0|SD_COUNTER[1] ; 13      ;
+; I2C_AV_Config:u7|I2C_Controller:u0|SD_COUNTER[4] ; 11      ;
+; I2C_AV_Config:u7|I2C_Controller:u0|SD_COUNTER[5] ; 12      ;
+; I2C_AV_Config:u7|I2C_Controller:u0|SCLK          ; 2       ;
 ; I2C_AV_Config:u7|I2C_Controller:u0|END           ; 5       ;
 ; I2C_AV_Config:u7|I2C_Controller:u0|SDO           ; 4       ;
 ; Total number of inverted registers = 17          ;         ;
 +--------------------------------------------------+---------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                  ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                        ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------+
-; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |DE1_synthesizer|PS2_KEYBOARD:keyboard|key1_code[2]               ;
-; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |DE1_synthesizer|demo_sound1:dd1|st[0]                            ;
-; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |DE1_synthesizer|demo_sound2:dd2|st[1]                            ;
-; 7:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |DE1_synthesizer|PS2_KEYBOARD:keyboard|key2_code[0]               ;
-; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |DE1_synthesizer|I2C_AV_Config:u7|I2C_Controller:u0|SD_COUNTER[2] ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |DE1_synthesizer|PS2_KEYBOARD:keyboard|key1_code[7]               ;
-; 7:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |DE1_synthesizer|PS2_KEYBOARD:keyboard|key2_code[4]               ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |DE1_synthesizer|staff:st1|sound1[5]                              ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |DE1_synthesizer|staff:st1|sound1[7]                              ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |DE1_synthesizer|staff:st1|sound1[5]                              ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |DE1_synthesizer|staff:st1|sound2[5]                              ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |DE1_synthesizer|staff:st1|sound2[7]                              ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |DE1_synthesizer|staff:st1|sound2[5]                              ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |DE1_synthesizer|sound_code1[7]                                   ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |DE1_synthesizer|sound_code2[7]                                   ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |DE1_synthesizer|demo_sound1:dd1|tmpa[6]                          ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |DE1_synthesizer|demo_sound2:dd2|tmpa[5]                          ;
-; 9:1                ; 2 bits    ; 12 LEs        ; 2 LEs                ; 10 LEs                 ; No         ; |DE1_synthesizer|staff:st1|blank_x[1]                             ;
-; 10:1               ; 2 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |DE1_synthesizer|staff:st1|by_org[5]                              ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |DE1_synthesizer|staff:st1|sound1[8]                              ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |DE1_synthesizer|staff:st1|sound2[8]                              ;
-; 14:1               ; 2 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; No         ; |DE1_synthesizer|staff:st1|y_org[5]                               ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |DE1_synthesizer|PS2_KEYBOARD:keyboard|key1_code[1] ;
+; 33:1               ; 5 bits    ; 110 LEs       ; 105 LEs              ; 5 LEs                  ; Yes        ; |DE1_synthesizer|demo_sound1:dd1|st[0]              ;
+; 33:1               ; 5 bits    ; 110 LEs       ; 105 LEs              ; 5 LEs                  ; Yes        ; |DE1_synthesizer|demo_sound2:dd2|st[0]              ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |DE1_synthesizer|PS2_KEYBOARD:keyboard|key2_code[3] ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |DE1_synthesizer|PS2_KEYBOARD:keyboard|key1_code[4] ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |DE1_synthesizer|PS2_KEYBOARD:keyboard|key2_code[4] ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |DE1_synthesizer|demo_sound1:dd1|tmpa[6]            ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |DE1_synthesizer|demo_sound2:dd2|tmpa[6]            ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |DE1_synthesizer|sound_code1[7]                     ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |DE1_synthesizer|sound_code2[7]                     ;
+; 9:1                ; 3 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; No         ; |DE1_synthesizer|sound_code1[2]                     ;
+; 9:1                ; 3 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; No         ; |DE1_synthesizer|sound_code2[4]                     ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 2 LEs                ; 10 LEs                 ; No         ; |DE1_synthesizer|staff:st1|blank_x[2]               ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |DE1_synthesizer|staff:st1|by_org[6]                ;
+; 13:1               ; 2 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |DE1_synthesizer|staff:st1|sound1[9]                ;
+; 13:1               ; 2 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |DE1_synthesizer|staff:st1|sound2[8]                ;
+; 14:1               ; 2 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; No         ; |DE1_synthesizer|staff:st1|y_org[5]                 ;
+; 15:1               ; 2 bits    ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |DE1_synthesizer|staff:st1|sound1[1]                ;
+; 15:1               ; 2 bits    ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |DE1_synthesizer|staff:st1|sound2[5]                ;
+; 16:1               ; 3 bits    ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |DE1_synthesizer|staff:st1|sound1[7]                ;
+; 16:1               ; 3 bits    ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |DE1_synthesizer|staff:st1|sound2[7]                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------+
@@ -451,12 +316,11 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +-------------------------------+-------------------+-----------------------------------+
 ; OPERATION_MODE                ; NORMAL            ; Untyped                           ;
 ; PLL_TYPE                      ; FAST              ; Untyped                           ;
-; LPM_HINT                      ; UNUSED            ; Untyped                           ;
 ; QUALIFY_CONF_DONE             ; OFF               ; Untyped                           ;
 ; COMPENSATE_CLOCK              ; CLK0              ; Untyped                           ;
 ; SCAN_CHAIN                    ; LONG              ; Untyped                           ;
 ; PRIMARY_CLOCK                 ; INCLK0            ; Untyped                           ;
-; INCLK0_INPUT_FREQUENCY        ; 37037             ; Signed Integer                    ;
+; INCLK0_INPUT_FREQUENCY        ; 37037             ; Integer                           ;
 ; INCLK1_INPUT_FREQUENCY        ; 0                 ; Untyped                           ;
 ; GATE_LOCK_SIGNAL              ; NO                ; Untyped                           ;
 ; GATE_LOCK_COUNTER             ; 0                 ; Untyped                           ;
@@ -476,31 +340,18 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; SPREAD_FREQUENCY              ; 0                 ; Untyped                           ;
 ; DOWN_SPREAD                   ; 0                 ; Untyped                           ;
 ; SELF_RESET_ON_GATED_LOSS_LOCK ; OFF               ; Untyped                           ;
-; SELF_RESET_ON_LOSS_LOCK       ; OFF               ; Untyped                           ;
-; CLK9_MULTIPLY_BY              ; 0                 ; Untyped                           ;
-; CLK8_MULTIPLY_BY              ; 0                 ; Untyped                           ;
-; CLK7_MULTIPLY_BY              ; 0                 ; Untyped                           ;
-; CLK6_MULTIPLY_BY              ; 0                 ; Untyped                           ;
 ; CLK5_MULTIPLY_BY              ; 1                 ; Untyped                           ;
 ; CLK4_MULTIPLY_BY              ; 1                 ; Untyped                           ;
 ; CLK3_MULTIPLY_BY              ; 1                 ; Untyped                           ;
 ; CLK2_MULTIPLY_BY              ; 1                 ; Untyped                           ;
-; CLK1_MULTIPLY_BY              ; 2                 ; Signed Integer                    ;
-; CLK0_MULTIPLY_BY              ; 14                ; Signed Integer                    ;
-; CLK9_DIVIDE_BY                ; 0                 ; Untyped                           ;
-; CLK8_DIVIDE_BY                ; 0                 ; Untyped                           ;
-; CLK7_DIVIDE_BY                ; 0                 ; Untyped                           ;
-; CLK6_DIVIDE_BY                ; 0                 ; Untyped                           ;
+; CLK1_MULTIPLY_BY              ; 2                 ; Integer                           ;
+; CLK0_MULTIPLY_BY              ; 14                ; Integer                           ;
 ; CLK5_DIVIDE_BY                ; 1                 ; Untyped                           ;
 ; CLK4_DIVIDE_BY                ; 1                 ; Untyped                           ;
 ; CLK3_DIVIDE_BY                ; 1                 ; Untyped                           ;
 ; CLK2_DIVIDE_BY                ; 1                 ; Untyped                           ;
-; CLK1_DIVIDE_BY                ; 3                 ; Signed Integer                    ;
-; CLK0_DIVIDE_BY                ; 15                ; Signed Integer                    ;
-; CLK9_PHASE_SHIFT              ; 0                 ; Untyped                           ;
-; CLK8_PHASE_SHIFT              ; 0                 ; Untyped                           ;
-; CLK7_PHASE_SHIFT              ; 0                 ; Untyped                           ;
-; CLK6_PHASE_SHIFT              ; 0                 ; Untyped                           ;
+; CLK1_DIVIDE_BY                ; 3                 ; Integer                           ;
+; CLK0_DIVIDE_BY                ; 15                ; Integer                           ;
 ; CLK5_PHASE_SHIFT              ; 0                 ; Untyped                           ;
 ; CLK4_PHASE_SHIFT              ; 0                 ; Untyped                           ;
 ; CLK3_PHASE_SHIFT              ; 0                 ; Untyped                           ;
@@ -513,43 +364,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; CLK2_TIME_DELAY               ; 0                 ; Untyped                           ;
 ; CLK1_TIME_DELAY               ; 0                 ; Untyped                           ;
 ; CLK0_TIME_DELAY               ; 0                 ; Untyped                           ;
-; CLK9_DUTY_CYCLE               ; 50                ; Untyped                           ;
-; CLK8_DUTY_CYCLE               ; 50                ; Untyped                           ;
-; CLK7_DUTY_CYCLE               ; 50                ; Untyped                           ;
-; CLK6_DUTY_CYCLE               ; 50                ; Untyped                           ;
 ; CLK5_DUTY_CYCLE               ; 50                ; Untyped                           ;
 ; CLK4_DUTY_CYCLE               ; 50                ; Untyped                           ;
 ; CLK3_DUTY_CYCLE               ; 50                ; Untyped                           ;
 ; CLK2_DUTY_CYCLE               ; 50                ; Untyped                           ;
-; CLK1_DUTY_CYCLE               ; 50                ; Signed Integer                    ;
-; CLK0_DUTY_CYCLE               ; 50                ; Signed Integer                    ;
-; CLK9_USE_EVEN_COUNTER_MODE    ; OFF               ; Untyped                           ;
-; CLK8_USE_EVEN_COUNTER_MODE    ; OFF               ; Untyped                           ;
-; CLK7_USE_EVEN_COUNTER_MODE    ; OFF               ; Untyped                           ;
-; CLK6_USE_EVEN_COUNTER_MODE    ; OFF               ; Untyped                           ;
-; CLK5_USE_EVEN_COUNTER_MODE    ; OFF               ; Untyped                           ;
-; CLK4_USE_EVEN_COUNTER_MODE    ; OFF               ; Untyped                           ;
-; CLK3_USE_EVEN_COUNTER_MODE    ; OFF               ; Untyped                           ;
-; CLK2_USE_EVEN_COUNTER_MODE    ; OFF               ; Untyped                           ;
-; CLK1_USE_EVEN_COUNTER_MODE    ; OFF               ; Untyped                           ;
-; CLK0_USE_EVEN_COUNTER_MODE    ; OFF               ; Untyped                           ;
-; CLK9_USE_EVEN_COUNTER_VALUE   ; OFF               ; Untyped                           ;
-; CLK8_USE_EVEN_COUNTER_VALUE   ; OFF               ; Untyped                           ;
-; CLK7_USE_EVEN_COUNTER_VALUE   ; OFF               ; Untyped                           ;
-; CLK6_USE_EVEN_COUNTER_VALUE   ; OFF               ; Untyped                           ;
-; CLK5_USE_EVEN_COUNTER_VALUE   ; OFF               ; Untyped                           ;
-; CLK4_USE_EVEN_COUNTER_VALUE   ; OFF               ; Untyped                           ;
-; CLK3_USE_EVEN_COUNTER_VALUE   ; OFF               ; Untyped                           ;
-; CLK2_USE_EVEN_COUNTER_VALUE   ; OFF               ; Untyped                           ;
-; CLK1_USE_EVEN_COUNTER_VALUE   ; OFF               ; Untyped                           ;
-; CLK0_USE_EVEN_COUNTER_VALUE   ; OFF               ; Untyped                           ;
-; LOCK_WINDOW_UI                ;  0.05             ; Untyped                           ;
-; LOCK_WINDOW_UI_BITS           ; UNUSED            ; Untyped                           ;
-; VCO_RANGE_DETECTOR_LOW_BITS   ; UNUSED            ; Untyped                           ;
-; VCO_RANGE_DETECTOR_HIGH_BITS  ; UNUSED            ; Untyped                           ;
-; DPA_MULTIPLY_BY               ; 0                 ; Untyped                           ;
-; DPA_DIVIDE_BY                 ; 1                 ; Untyped                           ;
-; DPA_DIVIDER                   ; 0                 ; Untyped                           ;
+; CLK1_DUTY_CYCLE               ; 50                ; Integer                           ;
+; CLK0_DUTY_CYCLE               ; 50                ; Integer                           ;
 ; EXTCLK3_MULTIPLY_BY           ; 1                 ; Untyped                           ;
 ; EXTCLK2_MULTIPLY_BY           ; 1                 ; Untyped                           ;
 ; EXTCLK1_MULTIPLY_BY           ; 1                 ; Untyped                           ;
@@ -591,50 +411,30 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; C3_HIGH                       ; 0                 ; Untyped                           ;
 ; C4_HIGH                       ; 0                 ; Untyped                           ;
 ; C5_HIGH                       ; 0                 ; Untyped                           ;
-; C6_HIGH                       ; 0                 ; Untyped                           ;
-; C7_HIGH                       ; 0                 ; Untyped                           ;
-; C8_HIGH                       ; 0                 ; Untyped                           ;
-; C9_HIGH                       ; 0                 ; Untyped                           ;
 ; C0_LOW                        ; 0                 ; Untyped                           ;
 ; C1_LOW                        ; 0                 ; Untyped                           ;
 ; C2_LOW                        ; 0                 ; Untyped                           ;
 ; C3_LOW                        ; 0                 ; Untyped                           ;
 ; C4_LOW                        ; 0                 ; Untyped                           ;
 ; C5_LOW                        ; 0                 ; Untyped                           ;
-; C6_LOW                        ; 0                 ; Untyped                           ;
-; C7_LOW                        ; 0                 ; Untyped                           ;
-; C8_LOW                        ; 0                 ; Untyped                           ;
-; C9_LOW                        ; 0                 ; Untyped                           ;
 ; C0_INITIAL                    ; 0                 ; Untyped                           ;
 ; C1_INITIAL                    ; 0                 ; Untyped                           ;
 ; C2_INITIAL                    ; 0                 ; Untyped                           ;
 ; C3_INITIAL                    ; 0                 ; Untyped                           ;
 ; C4_INITIAL                    ; 0                 ; Untyped                           ;
 ; C5_INITIAL                    ; 0                 ; Untyped                           ;
-; C6_INITIAL                    ; 0                 ; Untyped                           ;
-; C7_INITIAL                    ; 0                 ; Untyped                           ;
-; C8_INITIAL                    ; 0                 ; Untyped                           ;
-; C9_INITIAL                    ; 0                 ; Untyped                           ;
 ; C0_MODE                       ; BYPASS            ; Untyped                           ;
 ; C1_MODE                       ; BYPASS            ; Untyped                           ;
 ; C2_MODE                       ; BYPASS            ; Untyped                           ;
 ; C3_MODE                       ; BYPASS            ; Untyped                           ;
 ; C4_MODE                       ; BYPASS            ; Untyped                           ;
 ; C5_MODE                       ; BYPASS            ; Untyped                           ;
-; C6_MODE                       ; BYPASS            ; Untyped                           ;
-; C7_MODE                       ; BYPASS            ; Untyped                           ;
-; C8_MODE                       ; BYPASS            ; Untyped                           ;
-; C9_MODE                       ; BYPASS            ; Untyped                           ;
 ; C0_PH                         ; 0                 ; Untyped                           ;
 ; C1_PH                         ; 0                 ; Untyped                           ;
 ; C2_PH                         ; 0                 ; Untyped                           ;
 ; C3_PH                         ; 0                 ; Untyped                           ;
 ; C4_PH                         ; 0                 ; Untyped                           ;
 ; C5_PH                         ; 0                 ; Untyped                           ;
-; C6_PH                         ; 0                 ; Untyped                           ;
-; C7_PH                         ; 0                 ; Untyped                           ;
-; C8_PH                         ; 0                 ; Untyped                           ;
-; C9_PH                         ; 0                 ; Untyped                           ;
 ; L0_HIGH                       ; 1                 ; Untyped                           ;
 ; L1_HIGH                       ; 1                 ; Untyped                           ;
 ; G0_HIGH                       ; 1                 ; Untyped                           ;
@@ -686,25 +486,17 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; E2_PH                         ; 0                 ; Untyped                           ;
 ; E3_PH                         ; 0                 ; Untyped                           ;
 ; M_PH                          ; 0                 ; Untyped                           ;
-; C1_USE_CASC_IN                ; OFF               ; Untyped                           ;
-; C2_USE_CASC_IN                ; OFF               ; Untyped                           ;
-; C3_USE_CASC_IN                ; OFF               ; Untyped                           ;
-; C4_USE_CASC_IN                ; OFF               ; Untyped                           ;
-; C5_USE_CASC_IN                ; OFF               ; Untyped                           ;
-; C6_USE_CASC_IN                ; OFF               ; Untyped                           ;
-; C7_USE_CASC_IN                ; OFF               ; Untyped                           ;
-; C8_USE_CASC_IN                ; OFF               ; Untyped                           ;
-; C9_USE_CASC_IN                ; OFF               ; Untyped                           ;
+; C1_USE_CASC_IN                ; 0                 ; Untyped                           ;
+; C2_USE_CASC_IN                ; 0                 ; Untyped                           ;
+; C3_USE_CASC_IN                ; 0                 ; Untyped                           ;
+; C4_USE_CASC_IN                ; 0                 ; Untyped                           ;
+; C5_USE_CASC_IN                ; 0                 ; Untyped                           ;
 ; CLK0_COUNTER                  ; G0                ; Untyped                           ;
 ; CLK1_COUNTER                  ; G0                ; Untyped                           ;
 ; CLK2_COUNTER                  ; G0                ; Untyped                           ;
 ; CLK3_COUNTER                  ; G0                ; Untyped                           ;
 ; CLK4_COUNTER                  ; G0                ; Untyped                           ;
 ; CLK5_COUNTER                  ; G0                ; Untyped                           ;
-; CLK6_COUNTER                  ; E0                ; Untyped                           ;
-; CLK7_COUNTER                  ; E1                ; Untyped                           ;
-; CLK8_COUNTER                  ; E2                ; Untyped                           ;
-; CLK9_COUNTER                  ; E3                ; Untyped                           ;
 ; L0_TIME_DELAY                 ; 0                 ; Untyped                           ;
 ; L1_TIME_DELAY                 ; 0                 ; Untyped                           ;
 ; G0_TIME_DELAY                 ; 0                 ; Untyped                           ;
@@ -726,9 +518,6 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; CHARGE_PUMP_CURRENT           ; 2                 ; Untyped                           ;
 ; LOOP_FILTER_R                 ;  1.000000         ; Untyped                           ;
 ; LOOP_FILTER_C                 ; 5                 ; Untyped                           ;
-; CHARGE_PUMP_CURRENT_BITS      ; 9999              ; Untyped                           ;
-; LOOP_FILTER_R_BITS            ; 9999              ; Untyped                           ;
-; LOOP_FILTER_C_BITS            ; 9999              ; Untyped                           ;
 ; VCO_POST_SCALE                ; 0                 ; Untyped                           ;
 ; CLK2_OUTPUT_FREQUENCY         ; 0                 ; Untyped                           ;
 ; CLK1_OUTPUT_FREQUENCY         ; 0                 ; Untyped                           ;
@@ -756,10 +545,6 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; PORT_CLK3                     ; PORT_CONNECTIVITY ; Untyped                           ;
 ; PORT_CLK4                     ; PORT_CONNECTIVITY ; Untyped                           ;
 ; PORT_CLK5                     ; PORT_CONNECTIVITY ; Untyped                           ;
-; PORT_CLK6                     ; PORT_UNUSED       ; Untyped                           ;
-; PORT_CLK7                     ; PORT_UNUSED       ; Untyped                           ;
-; PORT_CLK8                     ; PORT_UNUSED       ; Untyped                           ;
-; PORT_CLK9                     ; PORT_UNUSED       ; Untyped                           ;
 ; PORT_SCANDATA                 ; PORT_CONNECTIVITY ; Untyped                           ;
 ; PORT_SCANDATAOUT              ; PORT_CONNECTIVITY ; Untyped                           ;
 ; PORT_SCANDONE                 ; PORT_CONNECTIVITY ; Untyped                           ;
@@ -781,15 +566,6 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; PORT_ENABLE0                  ; PORT_CONNECTIVITY ; Untyped                           ;
 ; PORT_ENABLE1                  ; PORT_CONNECTIVITY ; Untyped                           ;
 ; PORT_LOCKED                   ; PORT_CONNECTIVITY ; Untyped                           ;
-; PORT_CONFIGUPDATE             ; PORT_CONNECTIVITY ; Untyped                           ;
-; PORT_FBOUT                    ; PORT_CONNECTIVITY ; Untyped                           ;
-; PORT_PHASEDONE                ; PORT_CONNECTIVITY ; Untyped                           ;
-; PORT_PHASESTEP                ; PORT_CONNECTIVITY ; Untyped                           ;
-; PORT_PHASEUPDOWN              ; PORT_CONNECTIVITY ; Untyped                           ;
-; PORT_SCANCLKENA               ; PORT_CONNECTIVITY ; Untyped                           ;
-; PORT_PHASECOUNTERSELECT       ; PORT_CONNECTIVITY ; Untyped                           ;
-; PORT_VCOOVERRANGE             ; PORT_CONNECTIVITY ; Untyped                           ;
-; PORT_VCOUNDERRANGE            ; PORT_CONNECTIVITY ; Untyped                           ;
 ; M_TEST_SOURCE                 ; 5                 ; Untyped                           ;
 ; C0_TEST_SOURCE                ; 5                 ; Untyped                           ;
 ; C1_TEST_SOURCE                ; 5                 ; Untyped                           ;
@@ -797,25 +573,13 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; C3_TEST_SOURCE                ; 5                 ; Untyped                           ;
 ; C4_TEST_SOURCE                ; 5                 ; Untyped                           ;
 ; C5_TEST_SOURCE                ; 5                 ; Untyped                           ;
-; C6_TEST_SOURCE                ; 5                 ; Untyped                           ;
-; C7_TEST_SOURCE                ; 5                 ; Untyped                           ;
-; C8_TEST_SOURCE                ; 5                 ; Untyped                           ;
-; C9_TEST_SOURCE                ; 5                 ; Untyped                           ;
-; CBXI_PARAMETER                ; NOTHING           ; Untyped                           ;
-; VCO_FREQUENCY_CONTROL         ; AUTO              ; Untyped                           ;
-; VCO_PHASE_SHIFT_STEP          ; 0                 ; Untyped                           ;
-; WIDTH_CLOCK                   ; 6                 ; Untyped                           ;
-; WIDTH_PHASECOUNTERSELECT      ; 4                 ; Untyped                           ;
-; USING_FBMIMICBIDIR_PORT       ; OFF               ; Untyped                           ;
 ; DEVICE_FAMILY                 ; Cyclone II        ; Untyped                           ;
-; SCAN_CHAIN_MIF_FILE           ; UNUSED            ; Untyped                           ;
-; SIM_GATE_LOCK_DEVICE_BEHAVIOR ; OFF               ; Untyped                           ;
 ; AUTO_CARRY_CHAINS             ; ON                ; AUTO_CARRY                        ;
 ; IGNORE_CARRY_BUFFERS          ; OFF               ; IGNORE_CARRY                      ;
 ; AUTO_CASCADE_CHAINS           ; ON                ; AUTO_CASCADE                      ;
 ; IGNORE_CASCADE_BUFFERS        ; OFF               ; IGNORE_CASCADE                    ;
 +-------------------------------+-------------------+-----------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +---------------------------------------------------------------+
@@ -823,22 +587,22 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+----------+-----------------------------------+
 ; Parameter Name ; Value    ; Type                              ;
 +----------------+----------+-----------------------------------+
-; CLK_Freq       ; 50000000 ; Signed Integer                    ;
-; I2C_Freq       ; 20000    ; Signed Integer                    ;
-; LUT_SIZE       ; 50       ; Signed Integer                    ;
-; Dummy_DATA     ; 0        ; Signed Integer                    ;
-; SET_LIN_L      ; 1        ; Signed Integer                    ;
-; SET_LIN_R      ; 2        ; Signed Integer                    ;
-; SET_HEAD_L     ; 3        ; Signed Integer                    ;
-; SET_HEAD_R     ; 4        ; Signed Integer                    ;
-; A_PATH_CTRL    ; 5        ; Signed Integer                    ;
-; D_PATH_CTRL    ; 6        ; Signed Integer                    ;
-; POWER_ON       ; 7        ; Signed Integer                    ;
-; SET_FORMAT     ; 8        ; Signed Integer                    ;
-; SAMPLE_CTRL    ; 9        ; Signed Integer                    ;
-; SET_ACTIVE     ; 10       ; Signed Integer                    ;
+; CLK_Freq       ; 50000000 ; Integer                           ;
+; I2C_Freq       ; 20000    ; Integer                           ;
+; LUT_SIZE       ; 50       ; Integer                           ;
+; Dummy_DATA     ; 0        ; Integer                           ;
+; SET_LIN_L      ; 1        ; Integer                           ;
+; SET_LIN_R      ; 2        ; Integer                           ;
+; SET_HEAD_L     ; 3        ; Integer                           ;
+; SET_HEAD_R     ; 4        ; Integer                           ;
+; A_PATH_CTRL    ; 5        ; Integer                           ;
+; D_PATH_CTRL    ; 6        ; Integer                           ;
+; POWER_ON       ; 7        ; Integer                           ;
+; SET_FORMAT     ; 8        ; Integer                           ;
+; SAMPLE_CTRL    ; 9        ; Integer                           ;
+; SET_ACTIVE     ; 10       ; Integer                           ;
 +----------------+----------+-----------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-------------------------------------------------------------+
@@ -846,427 +610,220 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------+----------+--------------------------------+
 ; Parameter Name  ; Value    ; Type                           ;
 +-----------------+----------+--------------------------------+
-; REF_CLK         ; 18432000 ; Signed Integer                 ;
-; SAMPLE_RATE     ; 48000    ; Signed Integer                 ;
-; DATA_WIDTH      ; 16       ; Signed Integer                 ;
-; CHANNEL_NUM     ; 2        ; Signed Integer                 ;
-; SIN_SAMPLE_DATA ; 48       ; Signed Integer                 ;
-; SIN_SANPLE      ; 0        ; Signed Integer                 ;
+; REF_CLK         ; 18432000 ; Integer                        ;
+; SAMPLE_RATE     ; 48000    ; Integer                        ;
+; DATA_WIDTH      ; 16       ; Integer                        ;
+; CHANNEL_NUM     ; 2        ; Integer                        ;
+; SIN_SAMPLE_DATA ; 48       ; Integer                        ;
+; SIN_SANPLE      ; 0        ; Integer                        ;
 +-----------------+----------+--------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+--------------------------------------------------------------------------+
-; altpll Parameter Settings by Entity Instance                             ;
-+-------------------------------+------------------------------------------+
-; Name                          ; Value                                    ;
-+-------------------------------+------------------------------------------+
-; Number of entity instances    ; 1                                        ;
-; Entity Instance               ; VGA_Audio_PLL:u1|altpll:altpll_component ;
-;     -- OPERATION_MODE         ; NORMAL                                   ;
-;     -- PLL_TYPE               ; FAST                                     ;
-;     -- PRIMARY_CLOCK          ; INCLK0                                   ;
-;     -- INCLK0_INPUT_FREQUENCY ; 37037                                    ;
-;     -- INCLK1_INPUT_FREQUENCY ; 0                                        ;
-;     -- VCO_MULTIPLY_BY        ; 0                                        ;
-;     -- VCO_DIVIDE_BY          ; 0                                        ;
-+-------------------------------+------------------------------------------+
-
-
-+-----------------------------------------------+
-; Port Connectivity Checks: "adio_codec:ad1"    ;
-+-------------+-------+----------+--------------+
-; Port        ; Type  ; Severity ; Details      ;
-+-------------+-------+----------+--------------+
-; iSrc_Select ; Input ; Info     ; Stuck at GND ;
-; key3_on     ; Input ; Info     ; Stuck at GND ;
-; key4_on     ; Input ; Info     ; Stuck at GND ;
-+-------------+-------+----------+--------------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "staff:st1|bar_big:b2"                                                                                                                                                                       ;
-+---------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port          ; Type  ; Severity ; Details                                                                                                                                                                             ;
-+---------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; org_x         ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (12 bits) it drives.  The 20 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; org_x[11..0]  ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; line_x[5..4]  ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; line_x[11..6] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; line_x[0]     ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
-+---------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "staff:st1|bar_big:b0"                                                                                                                                                                       ;
-+---------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port          ; Type  ; Severity ; Details                                                                                                                                                                             ;
-+---------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; org_x         ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (12 bits) it drives.  The 20 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; org_x[11..0]  ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; line_x[6..5]  ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; line_x[11..7] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; line_x[4]     ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; line_x[2]     ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; line_x[0]     ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
-+---------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "staff:st1|vga_time_generator:vga0"                                                                                                                                                            ;
-+-----------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port            ; Type  ; Severity ; Details                                                                                                                                                                             ;
-+-----------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; h_disp          ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (12 bits) it drives.  The 20 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; h_disp[11..10]  ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; h_disp[6..0]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; h_disp[9]       ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; h_disp[8]       ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; h_disp[7]       ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; h_fporch        ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (12 bits) it drives.  The 20 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; h_fporch[11..5] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; h_fporch[3..0]  ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; h_fporch[4]     ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; h_sync          ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (12 bits) it drives.  The 20 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; h_sync[6..5]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; h_sync[11..7]   ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; h_sync[4..0]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; h_bporch        ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (12 bits) it drives.  The 20 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; h_bporch[5..4]  ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; h_bporch[11..6] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; h_bporch[3..0]  ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; v_disp          ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (12 bits) it drives.  The 20 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; v_disp[8..5]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; v_disp[11..9]   ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; v_disp[4..0]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; v_fporch        ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (12 bits) it drives.  The 20 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; v_fporch[1..0]  ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; v_fporch[11..4] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; v_fporch[3]     ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; v_fporch[2]     ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; v_sync          ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (12 bits) it drives.  The 20 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; v_sync[2..0]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; v_sync[11..3]   ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; v_bporch        ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (12 bits) it drives.  The 20 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; v_bporch[4..0]  ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; v_bporch[11..5] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
-+-----------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------+
-; Port Connectivity Checks: "staff:st1"              ;
-+------------------+-------+----------+--------------+
-; Port             ; Type  ; Severity ; Details      ;
-+------------------+-------+----------+--------------+
-; scan_code3[7..4] ; Input ; Info     ; Stuck at VCC ;
-; scan_code3[3..0] ; Input ; Info     ; Stuck at GND ;
-; scan_code4[7..4] ; Input ; Info     ; Stuck at VCC ;
-; scan_code4[3..0] ; Input ; Info     ; Stuck at GND ;
-+------------------+-------+----------+--------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "PS2_KEYBOARD:keyboard"                                                                 ;
-+---------+--------+----------+-------------------------------------------------------------------------------------+
-; Port    ; Type   ; Severity ; Details                                                                             ;
-+---------+--------+----------+-------------------------------------------------------------------------------------+
-; key1_on ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; key2_on ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+---------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "I2C_AV_Config:u7|I2C_Controller:u0"                                                                                                                ;
-+------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port       ; Type   ; Severity ; Details                                                                                                                                      ;
-+------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; W_R        ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; SD_COUNTER ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
-; SDO        ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
-+------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "VGA_Audio_PLL:u1"                                                                                                                                                                  ;
-+--------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port   ; Type   ; Severity ; Details                                                                                                                                                                          ;
-+--------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; inclk0 ; Input  ; Warning  ; Input port expression (2 bits) is wider than the input port (1 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; c0     ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                                         ;
-+--------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+------------------------------------------------+
-; Port Connectivity Checks: "SEG7_LUT_4:u0"      ;
-+--------------+-------+----------+--------------+
-; Port         ; Type  ; Severity ; Details      ;
-+--------------+-------+----------+--------------+
-; iDIG[15..13] ; Input ; Info     ; Stuck at GND ;
-; iDIG[11..9]  ; Input ; Info     ; Stuck at GND ;
-; iDIG[7..5]   ; Input ; Info     ; Stuck at GND ;
-; iDIG[3..2]   ; Input ; Info     ; Stuck at GND ;
-; iDIG[12]     ; Input ; Info     ; Stuck at VCC ;
-; iDIG[8]      ; Input ; Info     ; Stuck at VCC ;
-; iDIG[4]      ; Input ; Info     ; Stuck at VCC ;
-; iDIG[1]      ; Input ; Info     ; Stuck at VCC ;
-; iDIG[0]      ; Input ; Info     ; Stuck at GND ;
-+--------------+-------+----------+--------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:12     ;
-+----------------+--------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
-Info: Running Quartus II 64-Bit Analysis & Synthesis
-    Info: Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Fri Jun 05 11:03:33 2015
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 6.0 Build 202 06/20/2006 Service Pack 1 SJ Full Version
+    Info: Processing started: Thu Nov 16 09:01:48 2006
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE1_synthesizer -c DE1_synthesizer
-Critical Warning (138069): Setting INCREMENTAL_COMPILATION to "OFF" is no longer supported. Assignment is ignored. To disable partitions, set the IGNORE_PARTITIONS global assignment to "ON" instead.
-Warning (20028): Parallel compilation is not licensed and has been disabled
-Warning (12125): Using design file de1_synthesizer.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: DE1_synthesizer
-Warning (10236): Verilog HDL Implicit Net warning at de1_synthesizer.v(176): created implicit net for "VGA_CLK"
-Info (12127): Elaborating entity "DE1_synthesizer" for the top level hierarchy
-Warning (10034): Output port "LEDR[5..0]" at de1_synthesizer.v(78) has no driver
-Warning (10034): Output port "DRAM_ADDR" at de1_synthesizer.v(84) has no driver
-Warning (10034): Output port "FL_ADDR" at de1_synthesizer.v(97) has no driver
-Warning (10034): Output port "SRAM_ADDR" at de1_synthesizer.v(104) has no driver
-Warning (10034): Output port "VGA_R[2..0]" at de1_synthesizer.v(129) has no driver
-Warning (10034): Output port "VGA_G[2..0]" at de1_synthesizer.v(130) has no driver
-Warning (10034): Output port "VGA_B[2..0]" at de1_synthesizer.v(131) has no driver
-Warning (10034): Output port "UART_TXD" at de1_synthesizer.v(80) has no driver
-Warning (10034): Output port "DRAM_LDQM" at de1_synthesizer.v(85) has no driver
-Warning (10034): Output port "DRAM_UDQM" at de1_synthesizer.v(86) has no driver
-Warning (10034): Output port "DRAM_WE_N" at de1_synthesizer.v(87) has no driver
-Warning (10034): Output port "DRAM_CAS_N" at de1_synthesizer.v(88) has no driver
-Warning (10034): Output port "DRAM_RAS_N" at de1_synthesizer.v(89) has no driver
-Warning (10034): Output port "DRAM_CS_N" at de1_synthesizer.v(90) has no driver
-Warning (10034): Output port "DRAM_BA_0" at de1_synthesizer.v(91) has no driver
-Warning (10034): Output port "DRAM_BA_1" at de1_synthesizer.v(92) has no driver
-Warning (10034): Output port "DRAM_CLK" at de1_synthesizer.v(93) has no driver
-Warning (10034): Output port "DRAM_CKE" at de1_synthesizer.v(94) has no driver
-Warning (10034): Output port "FL_WE_N" at de1_synthesizer.v(98) has no driver
-Warning (10034): Output port "FL_RST_N" at de1_synthesizer.v(99) has no driver
-Warning (10034): Output port "FL_OE_N" at de1_synthesizer.v(100) has no driver
-Warning (10034): Output port "FL_CE_N" at de1_synthesizer.v(101) has no driver
-Warning (10034): Output port "SRAM_UB_N" at de1_synthesizer.v(105) has no driver
-Warning (10034): Output port "SRAM_LB_N" at de1_synthesizer.v(106) has no driver
-Warning (10034): Output port "SRAM_WE_N" at de1_synthesizer.v(107) has no driver
-Warning (10034): Output port "SRAM_CE_N" at de1_synthesizer.v(108) has no driver
-Warning (10034): Output port "SRAM_OE_N" at de1_synthesizer.v(109) has no driver
-Warning (10034): Output port "SD_CLK" at de1_synthesizer.v(114) has no driver
-Warning (10034): Output port "TDO" at de1_synthesizer.v(125) has no driver
-Warning (12125): Using design file seg7_lut_4.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: SEG7_LUT_4
-Info (12128): Elaborating entity "SEG7_LUT_4" for hierarchy "SEG7_LUT_4:u0"
-Warning (12125): Using design file seg7_lut.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: SEG7_LUT
-Info (12128): Elaborating entity "SEG7_LUT" for hierarchy "SEG7_LUT_4:u0|SEG7_LUT:u0"
-Warning (12125): Using design file vga_audio_pll.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: VGA_Audio_PLL
-Info (12128): Elaborating entity "VGA_Audio_PLL" for hierarchy "VGA_Audio_PLL:u1"
-Info (12128): Elaborating entity "altpll" for hierarchy "VGA_Audio_PLL:u1|altpll:altpll_component"
-Info (12130): Elaborated megafunction instantiation "VGA_Audio_PLL:u1|altpll:altpll_component"
-Info (12133): Instantiated megafunction "VGA_Audio_PLL:u1|altpll:altpll_component" with the following parameter:
-    Info (12134): Parameter "clk0_divide_by" = "15"
-    Info (12134): Parameter "clk0_duty_cycle" = "50"
-    Info (12134): Parameter "clk0_multiply_by" = "14"
-    Info (12134): Parameter "clk0_phase_shift" = "0"
-    Info (12134): Parameter "clk1_divide_by" = "3"
-    Info (12134): Parameter "clk1_duty_cycle" = "50"
-    Info (12134): Parameter "clk1_multiply_by" = "2"
-    Info (12134): Parameter "clk1_phase_shift" = "0"
-    Info (12134): Parameter "compensate_clock" = "CLK0"
-    Info (12134): Parameter "inclk0_input_frequency" = "37037"
-    Info (12134): Parameter "intended_device_family" = "Cyclone II"
-    Info (12134): Parameter "lpm_type" = "altpll"
-    Info (12134): Parameter "operation_mode" = "NORMAL"
-    Info (12134): Parameter "pll_type" = "FAST"
-Warning (12125): Using design file i2c_av_config.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: I2C_AV_Config
-Info (12128): Elaborating entity "I2C_AV_Config" for hierarchy "I2C_AV_Config:u7"
-Warning (10230): Verilog HDL assignment warning at i2c_av_config.v(53): truncated value with size 32 to match size of target (16)
-Warning (10230): Verilog HDL assignment warning at i2c_av_config.v(101): truncated value with size 32 to match size of target (4)
-Warning (12125): Using design file i2c_controller.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: I2C_Controller
-Info (12128): Elaborating entity "I2C_Controller" for hierarchy "I2C_AV_Config:u7|I2C_Controller:u0"
-Warning (10230): Verilog HDL assignment warning at i2c_controller.v(78): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at i2c_controller.v(77): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at i2c_controller.v(90): truncated value with size 32 to match size of target (6)
-Warning (12125): Using design file demo_sound1.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: demo_sound1
-Info (12128): Elaborating entity "demo_sound1" for hierarchy "demo_sound1:dd1"
+Warning (10236): Verilog HDL net warning at DE1_synthesizer.v(176): created undeclared net "VGA_CLK"
+Warning: Using design file DE1_synthesizer.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: DE1_synthesizer
+Info: Elaborating entity "DE1_synthesizer" for the top level hierarchy
+Warning (10034): Output port "LEDR[5]" at DE1_synthesizer.v(78) has no driver
+Warning (10034): Output port "LEDR[4]" at DE1_synthesizer.v(78) has no driver
+Warning (10034): Output port "LEDR[3]" at DE1_synthesizer.v(78) has no driver
+Warning (10034): Output port "LEDR[2]" at DE1_synthesizer.v(78) has no driver
+Warning (10034): Output port "LEDR[1]" at DE1_synthesizer.v(78) has no driver
+Warning (10034): Output port "LEDR[0]" at DE1_synthesizer.v(78) has no driver
+Warning (10034): Output port "UART_TXD" at DE1_synthesizer.v(80) has no driver
+Warning (10034): Output port "DRAM_ADDR[11]" at DE1_synthesizer.v(84) has no driver
+Warning (10034): Output port "DRAM_ADDR[10]" at DE1_synthesizer.v(84) has no driver
+Warning (10034): Output port "DRAM_ADDR[9]" at DE1_synthesizer.v(84) has no driver
+Warning (10034): Output port "DRAM_ADDR[8]" at DE1_synthesizer.v(84) has no driver
+Warning (10034): Output port "DRAM_ADDR[7]" at DE1_synthesizer.v(84) has no driver
+Warning (10034): Output port "DRAM_ADDR[6]" at DE1_synthesizer.v(84) has no driver
+Warning (10034): Output port "DRAM_ADDR[5]" at DE1_synthesizer.v(84) has no driver
+Warning (10034): Output port "DRAM_ADDR[4]" at DE1_synthesizer.v(84) has no driver
+Warning (10034): Output port "DRAM_ADDR[3]" at DE1_synthesizer.v(84) has no driver
+Warning (10034): Output port "DRAM_ADDR[2]" at DE1_synthesizer.v(84) has no driver
+Warning (10034): Output port "DRAM_ADDR[1]" at DE1_synthesizer.v(84) has no driver
+Warning (10034): Output port "DRAM_ADDR[0]" at DE1_synthesizer.v(84) has no driver
+Warning (10034): Output port "DRAM_LDQM" at DE1_synthesizer.v(85) has no driver
+Warning (10034): Output port "DRAM_UDQM" at DE1_synthesizer.v(86) has no driver
+Warning (10034): Output port "DRAM_WE_N" at DE1_synthesizer.v(87) has no driver
+Warning (10034): Output port "DRAM_CAS_N" at DE1_synthesizer.v(88) has no driver
+Warning (10034): Output port "DRAM_RAS_N" at DE1_synthesizer.v(89) has no driver
+Warning (10034): Output port "DRAM_CS_N" at DE1_synthesizer.v(90) has no driver
+Warning (10034): Output port "DRAM_BA_0" at DE1_synthesizer.v(91) has no driver
+Warning (10034): Output port "DRAM_BA_1" at DE1_synthesizer.v(92) has no driver
+Warning (10034): Output port "DRAM_CLK" at DE1_synthesizer.v(93) has no driver
+Warning (10034): Output port "DRAM_CKE" at DE1_synthesizer.v(94) has no driver
+Warning (10034): Output port "FL_ADDR[21]" at DE1_synthesizer.v(97) has no driver
+Warning (10034): Output port "FL_ADDR[20]" at DE1_synthesizer.v(97) has no driver
+Warning (10034): Output port "FL_ADDR[19]" at DE1_synthesizer.v(97) has no driver
+Warning (10034): Output port "FL_ADDR[18]" at DE1_synthesizer.v(97) has no driver
+Warning (10034): Output port "FL_ADDR[17]" at DE1_synthesizer.v(97) has no driver
+Warning (10034): Output port "FL_ADDR[16]" at DE1_synthesizer.v(97) has no driver
+Warning (10034): Output port "FL_ADDR[15]" at DE1_synthesizer.v(97) has no driver
+Warning (10034): Output port "FL_ADDR[14]" at DE1_synthesizer.v(97) has no driver
+Warning (10034): Output port "FL_ADDR[13]" at DE1_synthesizer.v(97) has no driver
+Warning (10034): Output port "FL_ADDR[12]" at DE1_synthesizer.v(97) has no driver
+Warning (10034): Output port "FL_ADDR[11]" at DE1_synthesizer.v(97) has no driver
+Warning (10034): Output port "FL_ADDR[10]" at DE1_synthesizer.v(97) has no driver
+Warning (10034): Output port "FL_ADDR[9]" at DE1_synthesizer.v(97) has no driver
+Warning (10034): Output port "FL_ADDR[8]" at DE1_synthesizer.v(97) has no driver
+Warning (10034): Output port "FL_ADDR[7]" at DE1_synthesizer.v(97) has no driver
+Warning (10034): Output port "FL_ADDR[6]" at DE1_synthesizer.v(97) has no driver
+Warning (10034): Output port "FL_ADDR[5]" at DE1_synthesizer.v(97) has no driver
+Warning (10034): Output port "FL_ADDR[4]" at DE1_synthesizer.v(97) has no driver
+Warning (10034): Output port "FL_ADDR[3]" at DE1_synthesizer.v(97) has no driver
+Warning (10034): Output port "FL_ADDR[2]" at DE1_synthesizer.v(97) has no driver
+Warning (10034): Output port "FL_ADDR[1]" at DE1_synthesizer.v(97) has no driver
+Warning (10034): Output port "FL_ADDR[0]" at DE1_synthesizer.v(97) has no driver
+Warning (10034): Output port "FL_WE_N" at DE1_synthesizer.v(98) has no driver
+Warning (10034): Output port "FL_RST_N" at DE1_synthesizer.v(99) has no driver
+Warning (10034): Output port "FL_OE_N" at DE1_synthesizer.v(100) has no driver
+Warning (10034): Output port "FL_CE_N" at DE1_synthesizer.v(101) has no driver
+Warning (10034): Output port "SRAM_ADDR[17]" at DE1_synthesizer.v(104) has no driver
+Warning (10034): Output port "SRAM_ADDR[16]" at DE1_synthesizer.v(104) has no driver
+Warning (10034): Output port "SRAM_ADDR[15]" at DE1_synthesizer.v(104) has no driver
+Warning (10034): Output port "SRAM_ADDR[14]" at DE1_synthesizer.v(104) has no driver
+Warning (10034): Output port "SRAM_ADDR[13]" at DE1_synthesizer.v(104) has no driver
+Warning (10034): Output port "SRAM_ADDR[12]" at DE1_synthesizer.v(104) has no driver
+Warning (10034): Output port "SRAM_ADDR[11]" at DE1_synthesizer.v(104) has no driver
+Warning (10034): Output port "SRAM_ADDR[10]" at DE1_synthesizer.v(104) has no driver
+Warning (10034): Output port "SRAM_ADDR[9]" at DE1_synthesizer.v(104) has no driver
+Warning (10034): Output port "SRAM_ADDR[8]" at DE1_synthesizer.v(104) has no driver
+Warning (10034): Output port "SRAM_ADDR[7]" at DE1_synthesizer.v(104) has no driver
+Warning (10034): Output port "SRAM_ADDR[6]" at DE1_synthesizer.v(104) has no driver
+Warning (10034): Output port "SRAM_ADDR[5]" at DE1_synthesizer.v(104) has no driver
+Warning (10034): Output port "SRAM_ADDR[4]" at DE1_synthesizer.v(104) has no driver
+Warning (10034): Output port "SRAM_ADDR[3]" at DE1_synthesizer.v(104) has no driver
+Warning (10034): Output port "SRAM_ADDR[2]" at DE1_synthesizer.v(104) has no driver
+Warning (10034): Output port "SRAM_ADDR[1]" at DE1_synthesizer.v(104) has no driver
+Warning (10034): Output port "SRAM_ADDR[0]" at DE1_synthesizer.v(104) has no driver
+Warning (10034): Output port "SRAM_UB_N" at DE1_synthesizer.v(105) has no driver
+Warning (10034): Output port "SRAM_LB_N" at DE1_synthesizer.v(106) has no driver
+Warning (10034): Output port "SRAM_WE_N" at DE1_synthesizer.v(107) has no driver
+Warning (10034): Output port "SRAM_CE_N" at DE1_synthesizer.v(108) has no driver
+Warning (10034): Output port "SRAM_OE_N" at DE1_synthesizer.v(109) has no driver
+Warning (10034): Output port "SD_CLK" at DE1_synthesizer.v(114) has no driver
+Warning (10034): Output port "TDO" at DE1_synthesizer.v(125) has no driver
+Warning (10034): Output port "VGA_R[2]" at DE1_synthesizer.v(129) has no driver
+Warning (10034): Output port "VGA_R[1]" at DE1_synthesizer.v(129) has no driver
+Warning (10034): Output port "VGA_R[0]" at DE1_synthesizer.v(129) has no driver
+Warning (10034): Output port "VGA_G[2]" at DE1_synthesizer.v(130) has no driver
+Warning (10034): Output port "VGA_G[1]" at DE1_synthesizer.v(130) has no driver
+Warning (10034): Output port "VGA_G[0]" at DE1_synthesizer.v(130) has no driver
+Warning (10034): Output port "VGA_B[2]" at DE1_synthesizer.v(131) has no driver
+Warning (10034): Output port "VGA_B[1]" at DE1_synthesizer.v(131) has no driver
+Warning (10034): Output port "VGA_B[0]" at DE1_synthesizer.v(131) has no driver
+Warning: Using design file SEG7_LUT_4.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: SEG7_LUT_4
+Info: Elaborating entity "SEG7_LUT_4" for hierarchy "SEG7_LUT_4:u0"
+Warning: Using design file SEG7_LUT.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: SEG7_LUT
+Info: Elaborating entity "SEG7_LUT" for hierarchy "SEG7_LUT_4:u0|SEG7_LUT:u0"
+Warning: Using design file VGA_Audio_PLL.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: VGA_Audio_PLL
+Info: Elaborating entity "VGA_Audio_PLL" for hierarchy "VGA_Audio_PLL:u1"
+Info: Found 1 design units, including 1 entities, in source file ../../../../../altera/quartus60/libraries/megafunctions/altpll.tdf
+    Info: Found entity 1: altpll
+Info: Elaborating entity "altpll" for hierarchy "VGA_Audio_PLL:u1|altpll:altpll_component"
+Info: Elaborated megafunction instantiation "VGA_Audio_PLL:u1|altpll:altpll_component"
+Warning: Using design file I2C_AV_Config.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: I2C_AV_Config
+Info: Elaborating entity "I2C_AV_Config" for hierarchy "I2C_AV_Config:u7"
+Warning (10230): Verilog HDL assignment warning at I2C_AV_Config.v(53): truncated value with size 32 to match size of target (16)
+Warning (10230): Verilog HDL assignment warning at I2C_AV_Config.v(101): truncated value with size 32 to match size of target (4)
+Warning: Using design file I2C_Controller.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: I2C_Controller
+Info: Elaborating entity "I2C_Controller" for hierarchy "I2C_AV_Config:u7|I2C_Controller:u0"
+Warning (10230): Verilog HDL assignment warning at I2C_Controller.v(90): truncated value with size 32 to match size of target (6)
+Warning: Using design file demo_sound1.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: demo_sound1
+Info: Elaborating entity "demo_sound1" for hierarchy "demo_sound1:dd1"
 Warning (10230): Verilog HDL assignment warning at demo_sound1.v(26): truncated value with size 32 to match size of target (6)
 Warning (10230): Verilog HDL assignment warning at demo_sound1.v(27): truncated value with size 32 to match size of target (6)
 Warning (10230): Verilog HDL assignment warning at demo_sound1.v(28): truncated value with size 32 to match size of target (6)
 Warning (10230): Verilog HDL assignment warning at demo_sound1.v(29): truncated value with size 32 to match size of target (6)
 Warning (10230): Verilog HDL assignment warning at demo_sound1.v(30): truncated value with size 32 to match size of target (16)
 Warning (10230): Verilog HDL assignment warning at demo_sound1.v(50): truncated value with size 32 to match size of target (16)
-Warning (10270): Verilog HDL Case Statement warning at demo_sound1.v(63): incomplete case statement has no default case item
+Warning (10270): Verilog HDL statement warning at demo_sound1.v(63): incomplete Case Statement has no default case item
 Warning (10240): Verilog HDL Always Construct warning at demo_sound1.v(62): inferring latch(es) for variable "TT", which holds its previous value in one or more paths through the always construct
+Info (10041): Verilog HDL or VHDL info at demo_sound1.v(12): inferred latch for "TT[15]"
+Info (10041): Verilog HDL or VHDL info at demo_sound1.v(12): inferred latch for "TT[14]"
+Info (10041): Verilog HDL or VHDL info at demo_sound1.v(12): inferred latch for "TT[13]"
+Info (10041): Verilog HDL or VHDL info at demo_sound1.v(12): inferred latch for "TT[12]"
+Info (10041): Verilog HDL or VHDL info at demo_sound1.v(12): inferred latch for "TT[11]"
+Info (10041): Verilog HDL or VHDL info at demo_sound1.v(12): inferred latch for "TT[10]"
+Info (10041): Verilog HDL or VHDL info at demo_sound1.v(12): inferred latch for "TT[9]"
+Info (10041): Verilog HDL or VHDL info at demo_sound1.v(12): inferred latch for "TT[8]"
+Info (10041): Verilog HDL or VHDL info at demo_sound1.v(63): inferred latch for "TT[7]"
+Info (10041): Verilog HDL or VHDL info at demo_sound1.v(63): inferred latch for "TT[6]"
+Info (10041): Verilog HDL or VHDL info at demo_sound1.v(63): inferred latch for "TT[5]"
+Info (10041): Verilog HDL or VHDL info at demo_sound1.v(63): inferred latch for "TT[4]"
+Info (10041): Verilog HDL or VHDL info at demo_sound1.v(63): inferred latch for "TT[3]"
+Info (10041): Verilog HDL or VHDL info at demo_sound1.v(63): inferred latch for "TT[2]"
+Info (10041): Verilog HDL or VHDL info at demo_sound1.v(63): inferred latch for "TT[1]"
+Info (10041): Verilog HDL or VHDL info at demo_sound1.v(63): inferred latch for "TT[0]"
 Warning (10230): Verilog HDL assignment warning at demo_sound1.v(130): truncated value with size 32 to match size of target (16)
-Info (10041): Inferred latch for "TT[0]" at demo_sound1.v(62)
-Info (10041): Inferred latch for "TT[1]" at demo_sound1.v(62)
-Info (10041): Inferred latch for "TT[2]" at demo_sound1.v(62)
-Info (10041): Inferred latch for "TT[3]" at demo_sound1.v(62)
-Info (10041): Inferred latch for "TT[4]" at demo_sound1.v(62)
-Info (10041): Inferred latch for "TT[5]" at demo_sound1.v(62)
-Info (10041): Inferred latch for "TT[6]" at demo_sound1.v(62)
-Info (10041): Inferred latch for "TT[7]" at demo_sound1.v(62)
-Warning (12125): Using design file demo_sound2.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: demo_sound2
-Info (12128): Elaborating entity "demo_sound2" for hierarchy "demo_sound2:dd2"
+Warning: Using design file demo_sound2.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: demo_sound2
+Info: Elaborating entity "demo_sound2" for hierarchy "demo_sound2:dd2"
 Warning (10230): Verilog HDL assignment warning at demo_sound2.v(26): truncated value with size 32 to match size of target (6)
 Warning (10230): Verilog HDL assignment warning at demo_sound2.v(27): truncated value with size 32 to match size of target (6)
 Warning (10230): Verilog HDL assignment warning at demo_sound2.v(28): truncated value with size 32 to match size of target (6)
 Warning (10230): Verilog HDL assignment warning at demo_sound2.v(29): truncated value with size 32 to match size of target (6)
 Warning (10230): Verilog HDL assignment warning at demo_sound2.v(30): truncated value with size 32 to match size of target (16)
 Warning (10230): Verilog HDL assignment warning at demo_sound2.v(50): truncated value with size 32 to match size of target (16)
-Warning (10270): Verilog HDL Case Statement warning at demo_sound2.v(63): incomplete case statement has no default case item
+Warning (10270): Verilog HDL statement warning at demo_sound2.v(63): incomplete Case Statement has no default case item
 Warning (10240): Verilog HDL Always Construct warning at demo_sound2.v(62): inferring latch(es) for variable "TT", which holds its previous value in one or more paths through the always construct
+Info (10041): Verilog HDL or VHDL info at demo_sound2.v(63): inferred latch for "TT[7]"
+Info (10041): Verilog HDL or VHDL info at demo_sound2.v(63): inferred latch for "TT[6]"
+Info (10041): Verilog HDL or VHDL info at demo_sound2.v(63): inferred latch for "TT[5]"
+Info (10041): Verilog HDL or VHDL info at demo_sound2.v(63): inferred latch for "TT[4]"
+Info (10041): Verilog HDL or VHDL info at demo_sound2.v(63): inferred latch for "TT[3]"
+Info (10041): Verilog HDL or VHDL info at demo_sound2.v(63): inferred latch for "TT[2]"
+Info (10041): Verilog HDL or VHDL info at demo_sound2.v(63): inferred latch for "TT[1]"
+Info (10041): Verilog HDL or VHDL info at demo_sound2.v(63): inferred latch for "TT[0]"
 Warning (10230): Verilog HDL assignment warning at demo_sound2.v(136): truncated value with size 32 to match size of target (16)
-Info (10041): Inferred latch for "TT[0]" at demo_sound2.v(62)
-Info (10041): Inferred latch for "TT[1]" at demo_sound2.v(62)
-Info (10041): Inferred latch for "TT[2]" at demo_sound2.v(62)
-Info (10041): Inferred latch for "TT[3]" at demo_sound2.v(62)
-Info (10041): Inferred latch for "TT[4]" at demo_sound2.v(62)
-Info (10041): Inferred latch for "TT[5]" at demo_sound2.v(62)
-Info (10041): Inferred latch for "TT[6]" at demo_sound2.v(62)
-Info (10041): Inferred latch for "TT[7]" at demo_sound2.v(62)
-Warning (12125): Using design file ps2_keyboard.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: PS2_KEYBOARD
-Info (12128): Elaborating entity "PS2_KEYBOARD" for hierarchy "PS2_KEYBOARD:keyboard"
-Warning (10230): Verilog HDL assignment warning at ps2_keyboard.v(19): truncated value with size 32 to match size of target (11)
-Warning (10230): Verilog HDL assignment warning at ps2_keyboard.v(24): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at ps2_keyboard.v(31): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at ps2_keyboard.v(49): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at ps2_keyboard.v(66): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at ps2_keyboard.v(90): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at ps2_keyboard.v(92): truncated value with size 10 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at ps2_keyboard.v(112): truncated value with size 10 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at ps2_keyboard.v(115): truncated value with size 10 to match size of target (8)
-Warning (10030): Net "keycode_o[9..8]" at ps2_keyboard.v(35) has no driver or initial value, using a default initial value '0'
-Warning (12125): Using design file staff.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: staff
-Info (12128): Elaborating entity "staff" for hierarchy "staff:st1"
+Warning: Using design file PS2_KEYBOARD.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: PS2_KEYBOARD
+Info: Elaborating entity "PS2_KEYBOARD" for hierarchy "PS2_KEYBOARD:keyboard"
+Warning (10230): Verilog HDL assignment warning at PS2_KEYBOARD.v(19): truncated value with size 32 to match size of target (11)
+Warning (10230): Verilog HDL assignment warning at PS2_KEYBOARD.v(31): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at PS2_KEYBOARD.v(92): truncated value with size 10 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at PS2_KEYBOARD.v(112): truncated value with size 10 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at PS2_KEYBOARD.v(115): truncated value with size 10 to match size of target (8)
+Warning (10030): Tied undriven net "keycode_o[9]" at PS2_KEYBOARD.v(35) to 0
+Warning (10030): Tied undriven net "keycode_o[8]" at PS2_KEYBOARD.v(35) to 0
+Warning: Using design file staff.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: staff
+Info: Elaborating entity "staff" for hierarchy "staff:st1"
 Warning (10230): Verilog HDL assignment warning at staff.v(23): truncated value with size 32 to match size of target (1)
 Warning (10230): Verilog HDL assignment warning at staff.v(24): truncated value with size 32 to match size of target (1)
 Warning (10230): Verilog HDL assignment warning at staff.v(25): truncated value with size 32 to match size of target (1)
 Warning (10230): Verilog HDL assignment warning at staff.v(26): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(50): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(51): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(52): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(53): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(54): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(55): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(56): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(57): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(58): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(59): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(60): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(67): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(68): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(69): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(70): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(71): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(72): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(73): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(74): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(75): truncated value with size 32 to match size of target (1)
 Warning (10230): Verilog HDL assignment warning at staff.v(77): truncated value with size 32 to match size of target (16)
-Warning (10230): Verilog HDL assignment warning at staff.v(102): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(103): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(104): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(105): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(106): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(107): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(108): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(109): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(110): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(111): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(112): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(119): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(120): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(121): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(122): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(123): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(124): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(125): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(126): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(127): truncated value with size 32 to match size of target (1)
 Warning (10230): Verilog HDL assignment warning at staff.v(129): truncated value with size 32 to match size of target (16)
-Warning (10230): Verilog HDL assignment warning at staff.v(154): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(155): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(156): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(157): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(158): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(159): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(160): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(161): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(162): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(163): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(164): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(171): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(172): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(173): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(174): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(175): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(176): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(177): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(178): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(179): truncated value with size 32 to match size of target (1)
 Warning (10230): Verilog HDL assignment warning at staff.v(181): truncated value with size 32 to match size of target (16)
-Warning (10230): Verilog HDL assignment warning at staff.v(206): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(207): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(208): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(209): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(210): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(211): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(212): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(213): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(214): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(215): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(216): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(223): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(224): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(225): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(226): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(227): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(228): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(229): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(230): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at staff.v(231): truncated value with size 32 to match size of target (1)
 Warning (10230): Verilog HDL assignment warning at staff.v(233): truncated value with size 32 to match size of target (16)
-Warning (10230): Verilog HDL assignment warning at staff.v(292): truncated value with size 32 to match size of target (12)
-Warning (10230): Verilog HDL assignment warning at staff.v(294): truncated value with size 32 to match size of target (12)
-Warning (10230): Verilog HDL assignment warning at staff.v(314): truncated value with size 32 to match size of target (12)
-Warning (10230): Verilog HDL assignment warning at staff.v(372): truncated value with size 32 to match size of target (12)
-Warning (10230): Verilog HDL assignment warning at staff.v(374): truncated value with size 32 to match size of target (12)
-Warning (10230): Verilog HDL assignment warning at staff.v(390): truncated value with size 32 to match size of target (12)
-Warning (12125): Using design file vga_time_generator.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: vga_time_generator
-Info (12128): Elaborating entity "vga_time_generator" for hierarchy "staff:st1|vga_time_generator:vga0"
-Warning (10230): Verilog HDL assignment warning at vga_time_generator.v(25): truncated value with size 32 to match size of target (12)
+Warning: Using design file vga_time_generator.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: vga_time_generator
+Info: Elaborating entity "vga_time_generator" for hierarchy "staff:st1|vga_time_generator:vga0"
 Warning (10230): Verilog HDL assignment warning at vga_time_generator.v(32): truncated value with size 32 to match size of target (12)
-Warning (10763): Verilog HDL warning at vga_time_generator.v(36): case statement has overlapping case item expressions with non-constant or don't care bits - unable to check case statement for completeness
-Warning (10230): Verilog HDL assignment warning at vga_time_generator.v(46): truncated value with size 32 to match size of target (12)
+Warning (10005): Verilog HDL or VHDL warning at vga_time_generator.v(36): overlapping case item expressions are non-constant or contain don't care bits - unable to check case statement for completeness
 Warning (10230): Verilog HDL assignment warning at vga_time_generator.v(53): truncated value with size 32 to match size of target (12)
-Warning (10763): Verilog HDL warning at vga_time_generator.v(57): case statement has overlapping case item expressions with non-constant or don't care bits - unable to check case statement for completeness
+Warning (10005): Verilog HDL or VHDL warning at vga_time_generator.v(57): overlapping case item expressions are non-constant or contain don't care bits - unable to check case statement for completeness
 Warning (10230): Verilog HDL assignment warning at vga_time_generator.v(72): truncated value with size 32 to match size of target (12)
 Warning (10230): Verilog HDL assignment warning at vga_time_generator.v(77): truncated value with size 32 to match size of target (12)
-Warning (12125): Using design file bar_white.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: bar_white
-Info (12128): Elaborating entity "bar_white" for hierarchy "staff:st1|bar_white:bar1"
-Warning (10230): Verilog HDL assignment warning at bar_white.v(22): truncated value with size 32 to match size of target (12)
+Warning: Using design file bar_white.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: bar_white
+Info: Elaborating entity "bar_white" for hierarchy "staff:st1|bar_white:bar1"
 Warning (10230): Verilog HDL assignment warning at bar_white.v(23): truncated value with size 32 to match size of target (1)
 Warning (10230): Verilog HDL assignment warning at bar_white.v(24): truncated value with size 32 to match size of target (1)
 Warning (10230): Verilog HDL assignment warning at bar_white.v(25): truncated value with size 32 to match size of target (1)
@@ -1282,14 +839,13 @@ Warning (10230): Verilog HDL assignment warning at bar_white.v(34): truncated va
 Warning (10230): Verilog HDL assignment warning at bar_white.v(35): truncated value with size 32 to match size of target (1)
 Warning (10230): Verilog HDL assignment warning at bar_white.v(36): truncated value with size 32 to match size of target (1)
 Warning (10230): Verilog HDL assignment warning at bar_white.v(37): truncated value with size 32 to match size of target (1)
-Warning (12125): Using design file bar_big.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: bar_big
-Info (12128): Elaborating entity "bar_big" for hierarchy "staff:st1|bar_big:b0"
+Warning: Using design file bar_big.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: bar_big
+Info: Elaborating entity "bar_big" for hierarchy "staff:st1|bar_big:b0"
 Warning (10230): Verilog HDL assignment warning at bar_big.v(12): truncated value with size 32 to match size of target (1)
-Warning (12125): Using design file bar_blank.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: bar_blank
-Info (12128): Elaborating entity "bar_blank" for hierarchy "staff:st1|bar_blank:bar_blank1"
-Warning (10230): Verilog HDL assignment warning at bar_blank.v(17): truncated value with size 32 to match size of target (12)
+Warning: Using design file bar_blank.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: bar_blank
+Info: Elaborating entity "bar_blank" for hierarchy "staff:st1|bar_blank:bar_blank1"
 Warning (10230): Verilog HDL assignment warning at bar_blank.v(19): truncated value with size 32 to match size of target (1)
 Warning (10230): Verilog HDL assignment warning at bar_blank.v(20): truncated value with size 32 to match size of target (1)
 Warning (10230): Verilog HDL assignment warning at bar_blank.v(21): truncated value with size 32 to match size of target (1)
@@ -1301,9 +857,9 @@ Warning (10230): Verilog HDL assignment warning at bar_blank.v(26): truncated va
 Warning (10230): Verilog HDL assignment warning at bar_blank.v(27): truncated value with size 32 to match size of target (1)
 Warning (10230): Verilog HDL assignment warning at bar_blank.v(28): truncated value with size 32 to match size of target (1)
 Warning (10230): Verilog HDL assignment warning at bar_blank.v(29): truncated value with size 32 to match size of target (1)
-Warning (12125): Using design file adio_codec.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: adio_codec
-Info (12128): Elaborating entity "adio_codec" for hierarchy "adio_codec:ad1"
+Warning: Using design file adio_codec.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: adio_codec
+Info: Elaborating entity "adio_codec" for hierarchy "adio_codec:ad1"
 Warning (10230): Verilog HDL assignment warning at adio_codec.v(63): truncated value with size 32 to match size of target (4)
 Warning (10230): Verilog HDL assignment warning at adio_codec.v(88): truncated value with size 32 to match size of target (9)
 Warning (10230): Verilog HDL assignment warning at adio_codec.v(96): truncated value with size 32 to match size of target (8)
@@ -1311,14 +867,6 @@ Warning (10230): Verilog HDL assignment warning at adio_codec.v(104): truncated 
 Warning (10230): Verilog HDL assignment warning at adio_codec.v(117): truncated value with size 32 to match size of target (6)
 Warning (10230): Verilog HDL assignment warning at adio_codec.v(144): truncated value with size 32 to match size of target (4)
 Warning (10230): Verilog HDL assignment warning at adio_codec.v(146): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at adio_codec.v(187): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at adio_codec.v(188): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at adio_codec.v(189): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at adio_codec.v(190): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at adio_codec.v(191): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at adio_codec.v(192): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at adio_codec.v(193): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at adio_codec.v(194): truncated value with size 32 to match size of target (6)
 Warning (10229): Verilog HDL Expression warning at wave_gen_string.v(53): truncated literal to match 16 bits
 Warning (10229): Verilog HDL Expression warning at wave_gen_string.v(54): truncated literal to match 16 bits
 Warning (10229): Verilog HDL Expression warning at wave_gen_string.v(55): truncated literal to match 16 bits
@@ -1340,9 +888,9 @@ Warning (10229): Verilog HDL Expression warning at wave_gen_string.v(70): trunca
 Warning (10229): Verilog HDL Expression warning at wave_gen_string.v(71): truncated literal to match 16 bits
 Warning (10229): Verilog HDL Expression warning at wave_gen_string.v(72): truncated literal to match 16 bits
 Warning (10229): Verilog HDL Expression warning at wave_gen_string.v(73): truncated literal to match 16 bits
-Warning (12125): Using design file wave_gen_string.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: wave_gen_string
-Info (12128): Elaborating entity "wave_gen_string" for hierarchy "adio_codec:ad1|wave_gen_string:r1"
+Warning: Using design file wave_gen_string.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: wave_gen_string
+Info: Elaborating entity "wave_gen_string" for hierarchy "adio_codec:ad1|wave_gen_string:r1"
 Warning (10229): Verilog HDL Expression warning at wave_gen_brass.v(40): truncated literal to match 16 bits
 Warning (10229): Verilog HDL Expression warning at wave_gen_brass.v(41): truncated literal to match 16 bits
 Warning (10229): Verilog HDL Expression warning at wave_gen_brass.v(42): truncated literal to match 16 bits
@@ -1376,212 +924,288 @@ Warning (10229): Verilog HDL Expression warning at wave_gen_brass.v(69): truncat
 Warning (10229): Verilog HDL Expression warning at wave_gen_brass.v(70): truncated literal to match 16 bits
 Warning (10229): Verilog HDL Expression warning at wave_gen_brass.v(71): truncated literal to match 16 bits
 Warning (10229): Verilog HDL Expression warning at wave_gen_brass.v(72): truncated literal to match 16 bits
-Warning (12125): Using design file wave_gen_brass.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: wave_gen_brass
-Info (12128): Elaborating entity "wave_gen_brass" for hierarchy "adio_codec:ad1|wave_gen_brass:s1"
-Info (276014): Found 8 instances of uninferred RAM logic
-    Info (276007): RAM logic "adio_codec:ad1|wave_gen_brass:s4|Ram0" is uninferred due to asynchronous read logic
-    Info (276007): RAM logic "adio_codec:ad1|wave_gen_string:r4|Ram0" is uninferred due to asynchronous read logic
-    Info (276007): RAM logic "adio_codec:ad1|wave_gen_brass:s3|Ram0" is uninferred due to asynchronous read logic
-    Info (276007): RAM logic "adio_codec:ad1|wave_gen_string:r3|Ram0" is uninferred due to asynchronous read logic
-    Info (276007): RAM logic "adio_codec:ad1|wave_gen_brass:s2|Ram0" is uninferred due to asynchronous read logic
-    Info (276007): RAM logic "adio_codec:ad1|wave_gen_string:r2|Ram0" is uninferred due to asynchronous read logic
-    Info (276007): RAM logic "adio_codec:ad1|wave_gen_brass:s1|Ram0" is uninferred due to asynchronous read logic
-    Info (276007): RAM logic "adio_codec:ad1|wave_gen_string:r1|Ram0" is uninferred due to asynchronous read logic
-Warning (12241): 5 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Warning (13034): The following nodes have both tri-state and non-tri-state drivers
-    Warning (13035): Inserted always-enabled tri-state buffer between "AUD_BCLK" and its non-tri-state driver.
-Warning (13039): The following bidir pins have no drivers
-    Warning (13040): Bidir "SD_DAT3" has no driver
-    Warning (13040): Bidir "SD_CMD" has no driver
-Warning (13027): Removed fan-outs from the following always-disabled I/O buffers
-    Warning (13028): Removed fan-out from the always-disabled I/O buffer "I2C_SDAT" to the node "I2C_SDAT"
-Warning (13012): Latch demo_sound1:dd1|TT[3] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal demo_sound1:dd1|step[0]
-Warning (13012): Latch demo_sound1:dd1|TT[6] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal demo_sound1:dd1|step[0]
-Warning (13012): Latch demo_sound1:dd1|TT[5] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal demo_sound1:dd1|step[0]
-Warning (13012): Latch demo_sound1:dd1|TT[4] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal demo_sound1:dd1|step[0]
-Warning (13012): Latch demo_sound1:dd1|TT[7] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal demo_sound1:dd1|step[0]
-Warning (13012): Latch demo_sound1:dd1|TT[2] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal demo_sound1:dd1|step[0]
-Warning (13012): Latch demo_sound1:dd1|TT[0] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal demo_sound1:dd1|step[0]
-Warning (13012): Latch demo_sound1:dd1|TT[1] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal demo_sound1:dd1|step[0]
-Warning (13012): Latch demo_sound2:dd2|TT[3] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal demo_sound2:dd2|step[0]
-Warning (13012): Latch demo_sound2:dd2|TT[6] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal demo_sound2:dd2|step[0]
-Warning (13012): Latch demo_sound2:dd2|TT[5] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal demo_sound2:dd2|step[0]
-Warning (13012): Latch demo_sound2:dd2|TT[4] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal demo_sound2:dd2|step[0]
-Warning (13012): Latch demo_sound2:dd2|TT[7] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal demo_sound2:dd2|step[0]
-Warning (13012): Latch demo_sound2:dd2|TT[2] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal demo_sound2:dd2|step[0]
-Warning (13012): Latch demo_sound2:dd2|TT[0] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal demo_sound2:dd2|step[0]
-Warning (13012): Latch demo_sound2:dd2|TT[1] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal demo_sound2:dd2|step[0]
-Info (13000): Registers with preset signals will power-up high
-Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
-Warning (13009): TRI or OPNDRN buffers permanently enabled
-    Warning (13010): Node "AUD_BCLK~synth"
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "HEX0[0]" is stuck at GND
-    Warning (13410): Pin "HEX0[1]" is stuck at GND
-    Warning (13410): Pin "HEX0[2]" is stuck at VCC
-    Warning (13410): Pin "HEX0[3]" is stuck at GND
-    Warning (13410): Pin "HEX0[4]" is stuck at GND
-    Warning (13410): Pin "HEX0[5]" is stuck at VCC
-    Warning (13410): Pin "HEX0[6]" is stuck at GND
-    Warning (13410): Pin "HEX1[0]" is stuck at VCC
-    Warning (13410): Pin "HEX1[1]" is stuck at GND
-    Warning (13410): Pin "HEX1[2]" is stuck at GND
-    Warning (13410): Pin "HEX1[3]" is stuck at VCC
-    Warning (13410): Pin "HEX1[4]" is stuck at VCC
-    Warning (13410): Pin "HEX1[5]" is stuck at VCC
-    Warning (13410): Pin "HEX1[6]" is stuck at VCC
-    Warning (13410): Pin "HEX2[0]" is stuck at VCC
-    Warning (13410): Pin "HEX2[1]" is stuck at GND
-    Warning (13410): Pin "HEX2[2]" is stuck at GND
-    Warning (13410): Pin "HEX2[3]" is stuck at VCC
-    Warning (13410): Pin "HEX2[4]" is stuck at VCC
-    Warning (13410): Pin "HEX2[5]" is stuck at VCC
-    Warning (13410): Pin "HEX2[6]" is stuck at VCC
-    Warning (13410): Pin "HEX3[0]" is stuck at VCC
-    Warning (13410): Pin "HEX3[1]" is stuck at GND
-    Warning (13410): Pin "HEX3[2]" is stuck at GND
-    Warning (13410): Pin "HEX3[3]" is stuck at VCC
-    Warning (13410): Pin "HEX3[4]" is stuck at VCC
-    Warning (13410): Pin "HEX3[5]" is stuck at VCC
-    Warning (13410): Pin "HEX3[6]" is stuck at VCC
-    Warning (13410): Pin "LEDR[0]" is stuck at GND
-    Warning (13410): Pin "LEDR[1]" is stuck at GND
-    Warning (13410): Pin "LEDR[2]" is stuck at GND
-    Warning (13410): Pin "LEDR[3]" is stuck at GND
-    Warning (13410): Pin "LEDR[4]" is stuck at GND
-    Warning (13410): Pin "LEDR[5]" is stuck at GND
-    Warning (13410): Pin "LEDR[8]" is stuck at GND
-    Warning (13410): Pin "LEDR[9]" is stuck at GND
-    Warning (13410): Pin "UART_TXD" is stuck at GND
-    Warning (13410): Pin "DRAM_ADDR[0]" is stuck at GND
-    Warning (13410): Pin "DRAM_ADDR[1]" is stuck at GND
-    Warning (13410): Pin "DRAM_ADDR[2]" is stuck at GND
-    Warning (13410): Pin "DRAM_ADDR[3]" is stuck at GND
-    Warning (13410): Pin "DRAM_ADDR[4]" is stuck at GND
-    Warning (13410): Pin "DRAM_ADDR[5]" is stuck at GND
-    Warning (13410): Pin "DRAM_ADDR[6]" is stuck at GND
-    Warning (13410): Pin "DRAM_ADDR[7]" is stuck at GND
-    Warning (13410): Pin "DRAM_ADDR[8]" is stuck at GND
-    Warning (13410): Pin "DRAM_ADDR[9]" is stuck at GND
-    Warning (13410): Pin "DRAM_ADDR[10]" is stuck at GND
-    Warning (13410): Pin "DRAM_ADDR[11]" is stuck at GND
-    Warning (13410): Pin "DRAM_LDQM" is stuck at GND
-    Warning (13410): Pin "DRAM_UDQM" is stuck at GND
-    Warning (13410): Pin "DRAM_WE_N" is stuck at GND
-    Warning (13410): Pin "DRAM_CAS_N" is stuck at GND
-    Warning (13410): Pin "DRAM_RAS_N" is stuck at GND
-    Warning (13410): Pin "DRAM_CS_N" is stuck at GND
-    Warning (13410): Pin "DRAM_BA_0" is stuck at GND
-    Warning (13410): Pin "DRAM_BA_1" is stuck at GND
-    Warning (13410): Pin "DRAM_CLK" is stuck at GND
-    Warning (13410): Pin "DRAM_CKE" is stuck at GND
-    Warning (13410): Pin "FL_ADDR[0]" is stuck at GND
-    Warning (13410): Pin "FL_ADDR[1]" is stuck at GND
-    Warning (13410): Pin "FL_ADDR[2]" is stuck at GND
-    Warning (13410): Pin "FL_ADDR[3]" is stuck at GND
-    Warning (13410): Pin "FL_ADDR[4]" is stuck at GND
-    Warning (13410): Pin "FL_ADDR[5]" is stuck at GND
-    Warning (13410): Pin "FL_ADDR[6]" is stuck at GND
-    Warning (13410): Pin "FL_ADDR[7]" is stuck at GND
-    Warning (13410): Pin "FL_ADDR[8]" is stuck at GND
-    Warning (13410): Pin "FL_ADDR[9]" is stuck at GND
-    Warning (13410): Pin "FL_ADDR[10]" is stuck at GND
-    Warning (13410): Pin "FL_ADDR[11]" is stuck at GND
-    Warning (13410): Pin "FL_ADDR[12]" is stuck at GND
-    Warning (13410): Pin "FL_ADDR[13]" is stuck at GND
-    Warning (13410): Pin "FL_ADDR[14]" is stuck at GND
-    Warning (13410): Pin "FL_ADDR[15]" is stuck at GND
-    Warning (13410): Pin "FL_ADDR[16]" is stuck at GND
-    Warning (13410): Pin "FL_ADDR[17]" is stuck at GND
-    Warning (13410): Pin "FL_ADDR[18]" is stuck at GND
-    Warning (13410): Pin "FL_ADDR[19]" is stuck at GND
-    Warning (13410): Pin "FL_ADDR[20]" is stuck at GND
-    Warning (13410): Pin "FL_ADDR[21]" is stuck at GND
-    Warning (13410): Pin "FL_WE_N" is stuck at GND
-    Warning (13410): Pin "FL_RST_N" is stuck at GND
-    Warning (13410): Pin "FL_OE_N" is stuck at GND
-    Warning (13410): Pin "FL_CE_N" is stuck at GND
-    Warning (13410): Pin "SRAM_ADDR[0]" is stuck at GND
-    Warning (13410): Pin "SRAM_ADDR[1]" is stuck at GND
-    Warning (13410): Pin "SRAM_ADDR[2]" is stuck at GND
-    Warning (13410): Pin "SRAM_ADDR[3]" is stuck at GND
-    Warning (13410): Pin "SRAM_ADDR[4]" is stuck at GND
-    Warning (13410): Pin "SRAM_ADDR[5]" is stuck at GND
-    Warning (13410): Pin "SRAM_ADDR[6]" is stuck at GND
-    Warning (13410): Pin "SRAM_ADDR[7]" is stuck at GND
-    Warning (13410): Pin "SRAM_ADDR[8]" is stuck at GND
-    Warning (13410): Pin "SRAM_ADDR[9]" is stuck at GND
-    Warning (13410): Pin "SRAM_ADDR[10]" is stuck at GND
-    Warning (13410): Pin "SRAM_ADDR[11]" is stuck at GND
-    Warning (13410): Pin "SRAM_ADDR[12]" is stuck at GND
-    Warning (13410): Pin "SRAM_ADDR[13]" is stuck at GND
-    Warning (13410): Pin "SRAM_ADDR[14]" is stuck at GND
-    Warning (13410): Pin "SRAM_ADDR[15]" is stuck at GND
-    Warning (13410): Pin "SRAM_ADDR[16]" is stuck at GND
-    Warning (13410): Pin "SRAM_ADDR[17]" is stuck at GND
-    Warning (13410): Pin "SRAM_UB_N" is stuck at GND
-    Warning (13410): Pin "SRAM_LB_N" is stuck at GND
-    Warning (13410): Pin "SRAM_WE_N" is stuck at GND
-    Warning (13410): Pin "SRAM_CE_N" is stuck at GND
-    Warning (13410): Pin "SRAM_OE_N" is stuck at GND
-    Warning (13410): Pin "SD_CLK" is stuck at GND
-    Warning (13410): Pin "TDO" is stuck at GND
-    Warning (13410): Pin "VGA_R[0]" is stuck at GND
-    Warning (13410): Pin "VGA_R[1]" is stuck at GND
-    Warning (13410): Pin "VGA_R[2]" is stuck at GND
-    Warning (13410): Pin "VGA_G[0]" is stuck at GND
-    Warning (13410): Pin "VGA_G[1]" is stuck at GND
-    Warning (13410): Pin "VGA_G[2]" is stuck at GND
-    Warning (13410): Pin "VGA_B[0]" is stuck at GND
-    Warning (13410): Pin "VGA_B[1]" is stuck at GND
-    Warning (13410): Pin "VGA_B[2]" is stuck at GND
-Info (17049): 13 registers lost all their fanouts during netlist optimizations.
-Critical Warning (138069): Setting INCREMENTAL_COMPILATION to "OFF" is no longer supported. Assignment is ignored. To disable partitions, set the IGNORE_PARTITIONS global assignment to "ON" instead.
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 15 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "CLOCK_24[0]"
-    Warning (15610): No output dependent on input pin "CLOCK_24[1]"
-    Warning (15610): No output dependent on input pin "CLOCK_27[1]"
-    Warning (15610): No output dependent on input pin "EXT_CLOCK"
-    Warning (15610): No output dependent on input pin "SW[3]"
-    Warning (15610): No output dependent on input pin "SW[4]"
-    Warning (15610): No output dependent on input pin "SW[5]"
-    Warning (15610): No output dependent on input pin "SW[6]"
-    Warning (15610): No output dependent on input pin "SW[7]"
-    Warning (15610): No output dependent on input pin "SW[8]"
-    Warning (15610): No output dependent on input pin "UART_RXD"
-    Warning (15610): No output dependent on input pin "TDI"
-    Warning (15610): No output dependent on input pin "TCK"
-    Warning (15610): No output dependent on input pin "TCS"
-    Warning (15610): No output dependent on input pin "AUD_ADCDAT"
-Info (21057): Implemented 1856 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 26 input pins
-    Info (21059): Implemented 139 output pins
-    Info (21060): Implemented 118 bidirectional pins
-    Info (21061): Implemented 1572 logic cells
-    Info (21065): Implemented 1 PLLs
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 461 warnings
-    Info: Peak virtual memory: 501 megabytes
-    Info: Processing ended: Fri Jun 05 11:03:48 2015
-    Info: Elapsed time: 00:00:15
-    Info: Total CPU time (on all processors): 00:00:14
+Warning: Using design file wave_gen_brass.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: wave_gen_brass
+Info: Elaborating entity "wave_gen_brass" for hierarchy "adio_codec:ad1|wave_gen_brass:s1"
+Warning: Port "org_x" on the entity instantiation of "b2" is connected to a signal of width 32. The formal width of the signal in the module is 12.  Extra bits will be driven by GND.
+Warning: Port "org_x" on the entity instantiation of "b0" is connected to a signal of width 32. The formal width of the signal in the module is 12.  Extra bits will be driven by GND.
+Warning: Port "h_bporch" on the entity instantiation of "vga0" is connected to a signal of width 32. The formal width of the signal in the module is 12.  Extra bits will be driven by GND.
+Warning: Port "h_disp" on the entity instantiation of "vga0" is connected to a signal of width 32. The formal width of the signal in the module is 12.  Extra bits will be driven by GND.
+Warning: Port "h_fporch" on the entity instantiation of "vga0" is connected to a signal of width 32. The formal width of the signal in the module is 12.  Extra bits will be driven by GND.
+Warning: Port "h_sync" on the entity instantiation of "vga0" is connected to a signal of width 32. The formal width of the signal in the module is 12.  Extra bits will be driven by GND.
+Warning: Port "v_bporch" on the entity instantiation of "vga0" is connected to a signal of width 32. The formal width of the signal in the module is 12.  Extra bits will be driven by GND.
+Warning: Port "v_disp" on the entity instantiation of "vga0" is connected to a signal of width 32. The formal width of the signal in the module is 12.  Extra bits will be driven by GND.
+Warning: Port "v_fporch" on the entity instantiation of "vga0" is connected to a signal of width 32. The formal width of the signal in the module is 12.  Extra bits will be driven by GND.
+Warning: Port "v_sync" on the entity instantiation of "vga0" is connected to a signal of width 32. The formal width of the signal in the module is 12.  Extra bits will be driven by GND.
+Warning: Port "inclk0" on the entity instantiation of "u1" is connected to a signal of width 2. The formal width of the signal in the module is 1.  Extra bits will be driven by GND.
+Warning: Reduced register "adio_codec:ad1|ramp3[15]" with stuck clear port to stuck value GND
+Warning: Reduced register "adio_codec:ad1|ramp3[14]" with stuck clear port to stuck value GND
+Warning: Reduced register "adio_codec:ad1|ramp3[13]" with stuck clear port to stuck value GND
+Warning: Reduced register "adio_codec:ad1|ramp3[12]" with stuck clear port to stuck value GND
+Warning: Reduced register "adio_codec:ad1|ramp3[11]" with stuck clear port to stuck value GND
+Warning: Reduced register "adio_codec:ad1|ramp3[10]" with stuck clear port to stuck value GND
+Warning: Reduced register "adio_codec:ad1|ramp3[9]" with stuck clear port to stuck value GND
+Warning: Reduced register "adio_codec:ad1|ramp3[8]" with stuck clear port to stuck value GND
+Warning: Reduced register "adio_codec:ad1|ramp3[7]" with stuck clear port to stuck value GND
+Warning: Reduced register "adio_codec:ad1|ramp3[6]" with stuck clear port to stuck value GND
+Warning: Reduced register "adio_codec:ad1|ramp3[5]" with stuck clear port to stuck value GND
+Warning: Reduced register "adio_codec:ad1|ramp3[4]" with stuck clear port to stuck value GND
+Warning: Reduced register "adio_codec:ad1|ramp3[3]" with stuck clear port to stuck value GND
+Warning: Reduced register "adio_codec:ad1|ramp3[2]" with stuck clear port to stuck value GND
+Warning: Reduced register "adio_codec:ad1|ramp3[1]" with stuck clear port to stuck value GND
+Warning: Reduced register "adio_codec:ad1|ramp3[0]" with stuck clear port to stuck value GND
+Warning: Reduced register "adio_codec:ad1|ramp4[15]" with stuck clear port to stuck value GND
+Warning: Reduced register "adio_codec:ad1|ramp4[14]" with stuck clear port to stuck value GND
+Warning: Reduced register "adio_codec:ad1|ramp4[13]" with stuck clear port to stuck value GND
+Warning: Reduced register "adio_codec:ad1|ramp4[12]" with stuck clear port to stuck value GND
+Warning: Reduced register "adio_codec:ad1|ramp4[11]" with stuck clear port to stuck value GND
+Warning: Reduced register "adio_codec:ad1|ramp4[10]" with stuck clear port to stuck value GND
+Warning: Reduced register "adio_codec:ad1|ramp4[9]" with stuck clear port to stuck value GND
+Warning: Reduced register "adio_codec:ad1|ramp4[8]" with stuck clear port to stuck value GND
+Warning: Reduced register "adio_codec:ad1|ramp4[7]" with stuck clear port to stuck value GND
+Warning: Reduced register "adio_codec:ad1|ramp4[6]" with stuck clear port to stuck value GND
+Warning: Reduced register "adio_codec:ad1|ramp4[5]" with stuck clear port to stuck value GND
+Warning: Reduced register "adio_codec:ad1|ramp4[4]" with stuck clear port to stuck value GND
+Warning: Reduced register "adio_codec:ad1|ramp4[3]" with stuck clear port to stuck value GND
+Warning: Reduced register "adio_codec:ad1|ramp4[2]" with stuck clear port to stuck value GND
+Warning: Reduced register "adio_codec:ad1|ramp4[1]" with stuck clear port to stuck value GND
+Warning: Reduced register "adio_codec:ad1|ramp4[0]" with stuck clear port to stuck value GND
+Warning: Reduced register "I2C_AV_Config:u7|mI2C_DATA[23]" with stuck data_in port to stuck value GND
+Warning: Reduced register "I2C_AV_Config:u7|mI2C_DATA[22]" with stuck data_in port to stuck value GND
+Info: Power-up level of register "I2C_AV_Config:u7|mI2C_DATA[21]" is not specified -- using power-up level of High to minimize register
+Warning: Reduced register "I2C_AV_Config:u7|mI2C_DATA[21]" with stuck data_in port to stuck value VCC
+Info: Power-up level of register "I2C_AV_Config:u7|mI2C_DATA[20]" is not specified -- using power-up level of High to minimize register
+Warning: Reduced register "I2C_AV_Config:u7|mI2C_DATA[20]" with stuck data_in port to stuck value VCC
+Warning: Reduced register "I2C_AV_Config:u7|mI2C_DATA[19]" with stuck data_in port to stuck value GND
+Info: Power-up level of register "I2C_AV_Config:u7|mI2C_DATA[18]" is not specified -- using power-up level of High to minimize register
+Warning: Reduced register "I2C_AV_Config:u7|mI2C_DATA[18]" with stuck data_in port to stuck value VCC
+Warning: Reduced register "I2C_AV_Config:u7|mI2C_DATA[17]" with stuck data_in port to stuck value GND
+Warning: Reduced register "I2C_AV_Config:u7|mI2C_DATA[16]" with stuck data_in port to stuck value GND
+Warning: Reduced register "I2C_AV_Config:u7|mI2C_DATA[15]" with stuck data_in port to stuck value GND
+Warning: Reduced register "I2C_AV_Config:u7|mI2C_DATA[14]" with stuck data_in port to stuck value GND
+Warning: Reduced register "I2C_AV_Config:u7|mI2C_DATA[13]" with stuck data_in port to stuck value GND
+Warning: Reduced register "I2C_AV_Config:u7|mI2C_DATA[8]" with stuck data_in port to stuck value GND
+Warning: Reduced register "I2C_AV_Config:u7|I2C_Controller:u0|SD[23]" with stuck data_in port to stuck value GND
+Warning: Reduced register "I2C_AV_Config:u7|I2C_Controller:u0|SD[22]" with stuck data_in port to stuck value GND
+Info: Power-up level of register "I2C_AV_Config:u7|I2C_Controller:u0|SD[21]" is not specified -- using power-up level of High to minimize register
+Warning: Reduced register "I2C_AV_Config:u7|I2C_Controller:u0|SD[21]" with stuck data_in port to stuck value VCC
+Info: Power-up level of register "I2C_AV_Config:u7|I2C_Controller:u0|SD[20]" is not specified -- using power-up level of High to minimize register
+Warning: Reduced register "I2C_AV_Config:u7|I2C_Controller:u0|SD[20]" with stuck data_in port to stuck value VCC
+Warning: Reduced register "I2C_AV_Config:u7|I2C_Controller:u0|SD[19]" with stuck data_in port to stuck value GND
+Info: Power-up level of register "I2C_AV_Config:u7|I2C_Controller:u0|SD[18]" is not specified -- using power-up level of High to minimize register
+Warning: Reduced register "I2C_AV_Config:u7|I2C_Controller:u0|SD[18]" with stuck data_in port to stuck value VCC
+Warning: Reduced register "I2C_AV_Config:u7|I2C_Controller:u0|SD[17]" with stuck data_in port to stuck value GND
+Warning: Reduced register "I2C_AV_Config:u7|I2C_Controller:u0|SD[16]" with stuck data_in port to stuck value GND
+Warning: Reduced register "I2C_AV_Config:u7|I2C_Controller:u0|SD[15]" with stuck data_in port to stuck value GND
+Warning: Reduced register "I2C_AV_Config:u7|I2C_Controller:u0|SD[14]" with stuck data_in port to stuck value GND
+Warning: Reduced register "I2C_AV_Config:u7|I2C_Controller:u0|SD[13]" with stuck data_in port to stuck value GND
+Warning: Reduced register "I2C_AV_Config:u7|I2C_Controller:u0|SD[8]" with stuck data_in port to stuck value GND
+Info: Duplicate registers merged to single register
+    Info: Duplicate register "demo_sound2:dd2|st[4]" merged to single register "demo_sound2:dd2|st[5]"
+    Info: Duplicate register "demo_sound1:dd1|st[4]" merged to single register "demo_sound1:dd1|st[5]"
+    Info: Duplicate register "I2C_AV_Config:u7|mI2C_DATA[5]" merged to single register "I2C_AV_Config:u7|mI2C_DATA[6]"
+    Info: Duplicate register "I2C_AV_Config:u7|mI2C_DATA[3]" merged to single register "I2C_AV_Config:u7|mI2C_DATA[4]"
+    Info: Duplicate register "I2C_AV_Config:u7|I2C_Controller:u0|SD[5]" merged to single register "I2C_AV_Config:u7|I2C_Controller:u0|SD[6]"
+    Info: Duplicate register "I2C_AV_Config:u7|I2C_Controller:u0|SD[3]" merged to single register "I2C_AV_Config:u7|I2C_Controller:u0|SD[4]"
+Warning: Reduced register "demo_sound1:dd1|st[5]" with stuck data_in port to stuck value GND
+Warning: Reduced register "demo_sound1:dd1|st[3]" with stuck data_in port to stuck value GND
+Warning: Reduced register "demo_sound2:dd2|st[5]" with stuck data_in port to stuck value GND
+Warning: Reduced register "demo_sound2:dd2|st[3]" with stuck data_in port to stuck value GND
+Info: State machine "|DE1_synthesizer|I2C_AV_Config:u7|mSetup_ST" contains 3 states
+Info: Selected Auto state machine encoding method for state machine "|DE1_synthesizer|I2C_AV_Config:u7|mSetup_ST"
+Info: Encoding result for state machine "|DE1_synthesizer|I2C_AV_Config:u7|mSetup_ST"
+    Info: Completed encoding using 3 state bits
+        Info: Encoded state bit "I2C_AV_Config:u7|mSetup_ST.00"
+        Info: Encoded state bit "I2C_AV_Config:u7|mSetup_ST.10"
+        Info: Encoded state bit "I2C_AV_Config:u7|mSetup_ST.01"
+    Info: State "|DE1_synthesizer|I2C_AV_Config:u7|mSetup_ST.00" uses code string "000"
+    Info: State "|DE1_synthesizer|I2C_AV_Config:u7|mSetup_ST.01" uses code string "101"
+    Info: State "|DE1_synthesizer|I2C_AV_Config:u7|mSetup_ST.10" uses code string "110"
+Warning: The bidir "SD_DAT3" has no source; inserted an always disabled tri-state buffer.
+Warning: The bidir "SD_CMD" has no source; inserted an always disabled tri-state buffer.
+Warning: Inserted an always-enabled tri-state buffer between logic and the tri-state bus AUD_BCLK~0 that it feeds
+Warning: Removed fan-in from always-disabled I/O buffer I2C_SDAT~4 to tri-state bus I2C_SDAT~1
+Warning: Latch demo_sound1:dd1|TT[3] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal demo_sound1:dd1|step[0]
+Warning: Latch demo_sound1:dd1|TT[7] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal demo_sound1:dd1|step[0]
+Warning: Latch demo_sound1:dd1|TT[4] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal demo_sound1:dd1|step[0]
+Warning: Latch demo_sound1:dd1|TT[6] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal demo_sound1:dd1|step[0]
+Warning: Latch demo_sound1:dd1|TT[5] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal demo_sound1:dd1|step[0]
+Warning: Latch demo_sound1:dd1|TT[2] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal demo_sound1:dd1|step[0]
+Warning: Latch demo_sound1:dd1|TT[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal demo_sound1:dd1|step[0]
+Warning: Latch demo_sound1:dd1|TT[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal demo_sound1:dd1|step[0]
+Warning: Latch demo_sound2:dd2|TT[3] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal demo_sound2:dd2|step[0]
+Warning: Latch demo_sound2:dd2|TT[7] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal demo_sound2:dd2|step[0]
+Warning: Latch demo_sound2:dd2|TT[4] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal demo_sound2:dd2|step[0]
+Warning: Latch demo_sound2:dd2|TT[6] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal demo_sound2:dd2|step[0]
+Warning: Latch demo_sound2:dd2|TT[5] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal demo_sound2:dd2|step[0]
+Warning: Latch demo_sound2:dd2|TT[2] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal demo_sound2:dd2|step[0]
+Warning: Latch demo_sound2:dd2|TT[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal demo_sound2:dd2|step[0]
+Warning: Latch demo_sound2:dd2|TT[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal demo_sound2:dd2|step[0]
+Info: Registers with preset signals will power-up high
+Info: DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning: Reduced register "adio_codec:ad1|BCK_DIV[3]" with stuck data_in port to stuck value GND
+Warning: TRI or OPNDRN buffers permanently enabled
+    Warning: Node "AUD_BCLK~1"
+Warning: Output pins are stuck at VCC or GND
+    Warning: Pin "HEX0[0]" stuck at GND
+    Warning: Pin "HEX0[1]" stuck at GND
+    Warning: Pin "HEX0[2]" stuck at VCC
+    Warning: Pin "HEX0[3]" stuck at GND
+    Warning: Pin "HEX0[4]" stuck at GND
+    Warning: Pin "HEX0[5]" stuck at VCC
+    Warning: Pin "HEX0[6]" stuck at GND
+    Warning: Pin "HEX1[0]" stuck at VCC
+    Warning: Pin "HEX1[1]" stuck at GND
+    Warning: Pin "HEX1[2]" stuck at GND
+    Warning: Pin "HEX1[3]" stuck at VCC
+    Warning: Pin "HEX1[4]" stuck at VCC
+    Warning: Pin "HEX1[5]" stuck at VCC
+    Warning: Pin "HEX1[6]" stuck at VCC
+    Warning: Pin "HEX2[0]" stuck at VCC
+    Warning: Pin "HEX2[1]" stuck at GND
+    Warning: Pin "HEX2[2]" stuck at GND
+    Warning: Pin "HEX2[3]" stuck at VCC
+    Warning: Pin "HEX2[4]" stuck at VCC
+    Warning: Pin "HEX2[5]" stuck at VCC
+    Warning: Pin "HEX2[6]" stuck at VCC
+    Warning: Pin "HEX3[0]" stuck at VCC
+    Warning: Pin "HEX3[1]" stuck at GND
+    Warning: Pin "HEX3[2]" stuck at GND
+    Warning: Pin "HEX3[3]" stuck at VCC
+    Warning: Pin "HEX3[4]" stuck at VCC
+    Warning: Pin "HEX3[5]" stuck at VCC
+    Warning: Pin "HEX3[6]" stuck at VCC
+    Warning: Pin "LEDR[0]" stuck at GND
+    Warning: Pin "LEDR[1]" stuck at GND
+    Warning: Pin "LEDR[2]" stuck at GND
+    Warning: Pin "LEDR[3]" stuck at GND
+    Warning: Pin "LEDR[4]" stuck at GND
+    Warning: Pin "LEDR[5]" stuck at GND
+    Warning: Pin "LEDR[8]" stuck at GND
+    Warning: Pin "LEDR[9]" stuck at GND
+    Warning: Pin "UART_TXD" stuck at GND
+    Warning: Pin "DRAM_ADDR[0]" stuck at GND
+    Warning: Pin "DRAM_ADDR[1]" stuck at GND
+    Warning: Pin "DRAM_ADDR[2]" stuck at GND
+    Warning: Pin "DRAM_ADDR[3]" stuck at GND
+    Warning: Pin "DRAM_ADDR[4]" stuck at GND
+    Warning: Pin "DRAM_ADDR[5]" stuck at GND
+    Warning: Pin "DRAM_ADDR[6]" stuck at GND
+    Warning: Pin "DRAM_ADDR[7]" stuck at GND
+    Warning: Pin "DRAM_ADDR[8]" stuck at GND
+    Warning: Pin "DRAM_ADDR[9]" stuck at GND
+    Warning: Pin "DRAM_ADDR[10]" stuck at GND
+    Warning: Pin "DRAM_ADDR[11]" stuck at GND
+    Warning: Pin "DRAM_LDQM" stuck at GND
+    Warning: Pin "DRAM_UDQM" stuck at GND
+    Warning: Pin "DRAM_WE_N" stuck at GND
+    Warning: Pin "DRAM_CAS_N" stuck at GND
+    Warning: Pin "DRAM_RAS_N" stuck at GND
+    Warning: Pin "DRAM_CS_N" stuck at GND
+    Warning: Pin "DRAM_BA_0" stuck at GND
+    Warning: Pin "DRAM_BA_1" stuck at GND
+    Warning: Pin "DRAM_CLK" stuck at GND
+    Warning: Pin "DRAM_CKE" stuck at GND
+    Warning: Pin "FL_ADDR[0]" stuck at GND
+    Warning: Pin "FL_ADDR[1]" stuck at GND
+    Warning: Pin "FL_ADDR[2]" stuck at GND
+    Warning: Pin "FL_ADDR[3]" stuck at GND
+    Warning: Pin "FL_ADDR[4]" stuck at GND
+    Warning: Pin "FL_ADDR[5]" stuck at GND
+    Warning: Pin "FL_ADDR[6]" stuck at GND
+    Warning: Pin "FL_ADDR[7]" stuck at GND
+    Warning: Pin "FL_ADDR[8]" stuck at GND
+    Warning: Pin "FL_ADDR[9]" stuck at GND
+    Warning: Pin "FL_ADDR[10]" stuck at GND
+    Warning: Pin "FL_ADDR[11]" stuck at GND
+    Warning: Pin "FL_ADDR[12]" stuck at GND
+    Warning: Pin "FL_ADDR[13]" stuck at GND
+    Warning: Pin "FL_ADDR[14]" stuck at GND
+    Warning: Pin "FL_ADDR[15]" stuck at GND
+    Warning: Pin "FL_ADDR[16]" stuck at GND
+    Warning: Pin "FL_ADDR[17]" stuck at GND
+    Warning: Pin "FL_ADDR[18]" stuck at GND
+    Warning: Pin "FL_ADDR[19]" stuck at GND
+    Warning: Pin "FL_ADDR[20]" stuck at GND
+    Warning: Pin "FL_ADDR[21]" stuck at GND
+    Warning: Pin "FL_WE_N" stuck at GND
+    Warning: Pin "FL_RST_N" stuck at GND
+    Warning: Pin "FL_OE_N" stuck at GND
+    Warning: Pin "FL_CE_N" stuck at GND
+    Warning: Pin "SRAM_ADDR[0]" stuck at GND
+    Warning: Pin "SRAM_ADDR[1]" stuck at GND
+    Warning: Pin "SRAM_ADDR[2]" stuck at GND
+    Warning: Pin "SRAM_ADDR[3]" stuck at GND
+    Warning: Pin "SRAM_ADDR[4]" stuck at GND
+    Warning: Pin "SRAM_ADDR[5]" stuck at GND
+    Warning: Pin "SRAM_ADDR[6]" stuck at GND
+    Warning: Pin "SRAM_ADDR[7]" stuck at GND
+    Warning: Pin "SRAM_ADDR[8]" stuck at GND
+    Warning: Pin "SRAM_ADDR[9]" stuck at GND
+    Warning: Pin "SRAM_ADDR[10]" stuck at GND
+    Warning: Pin "SRAM_ADDR[11]" stuck at GND
+    Warning: Pin "SRAM_ADDR[12]" stuck at GND
+    Warning: Pin "SRAM_ADDR[13]" stuck at GND
+    Warning: Pin "SRAM_ADDR[14]" stuck at GND
+    Warning: Pin "SRAM_ADDR[15]" stuck at GND
+    Warning: Pin "SRAM_ADDR[16]" stuck at GND
+    Warning: Pin "SRAM_ADDR[17]" stuck at GND
+    Warning: Pin "SRAM_UB_N" stuck at GND
+    Warning: Pin "SRAM_LB_N" stuck at GND
+    Warning: Pin "SRAM_WE_N" stuck at GND
+    Warning: Pin "SRAM_CE_N" stuck at GND
+    Warning: Pin "SRAM_OE_N" stuck at GND
+    Warning: Pin "SD_CLK" stuck at GND
+    Warning: Pin "TDO" stuck at GND
+    Warning: Pin "VGA_R[0]" stuck at GND
+    Warning: Pin "VGA_R[1]" stuck at GND
+    Warning: Pin "VGA_R[2]" stuck at GND
+    Warning: Pin "VGA_G[0]" stuck at GND
+    Warning: Pin "VGA_G[1]" stuck at GND
+    Warning: Pin "VGA_G[2]" stuck at GND
+    Warning: Pin "VGA_B[0]" stuck at GND
+    Warning: Pin "VGA_B[1]" stuck at GND
+    Warning: Pin "VGA_B[2]" stuck at GND
+Warning: Design contains 15 input pin(s) that do not drive logic
+    Warning: No output dependent on input pin "CLOCK_24[0]"
+    Warning: No output dependent on input pin "CLOCK_24[1]"
+    Warning: No output dependent on input pin "CLOCK_27[1]"
+    Warning: No output dependent on input pin "EXT_CLOCK"
+    Warning: No output dependent on input pin "SW[3]"
+    Warning: No output dependent on input pin "SW[4]"
+    Warning: No output dependent on input pin "SW[5]"
+    Warning: No output dependent on input pin "SW[6]"
+    Warning: No output dependent on input pin "SW[7]"
+    Warning: No output dependent on input pin "SW[8]"
+    Warning: No output dependent on input pin "UART_RXD"
+    Warning: No output dependent on input pin "TDI"
+    Warning: No output dependent on input pin "TCK"
+    Warning: No output dependent on input pin "TCS"
+    Warning: No output dependent on input pin "AUD_ADCDAT"
+Info: Implemented 1725 device resources after synthesis - the final resource count might be different
+    Info: Implemented 26 input pins
+    Info: Implemented 139 output pins
+    Info: Implemented 118 bidirectional pins
+    Info: Implemented 1441 logic cells
+    Info: Implemented 1 ClockLock PLLs
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 483 warnings
+    Info: Processing ended: Thu Nov 16 09:02:25 2006
+    Info: Elapsed time: 00:00:37
 
 
