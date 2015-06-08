@@ -20,9 +20,6 @@ parameter	SIN_SANPLE		=	0;
 //////////////////////////////////////////////////
 
 //input [51:0]iRefClock;
-input	[1:0]	iSrc_Select;
-input			iCLK_18_4;
-input			iRST_N;
 //	Internal Registers and Wires
 reg		[3:0]	BCK_DIV;
 reg		[8:0]	LRCK_1X_DIV;
