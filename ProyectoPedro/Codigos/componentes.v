@@ -169,7 +169,7 @@ module descompose(input wire clk, reset, enable,
 		else
             begin
                 continue=0;
-    			if (s == 25'b1011111010111100001000000)
+    			if (s == 25'b101111101011110000100000)
     				begin
               if(cuantosvan==4'b1001)
               begin 
