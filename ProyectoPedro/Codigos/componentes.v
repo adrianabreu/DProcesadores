@@ -147,7 +147,7 @@ endmodule
 
 module descompose(input wire clk, reset, enable,
           input wire [9:0] entrada,
-          output reg short, l, clock, continue,inputwire[24:0] s);
+          output reg short, l, clock, continue,input wire[24:0] contador);
   
  //reg [24:0]s; 
  reg[9:0] morse;
@@ -169,7 +169,7 @@ module descompose(input wire clk, reset, enable,
 		else
             begin
                 continue=0;
-    			if (s == 25'b101111101011110000100000)
+    			if (s == contador)
     				begin
               if(cuantosvan==4'b1001)
               begin 
