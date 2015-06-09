@@ -9,7 +9,7 @@ module microc(input wire clk, reset, enable0, enable1, enable2, enable3,
               output wire [1:0] puerto2,
               output wire [7:0] sout0,sout1,sout2,sout3,
 				  output wire [9:0] pc_out,
-              output wire zero,output wire [24:0]contador,output wire s_cont);
+              output wire zero,output wire [24:0]contador,input wire s_cont);
 
 //wire [7:0]sout0,sout1,sout2,sout3;
 wire [9:0] muxpc_out; //cable sumador, pc y memprog; cable mux_pc y pc
