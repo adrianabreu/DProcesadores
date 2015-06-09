@@ -1,7 +1,7 @@
 module uc(input wire clk, reset, z, input wire [5:0] opcode, 
     output reg s_inc, s_inm, selentrada, selsalida, enablebackup,
                s_rel, s_ret, we3, enable0, enable1, enable2, enable3, audioreg, audioact,
-    input wire [1:0] puerto1,puerto2, output wire [2:0] op,input wire continue);
+    input wire [1:0] puerto1,puerto2, output wire [2:0] op,input wire continue,output reg uc);
 
 //Si usamos wires se descontrola todo
 assign op = opcode[2:0];
