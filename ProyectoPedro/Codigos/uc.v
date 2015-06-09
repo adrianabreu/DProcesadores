@@ -1,7 +1,7 @@
 module uc(input wire clk, reset, z, input wire [5:0] opcode, 
     output reg s_inc, s_inm, selentrada, selsalida, enablebackup,
                s_rel, s_ret, we3, enable0, enable1, enable2, enable3, audioreg, audioact,
-    input wire [1:0] puerto1,puerto2, output wire [2:0] op);
+    input wire [1:0] puerto1,puerto2, output wire [2:0] op,input wire continue);
 
 //Si usamos wires se descontrola todo
 assign op = opcode[2:0];
@@ -280,7 +280,7 @@ always @(*)
         6'b011101:
            begin
             we3 <= 1'b0;        //Deshabilitamos escritura
-            s_inc <= 1'b0;      //El pc cambia su ciclo
+                  
             s_inm <= 1'b0;      //No vienen constantes del multiplexor
             selentrada <= 1'b0;  //No se aceptan entradas de los disp.      
             selsalida <= 1'b0;  //La entrada al mux de salida es el bus de datos
@@ -289,6 +289,10 @@ always @(*)
             enablebackup <= 1'b0;
             audioreg <= 1'b0;
             audioact <= 1'b1;
+            if(continue==1'b1)
+               s_inc <= 1'b0;//El pc cambia su ciclo
+            else
+               s_inc <= 1'b0;
            end
         
     	//DEFECTO

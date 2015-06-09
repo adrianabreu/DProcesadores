@@ -20,6 +20,7 @@ module monociclo(input wire clk, reset, enciendete,
   wire		AUD_ADCLRCK;
   wire [51:0] sonido;
   //wire audio_enable;
+  wire continue;
   
   wire s_inc, s_inm, selentrada, selsalida, we3, z;
   wire s_rel, enablebackup, s_ret;
@@ -42,12 +43,12 @@ module monociclo(input wire clk, reset, enciendete,
   
   uc uc1(clk, reset, z, opcode, s_inc, s_inm, selentrada, selsalida,
          enablebackup, s_rel, s_ret, we3, enable0, enable1, enable2,
-         enable3, audioreg, audioact, puerto1,puerto2, op);
+         enable3, audioreg, audioact, puerto1,puerto2, op,continue);
 
 					
   registro10 salvaaudio(clk, reset, audioreg, morse, audiofromregtomodulo);
   
-  descompose descomponer(clk, reset, audioact, morse, short, long, clock);
+  descompose descomponer(clk, reset, audioact, morse, short, long, clock,continue);
   
   ModuloSonido modsonido(clock,audioact,
                 audio_enable,
