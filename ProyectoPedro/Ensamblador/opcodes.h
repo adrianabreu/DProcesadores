@@ -159,6 +159,18 @@ str_inst opcode(char* operacion){
 			convertida.opcode= new string("1111");
 			convertida.operandos=2;
 		break;
+
+		case 21:
+			cout << "GUARDAR SONIDO EN REGISTRO" << endl;
+			convertida.opcode= new string("011100");
+			convertida.operandos=1;
+		break;
+		
+		case 22:
+			cout << "REPRODUCIR SONIDO" << endl;
+			convertida.opcode= new string("011101");
+			convertida.operandos=1;
+		break;
 		
 		case 0:
 			cout << "INDEFINIDO" << endl;

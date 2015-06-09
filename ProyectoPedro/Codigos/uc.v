@@ -276,7 +276,7 @@ always @(*)
           end     
 
         
-        //REPRODUCIR AUDIO EN REGISTRO   
+        //REPRODUCIR AUDIO DESDE REGISTRO   
         6'b011101:
            begin
             we3 <= 1'b0;        //Deshabilitamos escritura
