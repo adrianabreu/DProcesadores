@@ -188,14 +188,14 @@ module descompose(input wire clk, reset, enable,
     								short=0;
     								still=0;
     								morse = morse << 1;
-                                    cuantosvan+=1;
+                           cuantosvan= cuantosvan + 1;
     							end
     						else
     						  begin 
     						if(morse[9]==1'b1)
     							begin
     								morse = morse << 1;
-                                    cuantosvan+=1;
+                                    cuantosvan= cuantosvan + 1;
     								if(morse[9]==1'b1)
     									begin
     										l=1;
@@ -213,7 +213,7 @@ module descompose(input wire clk, reset, enable,
     									short=0;
     									l=0;
     									morse = morse << 1;
-                                        cuantosvan+=1;
+                                        cuantosvan= cuantosvan + 1;
     								end
     							end
     		        end 
