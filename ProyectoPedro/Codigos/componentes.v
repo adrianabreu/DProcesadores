@@ -147,9 +147,9 @@ endmodule
 
 module descompose(input wire clk, reset, enable,
           input wire [9:0] entrada,
-          output reg short, l, clock, continue);
+          output reg short, l, clock, continue,inputwire[24:0] s);
   
- reg [24:0]s; 
+ //reg [24:0]s; 
  reg[9:0] morse;
  reg still;
  reg[3:0] cuantosvan; //Contador hasta 9
@@ -345,4 +345,24 @@ module dmux4 #(parameter WIDTH = 8)
 		  endcase
 		end
 	end	
+endmodule
+
+module concatenator4000 (input wire clk, reset, enable,
+                         input wire [7:0] a,b,
+                         output reg[24:0] resultado);
+
+always @(posedge clk, posedge reset)
+    begin 
+    if(reset)
+      begin
+        resultado <= 25'b1011111010111100001000000;
+      end 
+    else
+       begin
+          if(enable)
+            begin
+                resultado <= {a,9'b11111111,b};
+            end
+       end
+    end 
 endmodule

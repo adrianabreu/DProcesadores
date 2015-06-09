@@ -9,7 +9,7 @@ module microc(input wire clk, reset, enable0, enable1, enable2, enable3,
               output wire [1:0] puerto2,
               output wire [7:0] sout0,sout1,sout2,sout3,
 				  output wire [9:0] pc_out,
-              output wire zero);
+              output wire zero,output wire [24:0]contador,output wire s_cont);
 
 //wire [7:0]sout0,sout1,sout2,sout3;
 wire [9:0] muxpc_out; //cable sumador, pc y memprog; cable mux_pc y pc
@@ -65,7 +65,11 @@ regfile registros(clk, we3, bus_de_datos[7:4], bus_de_datos[11:8], bus_de_datos[
 //module alu(input wire [7:0] a, b, input wire [2:0] op,
 //           output wire [7:0] y, output wire zero);      
 alu alu1(rd1, rd2, op, alu_mux_in, z); 
+/* module concatenator4000 (input wire clk, reset, enable,
+                         input wire [7:0] a,b,
+                         output reg[24:0] resultado); */ 
 
+contatenator4000 frecuencia(clk,reset,s_cont,rd1,rd2,contador);
 //module mux2 #(parameter WIDTH = 8)(input  wire [WIDTH-1:0] d0, d1, input wire s, 
 //                                   output wire [WIDTH-1:0] y);
 mux2 mux_banco(alu_mux_in, bus_de_datos[11:4], s_inm, alu_mux_out);
