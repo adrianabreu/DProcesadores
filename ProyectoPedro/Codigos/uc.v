@@ -290,7 +290,7 @@ always @(*)
             audioreg <= 1'b0;
             audioact <= 1'b1;
             if(continue==1'b1)
-               s_inc <= 1'b0;//El pc cambia su ciclo
+               s_inc <= 1'b1;//El pc cambia su ciclo
             else
                s_inc <= 1'b0;
            end
