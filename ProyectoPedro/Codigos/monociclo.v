@@ -49,7 +49,7 @@ module monociclo(input wire clk, reset, enciendete,
 					
   registro10 salvaaudio(clk, reset, audioreg, morse, audiofromregtomodulo);
   
-  descompose descomponer(clk, reset, audioact, morse, short, long, clock,continue,contador);
+  descompose descomponer(clk, reset, audioact, audiofromregtomodulo, short, long, clock,continue,contador);
 
   ModuloSonido modsonido(clock,audioact,
                 audio_enable,
