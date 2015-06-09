@@ -149,7 +149,7 @@ module descompose(input wire clk, reset, enable,
           input wire [9:0] entrada,
           output reg short, l, clock, continue,input wire[24:0] contador);
   
- //reg [24:0]s; 
+ reg [24:0]s; 
  reg[9:0] morse;
  reg still;
  reg[3:0] cuantosvan; //Contador hasta 9
