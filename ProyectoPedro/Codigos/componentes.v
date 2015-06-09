@@ -347,7 +347,7 @@ module dmux4 #(parameter WIDTH = 8)
 	end	
 endmodule
 
-module concatenator4000 (input wire clk, reset, enable,
+module concatenator (input wire clk, reset, enable,
                          input wire [7:0] a,b,
                          output reg[24:0] resultado);
 

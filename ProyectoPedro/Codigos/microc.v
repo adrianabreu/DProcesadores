@@ -69,7 +69,7 @@ alu alu1(rd1, rd2, op, alu_mux_in, z);
                          input wire [7:0] a,b,
                          output reg[24:0] resultado); */ 
 
-contatenator4000 frecuencia(clk,reset,s_cont,rd1,rd2,contador);
+concatenator frecuencia(clk,reset,s_cont,rd1,rd2,contador);
 //module mux2 #(parameter WIDTH = 8)(input  wire [WIDTH-1:0] d0, d1, input wire s, 
 //                                   output wire [WIDTH-1:0] y);
 mux2 mux_banco(alu_mux_in, bus_de_datos[11:4], s_inm, alu_mux_out);
