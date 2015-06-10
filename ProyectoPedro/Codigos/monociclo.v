@@ -20,6 +20,7 @@ module monociclo(input wire clk, reset, enciendete,
   wire		AUD_ADCLRCK;
   wire [51:0] sonido;
   //wire audio_enable;
+  wire continue;
   
   wire s_inc, s_inm, selentrada, selsalida, we3, z;
   wire s_rel, enablebackup, s_ret;
@@ -34,21 +35,22 @@ module monociclo(input wire clk, reset, enciendete,
   assign  I2C_SDAT  = 1'bz;
   assign  AUD_ADCLRCK = AUD_DACLRCK;
   assign  AUD_XCK   = AUD_CTRL_CLK;
- 
+ wire [24:0] contador;
+ wire s_cont;
   
   microc micro1(clk, reset, enable0, enable1, enable2, enable3,
                 enablebackup, s_inc, s_inm, we3, selsalida,
-                selentrada, s_rel, s_ret, e0,e1,e2,e3, opcode,op,puerto1,puerto2,s0,s1,s2,s3,pc_out,z);
+                selentrada, s_rel, s_ret, e0,e1,e2,e3, opcode,op,puerto1,puerto2,s0,s1,s2,s3,pc_out,z,contador,s_cont);
   
   uc uc1(clk, reset, z, opcode, s_inc, s_inm, selentrada, selsalida,
          enablebackup, s_rel, s_ret, we3, enable0, enable1, enable2,
-         enable3, audioreg, audioact, puerto1,puerto2, op);
+         enable3, audioreg, audioact, puerto1,puerto2, op,continue,s_cont);
 
 					
   registro10 salvaaudio(clk, reset, audioreg, morse, audiofromregtomodulo);
   
-  descompose descomponer(clk, reset, audioact, morse, short, long, clock);
-  
+  descompose descomponer(clk, reset, audioact, audiofromregtomodulo, short, long, clock,continue,contador);
+
   ModuloSonido modsonido(clock,audioact,
                 audio_enable,
                 short, long,

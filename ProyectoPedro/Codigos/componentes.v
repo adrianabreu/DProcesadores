@@ -144,98 +144,85 @@ module regfile(input  wire        clk,
   assign rd2 = (ra2 != 0) ? regb[ra2] : 8'b0;
 endmodule
 
-/*module retrasado(input wire clk, reset,
-          output reg clock);
-  reg [24:0] s;
-  always @(clk)
-    begin
-      if(reset)
-        begin
-          s = 25'b0;
-        end
-      if (s == 25'b1011111010111100001000000)
-        begin
-          clock = 1;
-          s = 25'b0;
-        end
-      else
-        s=s+1;
-        clock = 0;
-    end
-endmodule*/
 
 module descompose(input wire clk, reset, enable,
           input wire [9:0] entrada,
-          output reg short, l, clock);
+          output reg short, l, clock, continue,input wire[24:0] contador);
   
  reg [24:0]s; 
  reg[9:0] morse;
  reg still;
+ reg[3:0] cuantosvan; //Contador hasta 9
  
   always @(posedge clk,posedge reset)
     begin
       if(reset)
         begin
-			 clock = 0;
-          s = 25'b0;
-			 morse = entrada;
-          short=0;
-          l=0;
+            clock = 0;
+            s = 25'b0;
+            morse = entrada;
+            short=0;
+            l=0;
+            continue=1;
+            cuantosvan=0;
         end
 		else
-			if (s == 25'b1011111010111100001000000)
-				begin
-					if(clock==0)
-						clock = 1;
-					else
-						clock = 0;
-					s = 25'b0;
-					if(enable)
-						if(still)
-							begin
-								l=1;
-								short=0;
-								still=0;
-								morse = morse << 1;
-							end
-						else
-						  begin 
-						if(morse[9]==1'b1)
-							begin
-								morse = morse << 1;
-								if(morse[9]==1'b1)
-									begin
-										l=1;
-										still=1;
-										short=0;
-									end
-								else
-									begin
-										short=1;
-										l=0;
-									end
-							end
-							else
-								begin
-									short=0;
-									l=0;
-									morse = morse << 1;
-								end
-							end
-		end   
-      else
-			begin
-			  s=s+1;
-		  end
+            begin
+                continue=0;
+    			if (s == contador)
+    				begin
+              if(cuantosvan==4'b1001)
+              begin 
+                continue=1;
+                cuantosvan=0;
+              end 
+    					if(clock==0)
+    						clock = 1;
+    					else
+    						clock = 0;
+    					s = 25'b0;
+    					if(enable)
+    						if(still)
+    							begin
+    								l=1;
+    								short=0;
+    								still=0;
+    								morse = morse << 1;
+                           cuantosvan= cuantosvan + 1;
+    							end
+    						else
+    						  begin 
+    						if(morse[9]==1'b1)
+    							begin
+    								morse = morse << 1;
+                                    cuantosvan= cuantosvan + 1;
+    								if(morse[9]==1'b1)
+    									begin
+    										l=1;
+    										still=1;
+    										short=0;
+    									end
+    								else
+    									begin
+    										short=1;
+    										l=0;
+    									end
+    							end
+    							else
+    								begin
+    									short=0;
+    									l=0;
+    									morse = morse << 1;
+                                        cuantosvan= cuantosvan + 1;
+    								end
+    							end
+    		        end 
+                else
+    			    begin
+                        s=s+1;
+    		        end
+            end
     end  
- /* always @(posedge clk, posedge reset)
-    begin
-      if(reset)
-        begin
- 
-        end
-      else*/
-		
 endmodule
 
 //modulo sumador  
@@ -358,4 +345,24 @@ module dmux4 #(parameter WIDTH = 8)
 		  endcase
 		end
 	end	
+endmodule
+
+module concatenator (input wire clk, reset, enable,
+                         input wire [7:0] a,b,
+                         output reg[24:0] resultado);
+
+always @(posedge clk, posedge reset)
+    begin 
+    if(reset)
+      begin
+        resultado <= 25'b1011111010111100001000000;
+      end 
+    else
+       begin
+          if(enable)
+            begin
+                resultado <= {a,9'b11111111,b};
+            end
+       end
+    end 
 endmodule

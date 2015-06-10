@@ -1,7 +1,7 @@
 module uc(input wire clk, reset, z, input wire [5:0] opcode, 
     output reg s_inc, s_inm, selentrada, selsalida, enablebackup,
                s_rel, s_ret, we3, enable0, enable1, enable2, enable3, audioreg, audioact,
-    input wire [1:0] puerto1,puerto2, output wire [2:0] op);
+    input wire [1:0] puerto1,puerto2, output wire [2:0] op,input wire continue,output reg s_cont);
 
 //Si usamos wires se descontrola todo
 assign op = opcode[2:0];
@@ -24,6 +24,7 @@ always @(*)
         enablebackup <= 1'b0;
         audioreg <= 1'b0;
         audioact <= 1'b0;
+        s_cont <= 1'b0;
       end
       
       else
@@ -43,6 +44,7 @@ always @(*)
             enablebackup <= 1'b0;
             audioreg <= 1'b0;
             audioact <= 1'b0;
+            s_cont <= 1'b0;
     	  end
     	  
     	//CARGA
@@ -58,6 +60,7 @@ always @(*)
             enablebackup <= 1'b0;
             audioreg <= 1'b0;
             audioact <= 1'b0;
+            s_cont <= 1'b0;
     	  end
     	  
         //SALTO INCONDICIONAL
@@ -73,6 +76,7 @@ always @(*)
             enablebackup <= 1'b0;
             audioreg <= 1'b0;
             audioact <= 1'b0;
+            s_cont <= 1'b0;
     	  end
     	  
     	//SALTO CONDICIONAL SI ZERO
@@ -88,6 +92,7 @@ always @(*)
             enablebackup <= 1'b0;
             audioreg <= 1'b0;
             audioact <= 1'b0;
+            s_cont <= 1'b0;
 
     	    if(z == 1'b1)
     	      s_inc <= 1'b0;   //El pc recibe la direccion de la instruccion
@@ -109,6 +114,7 @@ always @(*)
             enablebackup <= 1'b0;
             audioreg <= 1'b0;
             audioact <= 1'b0;
+            s_cont <= 1'b0;
 
     	    if(z != 1'b1)
     	       s_inc <= 1'b0;  //El pc recibe la direccion de la instruccion
@@ -129,6 +135,7 @@ always @(*)
             enablebackup <= 1'b0;
             audioreg <= 1'b0;
             audioact <= 1'b0;
+            s_cont <= 1'b0;
           end   
 
     	//ESCRIBIR EN SALIDA DESDE REGISTRO
@@ -144,6 +151,7 @@ always @(*)
             enablebackup <= 1'b0;
             audioreg <= 1'b0;
             audioact <= 1'b0;
+            s_cont <= 1'b0;
             case (puerto1)
                 2'b00:
                     enable0 <= 1'b1;   
@@ -172,6 +180,7 @@ always @(*)
             enablebackup <= 1'b0;
             audioreg <= 1'b0;
             audioact <= 1'b0;
+            s_cont <= 1'b0;
             case (puerto1)
                 2'b00:
                     enable0 <= 1'b1;   
@@ -201,6 +210,7 @@ always @(*)
             enablebackup <= 1'b0;
             audioreg <= 1'b0;
             audioact <= 1'b0;
+            s_cont <= 1'b0;
             case (puerto2)
                 2'b00:
                     enable0 <= 1'b1;   
@@ -228,6 +238,7 @@ always @(*)
             enablebackup <= 1'b0;
             audioreg <= 1'b0;
             audioact <= 1'b0;
+            s_cont <= 1'b0;
         end
 
         //SALTO A SUBRUTINA        
@@ -243,6 +254,7 @@ always @(*)
             enablebackup <= 1'b1;
             audioreg <= 1'b0;
             audioact <= 1'b0;
+            s_cont <= 1'b0;
         end
 
         //RETORNO A SUBRUTINA
@@ -258,6 +270,7 @@ always @(*)
             enablebackup <= 1'b0;
             audioreg <= 1'b0;
             audioact <= 1'b0;
+            s_cont <= 1'b0;
         end     
 
         //Leer entradas a audio reg
@@ -273,14 +286,14 @@ always @(*)
             enablebackup <= 1'b0;
             audioreg <= 1'b1;
             audioact <= 1'b0;
+            s_cont <= 1'b0;
           end     
 
         
         //REPRODUCIR AUDIO DESDE REGISTRO   
         6'b011101:
            begin
-            we3 <= 1'b0;        //Deshabilitamos escritura
-            s_inc <= 1'b0;      //El pc cambia su ciclo
+            we3 <= 1'b0;        //Deshabilitamos escritura      
             s_inm <= 1'b0;      //No vienen constantes del multiplexor
             selentrada <= 1'b0;  //No se aceptan entradas de los disp.      
             selsalida <= 1'b0;  //La entrada al mux de salida es el bus de datos
@@ -289,8 +302,27 @@ always @(*)
             enablebackup <= 1'b0;
             audioreg <= 1'b0;
             audioact <= 1'b1;
+            if(continue==1'b1)
+               s_inc <= 1'b1;//El pc cambia su ciclo
+            else
+               s_inc <= 1'b0;
+            s_cont <= 1'b0;
            end
-        
+        //AJUSTAR FRECUENCIA 
+        6'b011110:
+           begin
+            we3 <= 1'b0;        //Deshabilitamos escritura      
+            s_inm <= 1'b0;      //No vienen constantes del multiplexor
+            selentrada <= 1'b0;  //No se aceptan entradas de los disp.      
+            selsalida <= 1'b0;  //La entrada al mux de salida es el bus de datos
+            s_rel <= 1'b0; //SALTO RELATIVO
+            s_ret <= 1'b0; 
+            enablebackup <= 1'b0;
+            audioreg <= 1'b0;
+            audioact <= 1'b1;
+            s_inc <= 1'b1;//El pc cambia su ciclo
+            s_cont <= 1'b1;
+           end
     	//DEFECTO
     	default:
     	  begin
@@ -303,7 +335,8 @@ always @(*)
             s_ret <= 1'b0; 
             enablebackup <= 1'b0;	
             audioreg <= 1'b0;
-				audioact <= 1'b1;
+			audioact <= 1'b0;
+            s_cont <= 1'b0;
             end
         endcase
       end	
